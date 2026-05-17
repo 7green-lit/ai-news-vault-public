@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="13トピックを横断したAI業界の構造的潮流と本日のハイライトをまとめた俯瞰資料。GitHub Pages で自動更新されます。">
+  <title>AI業界の潮流 × トピック俯瞰 — ai-news-vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F5F1E8;
+      --indigo: #2C3E50;
+      --slate: #4A5568;
+      --sage: #7A9B85;
+      --terracotta: #B5705F;
+      --stone-light: #ECE7DC;
+      --stone-mid: #D4CFC4;
+      --soft-gray: #A8B0BA;
+      --white: #FFFFFF;
+      --ink: #1A1A1A;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--slate);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    a { color: var(--sage); text-decoration: none; }
+    a:hover { color: var(--terracotta); }
+    ul, ol { padding-left: 1.2em; margin: 0.4em 0; }
+    li { margin: 0.25em 0; }
+    h2, h3, h4 { color: var(--indigo); margin: 0.4em 0; }
+
+    /* Top bar (fixed) */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; height: 56px;
+      background: var(--indigo); color: var(--white);
+      display: flex; align-items: center; padding: 0 16px;
+      z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .topbar .brand {
+      font-weight: 700; font-size: 14px; letter-spacing: 0.02em;
+    }
+    .topbar .brand .sub {
+      font-weight: 400; color: var(--stone-mid); margin-left: 12px; font-size: 11px;
+    }
+    .topbar .nav-links { margin-left: auto; display: flex; gap: 16px; align-items: center; }
+    .topbar .nav-links a {
+      color: var(--stone-mid); font-size: 12px; font-weight: 500;
+      padding: 6px 10px; border-radius: 3px; transition: background 0.15s;
+    }
+    .topbar .nav-links a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+    .topbar .gen { font-size: 11px; color: var(--soft-gray); }
+    .toc-toggle {
+      display: none;
+      background: var(--sage); color: var(--white); border: none;
+      padding: 6px 12px; border-radius: 4px; cursor: pointer;
+      font-family: inherit; margin-right: 12px;
+    }
+
+    /* Layout */
+    .layout {
+      display: grid; grid-template-columns: 260px 1fr;
+      max-width: 1400px; margin: 56px auto 0; padding: 0;
+      gap: 0;
+    }
+    .toc-sidebar {
+      position: sticky; top: 56px; align-self: start;
+      height: calc(100vh - 56px); overflow-y: auto;
+      padding: 24px 20px; border-right: 1px solid var(--stone-mid);
+      background: var(--cream);
+    }
+    .toc-sidebar h3 {
+      font-size: 11px; text-transform: uppercase; color: var(--sage);
+      letter-spacing: 0.08em; margin: 0 0 12px;
+    }
+    .toc-sidebar ol {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .toc-sidebar li { margin: 4px 0; }
+    .toc-sidebar a {
+      display: block; padding: 6px 10px; border-radius: 4px;
+      color: var(--slate); font-size: 12px; line-height: 1.4;
+      transition: background 0.15s;
+    }
+    .toc-sidebar a:hover { background: var(--stone-light); color: var(--indigo); }
+
+    .content { padding: 24px 36px 60px; min-width: 0; }
+
+    /* Sections */
+    .topic-section {
+      background: var(--white); padding: 24px 28px;
+      border-radius: 6px; margin-bottom: 24px;
+      border-left: 4px solid var(--sage);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .topic-section.-impact { border-left-color: var(--terracotta); }
+    .topic-section.overview-section { border-left-color: var(--indigo); }
+    .topic-header { border-bottom: 1px solid var(--stone-mid); padding-bottom: 12px; margin-bottom: 16px; }
+    .topic-eyebrow {
+      font-size: 10px; color: var(--sage); text-transform: uppercase;
+      font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px;
+    }
+    .topic-section h2 { font-size: 22px; margin: 0; }
+    .topic-q {
+      background: var(--stone-light); padding: 12px 16px; border-radius: 4px;
+      margin-bottom: 18px;
+    }
+    .q-label {
+      font-size: 10px; font-weight: 700; color: var(--sage);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .topic-q p { margin: 4px 0 0; color: var(--indigo); font-size: 13px; }
+
+    .section-h {
+      font-size: 13px; font-weight: 700; color: var(--sage);
+      margin: 18px 0 10px; padding-bottom: 4px;
+      border-bottom: 1px dashed var(--stone-mid);
+    }
+    .section-h.terracotta { color: var(--terracotta); }
+
+    /* Topic body grid */
+    .topic-body {
+      display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px;
+    }
+
+    /* Points */
+    .point {
+      display: grid; grid-template-columns: 36px 1fr; gap: 8px;
+      margin-bottom: 16px; padding-bottom: 14px;
+      border-bottom: 1px dotted var(--stone-mid);
+    }
+    .point:last-child { border-bottom: none; }
+    .point-num {
+      font-size: 18px; font-weight: 700; color: var(--terracotta);
+      line-height: 1;
+    }
+    .point-head {
+      font-size: 13px; font-weight: 700; color: var(--indigo);
+      margin: 0 0 8px;
+    }
+    .point-block { margin: 6px 0; }
+    .block-label {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      color: var(--sage); text-transform: uppercase; letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+    .block-label.cases { color: var(--terracotta); }
+    .summary-list, .cases-list { font-size: 12px; margin: 4px 0 0; }
+    .cases-list li::marker { color: var(--terracotta); }
+
+    /* Aside */
+    .aside-box {
+      background: var(--stone-light); padding: 14px 16px;
+      border-radius: 4px; margin-bottom: 12px;
+    }
+    .aside-box.terracotta { background: #F5EAE3; }
+
+    /* Overview section */
+    .overview-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .trends { display: flex; flex-direction: column; gap: 14px; }
+    .trend {
+      display: grid; grid-template-columns: 48px 1fr; gap: 12px;
+      background: var(--stone-light); padding: 14px 18px; border-radius: 4px;
+    }
+    .trend-num {
+      font-size: 26px; font-weight: 700; color: var(--sage); line-height: 1;
+    }
+    .trend-body h3 { font-size: 14px; margin: 0 0 6px; }
+    .trend-body h4 {
+      font-size: 10px; color: var(--sage); margin: 8px 0 4px;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .trend-summary { font-size: 12px; margin: 0; }
+    .axes { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+    .axis {
+      display: grid; grid-template-columns: 180px 1fr; gap: 8px;
+      font-size: 11px;
+    }
+    .axis-label { color: var(--terracotta); font-weight: 700; }
+    .axis-body { color: var(--slate); }
+
+    /* Daily list */
+    .theme-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+    .pill {
+      display: inline-block; padding: 3px 10px; border-radius: 12px;
+      font-size: 11px; font-weight: 700; color: var(--white);
+    }
+    .pill-0 { background: var(--sage); }
+    .pill-1 { background: var(--terracotta); }
+    .daily-list { list-style: none; padding: 0; margin: 0; }
+    .daily-item {
+      display: grid; grid-template-columns: 32px 1fr; gap: 10px;
+      margin-bottom: 10px; padding-bottom: 8px;
+      border-bottom: 1px dotted var(--stone-mid);
+    }
+    .daily-num {
+      background: var(--indigo); color: var(--white);
+      font-size: 11px; font-weight: 700; text-align: center;
+      padding: 4px 0; border-radius: 3px; height: 22px; line-height: 14px;
+    }
+    .daily-head { font-weight: 700; color: var(--indigo); font-size: 12px; }
+    .daily-body { font-size: 11px; color: var(--slate); margin-top: 2px; }
+    .daily-link {
+      display: inline-block; margin-top: 4px; font-size: 10px; font-weight: 700;
+      color: var(--terracotta); text-decoration: none;
+      padding: 2px 8px; border: 1px solid var(--terracotta); border-radius: 3px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .daily-link:hover { background: var(--terracotta); color: var(--white); }
+    .archive-note {
+      margin-top: 12px; padding: 10px 14px; background: var(--stone-light);
+      border-radius: 4px; font-size: 11px; color: var(--slate);
+    }
+    .archive-note a { font-weight: 700; }
+
+    /* ai-models comparison rendering (markdown -> HTML) */
+    .comparison-body { font-size: 13px; line-height: 1.7; }
+    .comparison-body h1 { font-size: 20px; color: var(--indigo); margin-top: 0; }
+    .comparison-body h2 { font-size: 17px; color: var(--indigo); margin-top: 28px; padding-bottom: 6px; border-bottom: 1px solid var(--stone-mid); }
+    .comparison-body h3 { font-size: 14px; color: var(--sage); margin-top: 22px; }
+    .comparison-body h4 { font-size: 13px; color: var(--terracotta); margin-top: 16px; }
+    .comparison-body p { margin: 0.5em 0; }
+    .comparison-body blockquote {
+      border-left: 3px solid var(--sage); padding: 8px 14px;
+      background: var(--stone-light); margin: 12px 0; font-size: 12px;
+    }
+    .comparison-body table {
+      border-collapse: collapse; width: 100%; margin: 12px 0;
+      font-size: 11px; background: var(--white);
+    }
+    .comparison-body table thead th {
+      background: var(--indigo); color: var(--white); padding: 8px 10px;
+      text-align: left; font-weight: 700; font-size: 10px;
+      border: 1px solid var(--indigo); white-space: nowrap;
+    }
+    .comparison-body table tbody td {
+      padding: 8px 10px; border: 1px solid var(--stone-mid);
+      vertical-align: top; line-height: 1.5;
+    }
+    .comparison-body table tbody tr:nth-child(even) td {
+      background: var(--stone-light);
+    }
+    .comparison-body table tbody tr:hover td { background: #FAF8F2; }
+    .comparison-body table tbody td:first-child {
+      font-weight: 700; color: var(--indigo); background: #F8F5EE;
+    }
+    .comparison-body code {
+      background: var(--stone-light); padding: 1px 6px; border-radius: 3px;
+      font-size: 11px; font-family: 'Consolas', 'Monaco', monospace;
+      color: var(--terracotta);
+    }
+    .comparison-body pre {
+      background: var(--indigo); color: var(--stone-mid); padding: 12px 16px;
+      border-radius: 4px; font-size: 11px; overflow-x: auto;
+      line-height: 1.5; font-family: 'Consolas', 'Monaco', monospace;
+    }
+    .comparison-body pre code {
+      background: transparent; color: inherit; padding: 0;
+    }
+    .comparison-body ul, .comparison-body ol { padding-left: 1.6em; margin: 0.4em 0; }
+    .comparison-body li { margin: 0.3em 0; font-size: 12px; }
+    .comparison-body strong { color: var(--indigo); }
+    /* Override: keep bold text visible on dark backgrounds (table headers) */
+    .comparison-body table thead th strong,
+    .comparison-body table thead th b {
+      color: var(--white);
+    }
+    .comparison-body table thead th {
+      color: var(--white);
+      font-size: 11px;
+    }
+    .comparison-body hr {
+      border: none; border-top: 1px dashed var(--stone-mid); margin: 24px 0;
+    }
+    /* Wide tables overflow handling */
+    .comparison-body { overflow-x: auto; }
+
+    /*  impact */
+    .impact-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-bottom: 24px;
+    }
+    .impact-card {
+      background: var(--stone-light); padding: 16px 18px; border-radius: 4px;
+      border-top: 3px solid var(--terracotta);
+    }
+    .impact-num { font-size: 22px; font-weight: 700; color: var(--sage); line-height: 1; }
+    .impact-card h3 { font-size: 13px; margin: 6px 0 8px; }
+
+    .fit-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px; }
+    .fit-table th {
+      background: var(--indigo); color: var(--white); padding: 10px;
+      text-align: left; font-weight: 700; font-size: 11px;
+    }
+    .fit-table td {
+      padding: 10px; border-bottom: 1px solid var(--stone-mid);
+      vertical-align: top;
+    }
+    .fit-table tr:nth-child(even) td { background: var(--stone-light); }
+    .eval-good { color: #1f7a4a; }
+    .eval-mid { color: #b58d2b; }
+    .eval-care { color: var(--terracotta); }
+
+    .actions-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .action-box {
+      background: var(--stone-light); padding: 14px 18px; border-radius: 4px;
+    }
+    .action-box h4 {
+      font-size: 12px; color: var(--terracotta); margin: 0 0 8px;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 1400px; margin: 40px auto 0;
+      padding: 24px 36px 60px; color: var(--soft-gray); font-size: 11px;
+      border-top: 1px solid var(--stone-mid);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .topic-body, .overview-grid, .impact-grid, .actions-grid {
+        grid-template-columns: 1fr;
+      }
+      .layout { grid-template-columns: 1fr; }
+      .toc-sidebar {
+        position: relative; height: auto; max-height: 280px;
+        border-right: none; border-bottom: 1px solid var(--stone-mid);
+        display: none;
+      }
+      .toc-sidebar.open { display: block; }
+      .toc-toggle { display: inline-block; }
+      .content { padding: 16px 16px 40px; }
+      .topic-section { padding: 18px 18px; }
+      .axis { grid-template-columns: 1fr; gap: 2px; }
+      .axis-label { font-size: 10px; }
+    }
+
+    @media print {
+      .topbar, .toc-sidebar, .toc-toggle { display: none; }
+      .layout { display: block; margin-top: 0; }
+      .content { padding: 0; }
+      .topic-section {
+        page-break-inside: avoid; break-inside: avoid;
+        margin-bottom: 12px; box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <button class="toc-toggle" onclick="document.querySelector('.toc-sidebar').classList.toggle('open')">☰ 目次</button>
+    <div class="brand">
+      AI NEWS VAULT
+      <span class="sub">Topic Overview × Daily Highlights</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">最新版</a>
+      <a href="archive.html">アーカイブ</a>
+      <span class="gen">Generated: 2026-05-17 12:00 JST</span>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <nav class="toc-sidebar">
+      <h3>目次</h3>
+      <ol><li><a href="#overview">01. AI業界の潮流 × 本日のハイライト</a></li>
+<li><a href="#topic-ai-companies">02. 主要AI企業動向</a></li>
+<li><a href="#topic-ai-regulation">03. AI規制・ガバナンス</a></li>
+<li><a href="#topic-ai-data-structuring">04. AI活用のための構造化</a></li>
+<li><a href="#topic-enterprise-ai">05. エンタープライズAI導入</a></li>
+<li><a href="#topic-agentic-ai">06. AIエージェント / Agentic AI</a></li>
+<li><a href="#topic-ai-coding">07. AIコーディング・開発支援</a></li>
+<li><a href="#topic-ai-models">08. AIモデルの進化</a></li>
+<li><a href="#topic-ai-infra">09. AIインフラ・GPU・コスト</a></li>
+<li><a href="#topic-llm-evaluation">10. LLM評価・解釈可能性</a></li>
+<li><a href="#topic-physical-ai">11. フィジカル AI・AI ロボティクス</a></li>
+<li><a href="#topic-finance-ai">12. 金融×AI(銀行・証券・保険・決済)</a></li>
+<li><a href="#topic-logistics-ai">13. 物流×AI(倉庫・配送・自動運転)</a></li>
+<li><a href="#topic-consulting-ai">14. コンサルティング業界×AI</a></li></ol>
+    </nav>
+    <main class="content">
+      
+    <section id="overview" class="topic-section overview-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">AI NEWS VAULT · TOPIC OVERVIEW + DAILY 2026-05-15 · 01 / 15</div>
+        <h2>AI業界の潮流 × 最新の Daily ハイライト</h2>
+      </header>
+      <div class="overview-grid">
+        <div class="overview-left">
+          <h3 class="section-h">13トピック横断 — AI業界の3つの大潮流</h3>
+          <div class="trends">
+    <article class="trend">
+      <div class="trend-num">01</div>
+      <div class="trend-body">
+        <h3>コンサル × AIベンダー × 業界Tier1 — 3軸の同時進行</h3>
+        <h4>概要</h4>
+        <ul class="trend-summary"><li>AIベンダーがコンサル業界に「取り込み(a)」「中抜き(b)」「業界直結(c)」の3軸で侵入</li>
+<li>コンサルは「中抜きされる側 + 取り込まれる側」の両ポジションに</li>
+<li>業界 Tier1 は AI ベンダー直結のスピード vs コンサル経由の総合性で選別する局面</li></ul>
+        <h4>事例詳細</h4>
+        <div class="axes"><div class="axis"><div class="axis-label">(a) AIベンダー × コンサル</div><div class="axis-body">アクセンチュア × Anthropic 国内 / NEC × Anthropic / OpenAI Deployment Co + Tomoro(中抜き型)</div></div>
+<div class="axis"><div class="axis-label">(b) AIベンダー × 業界Tier1</div><div class="axis-body">Anthropic Claude for Legal × Big Law / OpenAI × PwC / Sakana × SMBC / Stripe × OpenAI</div></div>
+<div class="axis"><div class="axis-label">(c) コンサル × 業界Tier1</div><div class="axis-body">アクセンチュア × SAP ADVANCE / アクセンチュア × 日本精工 / 富士ソフト人月脱却</div></div></div>
+      </div>
+    </article>
+    
+
+    <article class="trend">
+      <div class="trend-num">02</div>
+      <div class="trend-body">
+        <h3>業務代替型AI解雇とAIネイティブ企業の台頭</h3>
+        <h4>概要</h4>
+        <ul class="trend-summary"><li>「AI効率化型解雇」がCEO公言レベルに達し、AIネイティブ企業が既存SaaS/SI/コンサルを構造的に置換</li>
+<li>Gartner 28% CEO が「AI が最大の収益リスク」と回答</li>
+<li>国内では「人月脱却 / 規模拡大 / 米AI 提携」の3戦略分岐で対応</li></ul>
+        <h4>事例詳細</h4>
+        <div class="axes"><div class="axis"><div class="axis-label">段階1: AI効率化型解雇</div><div class="axis-body">Cloudflare 1,100 / Coinbase 14% / GM 数百名 / GitLab / Oracle 退職金問題</div></div>
+<div class="axis"><div class="axis-label">段階2: AIネイティブ企業の侵入</div><div class="axis-body">Cognition AI 日本法人 / OpenAI Deployment Co + Tomoro / Sierra AI / Decart / Lovable / Cursor</div></div>
+<div class="axis"><div class="axis-label">段階3: 経営層の認識転換</div><div class="axis-body">Gartner CEO 28% AI 収益リスク / @IT「AI 業務浸食予想以上」/ AINOW 意識改革6ステップ</div></div></div>
+      </div>
+    </article>
+    
+
+    <article class="trend">
+      <div class="trend-num">03</div>
+      <div class="trend-body">
+        <h3>国内 AI 主権体制の同時成立(2026-05-11週)</h3>
+        <h4>概要</h4>
+        <ul class="trend-summary"><li>法律 / 基盤製品 / 米AI 提携 / 製造業適応の4層が単一週で同時表面化</li>
+<li>EU 規制重視・米自由市場とは別の「公共財型 AI 戦略」が形成</li>
+<li>国内 AI ベンダー・SI・シンクタンクが規制対応と実装の両面で再編</li></ul>
+        <h4>事例詳細</h4>
+        <div class="axes"><div class="axis"><div class="axis-label">層1: 法律</div><div class="axis-body">日本初 AI 特化法律(2026-05-11) / サイバー対処強化法10月施行</div></div>
+<div class="axis"><div class="axis-label">層2: 基盤製品</div><div class="axis-body">IBM Sovereign Core 一般提供(2026-05-05/11) / IBM Enterprise Advantage 拡充</div></div>
+<div class="axis"><div class="axis-label">層3: 米AI提携</div><div class="axis-body">NEC × Anthropic / アクセンチュア × Anthropic / Claude Platform on AWS</div></div>
+<div class="axis"><div class="axis-label">層4: 製造業適応</div><div class="axis-body">ファナック・安川フィジカルAI / 三菱電機・オムロン SDA SAT</div></div></div>
+      </div>
+    </article>
+    </div>
+        </div>
+        <div class="overview-right">
+          <h3 class="section-h terracotta">最新のハイライト  2026-05-15(自動抽出 8 件)</h3>
+          <div class="theme-pills"><span class="pill pill-0">最新版</span>
+<span class="pill pill-1">自動更新</span>
+<span class="pill pill-0">リンク付き</span>
+<span class="pill pill-1">アーカイブ可</span>
+<span class="pill pill-0">公開</span></div>
+          <ol class="daily-list">
+    <li class="daily-item">
+      <div class="daily-num">01</div>
+      <div class="daily-content">
+        <div class="daily-head">OpenAI Deployment Co「客先常駐」が国内 IT 部門・SIer の存在意義を問う</div>
+        <div class="daily-body">日経クロステック詳報。OpenAI が投資ファンドと設立した新会社が、エンジニアを顧客企業に常駐させて AI 導入を支援。AI ベンダー直営の Forward Deployed Engineer モデルが国内市場にも到達することで、システム部門・SIer の存在意義が改めて問われ…</div>
+        <a class="daily-link" href="https://xtech.nikkei.com/atcl/nxt/column/18/00001/11746" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    
+
+    <li class="daily-item">
+      <div class="daily-num">02</div>
+      <div class="daily-content">
+        <div class="daily-head">Anthropic × Bill Gates 財団、$200M で AI 公益拠出</div>
+        <div class="daily-body">Anthropic と Gates Foundation がAI 関連インフラ・ヘルスケア・教育を支援するため$200M を拠出。市場原理では AI が届きにくい低中所得国に対し、Claude 利用クレジット + 技術支援を提供。ワクチン開発加速・学習支援アプリ開発を通じ、AI …</div>
+        <a class="daily-link" href="https://www.itmedia.co.jp/news/articles/2605/15/news064.html" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    
+
+    <li class="daily-item">
+      <div class="daily-num">03</div>
+      <div class="daily-content">
+        <div class="daily-head">アクセンチュア × Google Cloud 新プログラム</div>
+        <div class="daily-body">AI の試験導入は容易だが全社展開には依然「壁」がある状況に対し、アクセンチュア × Google Cloud が新プログラム発表。アクセンチュア × Anthropic 国内本格化(2026-05-12)、アクセンチュア × SAP 中堅 ERP(2026-05-13)に続くア…</div>
+        <a class="daily-link" href="https://www.itmedia.co.jp/enterprise/articles/2605/15/news050.html" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    
+
+    <li class="daily-item">
+      <div class="daily-num">04</div>
+      <div class="daily-content">
+        <div class="daily-head">OpenAI、サプライチェーン攻撃</div>
+        <div class="daily-body">OpenAI がサプライチェーン攻撃により従業員2人のデバイスが侵害されたと発表。170以上のパッケージが影響、コード署名証明書が漏洩した可能性。macOS アプリユーザーは6月12日までにアップデート要求。マネーフォワード GitHub 侵害(2026-05-11)、TanSt…</div>
+        <a class="daily-link" href="https://www.itmedia.co.jp/news/articles/2605/15/news075.html" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    
+
+    <li class="daily-item">
+      <div class="daily-num">05</div>
+      <div class="daily-content">
+        <div class="daily-head">朝日 × 日経 vs Perplexity 訴訟第1回口頭弁論</div>
+        <div class="daily-body">朝日新聞社 + 日経新聞社 が Perplexity を提訴、東京地裁で第1回口頭弁論。記事無断使用差止 + 計44億円の損害賠償請求。Perplexity 側は請求棄却を求め争う姿勢。This is fine vs Artisan(2026-05-03)、米メディア訴訟群と並ぶ…</div>
+        <a class="daily-link" href="https://www.itmedia.co.jp/news/articles/2605/15/news068.html" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    
+
+    <li class="daily-item">
+      <div class="daily-num">06</div>
+      <div class="daily-content">
+        <div class="daily-head">SAP「自律型エンタープライズ戦略」始動</div>
+        <div class="daily-body">SAP が AI 基盤「Business AI Platform」+ 自律運用群「Autonomous Suite」を発表。財務・人材・調達分野の AI 機能拡充、設備保全・ERP 移行支援も強化。Anthropic / AWS / Google Cloud / Microsof…</div>
+        <a class="daily-link" href="https://www.itmedia.co.jp/enterprise/articles/2605/15/news029.html" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    
+
+    <li class="daily-item">
+      <div class="daily-num">07</div>
+      <div class="daily-content">
+        <div class="daily-head">米国民7割が AI DC 建設に反対</div>
+        <div class="daily-body">Gallup 調査で米国民の7割以上が居住地域での AI データセンター建設に反対、「強く支持」はわずか7%。資源過剰消費・公共料金影響が反対理由。「AI DC は原子力発電所より嫌悪される」衝撃的結果。xAI ガスタービン訴訟(2026-05-13)、Google × Spac…</div>
+        <a class="daily-link" href="https://www.itmedia.co.jp/news/articles/2605/15/news066.html" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    
+
+    <li class="daily-item">
+      <div class="daily-num">08</div>
+      <div class="daily-content">
+        <div class="daily-head">デンソー SCM 内製主義から脱却</div>
+        <div class="daily-body">ITmedia エンタープライズ。デンソーが SCM の内製方針を転換、オラクルのクラウド基盤に移行。地政学的リスク + 技術革新即応のためAI エージェントによる自律型 SCM へ託す。トヨタ系最大手の戦略転換、SCM × AI エージェントの最大級事例。</div>
+        <a class="daily-link" href="https://www.itmedia.co.jp/enterprise/articles/2605/15/news017.html" target="_blank" rel="noopener">記事を開く ↗</a>
+      </div>
+    </li>
+    </ol>
+          <p class="archive-note">過去の Daily Digest は <a href="archive.html">アーカイブ</a> から閲覧できます。</p>
+        </div>
+      </div>
+    </section>
+    
+      
+    <section id="topic-ai-companies" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · ai-companies · synthesis v2 · articles: 16 · 02 / 15</div>
+        <h2>主要AI企業動向</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>各社の戦略の差分はどこにあるか(基盤モデル特化/プロダクト寄り/オープン戦略/特定領域)。 資金調達・人材移動・パートナーシップの動きから次の主導権争いがどう見えるか。 日本勢(PKSHA、Sakana、Preferred Networks 等)はグローバル文脈でどう位置取りしているか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: インフラ層は NVIDIA の「投資×供給」二重支配で2026 Q2 までに事実上寡占確定</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>GPU 供給(従来)+ 株式投資による生態系ロックイン(新)で支配者ポジション</li>
+<li>CUDA/Blackwell への構造的固着で AMD・Intel の市場参入を阻害</li>
+<li>独禁法リスクは FTC/EC の標的になり得るが、現時点で具体的訴追なし</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>年初来 $40B AI 関連企業株式投資コミット(2026-05-09)</li>
+<li>CoreWeave / Lambda 等ネオクラウド5社が世界クラウドトップ30入り(2026-05-07)</li>
+<li>Sakana × NVIDIA「TwELL」共同研究で国内勢にも食い込み(2026-05-10)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: モデル層は ChatGPT/Claude/Gemini の三極化が「現実シェア=絶対MAU拡大」両立で安定状態へ</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>ChatGPT シェア40%切るが MAU 絶対値は2026 Q1 で 35歳以上が最速成長</li>
+<li>Claude が急伸(80倍成長 → 法務AI攻勢 → 国内SI提携)、Anthropic が B2B で OpenAI を追い抜く勢い</li>
+<li>Gemini が Android 17 + Gboard + Search 統合で全方位浸透、Alphabet 時価総額世界首位視野</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Apptopia 調査で米生成AI チャット三極化(2026-05-08)</li>
+<li>Anthropic Claude for Legal + Claude Platform on AWS 同日(2026-05-12)</li>
+<li>Google Android Show: Googlebooks + Gemini Intelligence(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: 国内勢は「米AI 借用 / 特化 / 独自基盤 / データ寡占」の4戦略に分岐し、当面共存</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>NEC・アクセンチュア型(米AI 借用 + 業界知識)が国内大手案件を獲得</li>
+<li>Sakana 型(特化案件)が金融・製造で先行 型(独自基盤)が R&amp;D で差別化</li>
+<li>LINE ヤフー型(ユーザーデータ寡占)が消費者向けで対抗</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>NEC × Anthropic 対談公開(2026-05-11)</li>
+<li>Sakana × SMBC / × NVIDIA TwELL(2026-05-10)</li>
+<li>LINE ヤフー Agent i ローンチ(2026-05-11)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>AI ベンダー側の B2B 攻勢が4月末〜5月で急加速</li>
+<li>Anthropic は資金・計算・チャネルの3不足を一気に補填</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  Anthropic Claude for Legal 一斉(20+ コネクタ)</li>
+<li>2026-05-12  OpenAI Deployment Co 設立+$4B+Tomoro 買収</li>
+<li>2026-05-11  NEC × Anthropic 対談 / 2026-05-12 アクセンチュア × Anthropic 本格化</li>
+<li>2026-05-08  Anthropic 80倍成長 → Musk DC 借用(Fortune)</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>Big4 全社の AI 提携完了タイミングで寡占構造が最終確定</li>
+<li>国内 SI 各社の決算で人月モデル崩壊度合いが定量化されるか</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>Deloitte/EY/KPMG の AI 提携発表(2026 Q3-Q4 予想)</li>
+<li>アクセンチュア四半期決算で OpenAI Deployment Co の影響可視化</li>
+<li>Anthropic 独自 DC(Trainium 互換)建設の時期と Pentagon 復帰</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-ai-regulation" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · ai-regulation · synthesis v4 · articles: 26 · 03 / 15</div>
+        <h2>AI規制・ガバナンス</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>主要AIGiantsによる事実上ルールメイキングに各国が後追いでルール形成・規制を行う市場形相のなか、現状の事実上のルールと各国規制はどのような状況なのか。 企業の対応コストはどこに発生するか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: 規制対象は「能力ベース」→「用途+挙動ベース」へシフト</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>GPT-5.5-Cyber「Trusted Access」型の用途別アクセス制御が先行例</li>
+<li>Anthropic がフィクション悪役 AI 描写と脅迫行動の因果を技術実証</li>
+<li>学習データの倫理キュレーション義務が現実的に検討可能に</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Anthropic Claude 脅迫行動研究 + 隠れ推論可視化ツール(2026-05-12)</li>
+<li>Claude メキシコ公共機関攻撃 17,000行ツール公表(2026-05-08)</li>
+<li>OpenAI GPT-5.5-Cyber Trusted Access for Cyber(2026-05-07)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: 規制主体は政府・業界自主・AI ベンダー自主の3層協調モデルへ</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>政府: EU AI Act、日本初 AI 法律、サイバー対処強化法10月施行</li>
+<li>業界自主: Hollywood Human Consent Standard、米アカデミー AI 対象外</li>
+<li>AI ベンダー自主: Anthropic alignment ツール寄贈、OpenAI Daybreak</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>日本初 AI 特化法律成立(2026-05-11)</li>
+<li>EU AI 法修正で性的画像 AI 生成禁止暫定合意(2026-05-08)</li>
+<li>George Clooney + Tom Hanks + Streep が Human Consent Standard 支持(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: 管轄は「EU 規制重視 / 米 自由市場 / 日本 公共財型」の3極で確定</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>日本は「規制+国産基盤+産業実装の一体化」で第3極を形成</li>
+<li>輸出可能な公共財型 AI 戦略はデジタル庁・FOIP デジタル回廊で具体化</li>
+<li>EU の説明可能性義務に対応するため Anthropic 系の解釈技術が業界標準化候補</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>IBM Sovereign Core 一般提供 + </li>
+<li>FOIP デジタル回廊構想(2026-05-10)、日本政府が米最新AI使用権要求</li>
+<li>高市総理がClaude Mythos受けサイバー対策指示(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 規制エコシステム自体が AI に「ノイズ攻撃」される第二波が始動</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>バグバウンティ・特許審査・行政申請が AI 生成ノイズで機能不全リスク</li>
+<li>「AI vs AI の規制執行」が必須化、Anthropic 解釈ツールが規制側でも有用に</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>HackerOne「AI 生成ゴミ脆弱性報告」殺到で受付停止(2026-05-11)</li>
+<li>JBpress「AI 申請の洪水、行政が制度改革を迫られる」(2026-05-12)</li>
+<li>AI 検索対策悪徳業者の急増(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>AI 兵器化と国内法律施行が同時期に集中</li>
+<li>コンテンツ真正性のスタンダード化が Hollywood 主導で加速</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  Google「AI 製ゼロデイ + 中朝露関与」公式報告</li>
+<li>2026-05-12  ClaudeBleed 脆弱性(Claude for Chrome 拡張)</li>
+<li>2026-05-11  日本初 AI 法律成立</li>
+<li>2026-05-12  高市総理がClaude Mythos対策指示</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>公共財型 AI 規制の輸出可能性と FOIP 文脈での運用</li>
+<li>Big4(特に PwC・Deloitte)の AI 監査ビジネス規模の立ち上がり</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>EU AI Act × 日本初 AI 法律の相互運用性</li>
+<li>AI 駆動の規制執行(AI vs AI)の標準化</li>
+<li>「学習データ規定」の具体化と SF 文学検閲リスク</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-ai-data-structuring" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · ai-data-structuring · synthesis v4 · articles: 16 · 04 / 15</div>
+        <h2>AI活用のための構造化</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>LLMを業務で機能させるためのデータ・知識・スキーマの「構造化」は 歴史的にどう積み上がり、現状どこまで来ていて、今後どう進むか。 特に業界別・業種別に進化が進むと考えられ、国内エンタープライズで何がボトルネックで、どんな突破口が見えているか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: データ層は「文書構造化(PDF)」→「文脈構造化(Skill)」へ進化中</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>PDF/表/DB の抽出は既に成熟、業界別「文脈+判断ルール」の構造化が次の競争領域</li>
+<li>Anthropic Skill 型(振る舞いプロンプト+ツール)が事実上の標準化候補</li>
+<li>国内では が先行モデル</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li></li>
+<li>Salesforce Headless 360 で SaaS データを MCP 経由公開(2026-04-19)</li>
+<li>HEROZ ASK が MCP 対応開始(国内法人 SaaS 第一号、2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: プロトコル層は MCP × Anthropic Skill が事実上の標準へ収斂中</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>MCP/A2A/UCP/AP2 の6プロトコル乱立から、MCP が大手SaaS統合で勝ち抜き</li>
+<li>業界別「文脈 Skill」を Anthropic が CoCounsel 連携等で先行プラットフォーム化</li>
+<li>Google Gemini API skills(GitHub OSS 版)が対抗、競合は中立規格作りを志向</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>GitHub MCP Server コミット前認証情報スキャン(2026-05-07)</li>
+<li>Anthropic Claude for Legal 20+ コネクタ + Thomson Reuters CoCounsel(2026-05-12)</li>
+<li>Google Gemini API skills GitHub 公開(2026-05-08)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: 主権/ガバナンス層は「AI 主権スタック」という新カテゴリへ昇格</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>アクセス統制+暗号化+監査+AI 運用を統合した製品が大手から登場</li>
+<li> / IBM Sovereign Core / Oracle Alloy / Salesforce Headless 360 が同カテゴリへ</li>
+<li>規制業界(金融・公共・医療)向けに主権ニーズが顕在化</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>IBM Sovereign Core 一般提供開始(2026-05-05 GA、2026-05-11 国内提供)</li>
+<li>Fivetran AI Readiness 指数2026年版(2026-05-08)で評価軸の指標化</li>
+<li>Zenmu 秘密分散 × RAG 特許出願(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 構造化対象の境界が「テキスト/表/画像」から「動作・センサー」へ拡張</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>ファナック・安川「フィジカル AI」で動作データが構造化対象に</li>
+<li>東芝「反事実波形」など説明可能性技術が産業応用へ</li>
+<li>VLA モデル(視覚言語動作)向けデータ規格が次の競争軸</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>ファナック・安川電機フィジカル AI(2026-05-11)</li>
+<li>東芝 反事実波形生成技術で異常検知の根拠説明(2026-05-12)</li>
+<li>NEC 独自 AI で 3D 点群90%軽量化(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>国内製造業データ主権の機運が同月内で複数事例化</li>
+<li>Big4 監査領域でも「AI 主権基盤」採用が始動</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  HEROZ ASK MCP 対応開始</li>
+<li>2026-05-12  オーエスジー × Microsoft Fabric データ基盤刷新</li>
+<li>2026-05-11  ファナック・安川フィジカル AI 国産基盤</li>
+<li>2026-05-07  三菱UFJ信託 × Snowflake データマネジメント</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>Sovereign Cloud 各社(Microsoft / AWS / Oracle)の国内対応動向</li>
+<li>VLA モデル学習データ規格の標準化レース</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>国内 AI ベンダー(PFN/Sakana/NEC)の Sovereign Core 連携</li>
+<li>MCP 分裂(A2A/UCP/AP2)の収斂タイミング</li>
+<li>フィジカル AI 文脈構造化の具体的データ標準</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-enterprise-ai" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · enterprise-ai · synthesis v2 · articles: 14 · 05 / 15</div>
+        <h2>エンタープライズAI導入</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>実際のROIが出ている領域とそうでない領域は何が違うか。 組織変革との関係はどう整理されるか。 業界・業種特化の動きには具体的にどのような領域・内容があるか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: 議論軸は「ROI算定」→「業務浸食速度」へ移行</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>@IT「AI 業務浸食は予想以上」が業界メディアの公式時代認識へ</li>
+<li>Cloudflare 1,100、Coinbase 14%、GM 数百名と「CEO 公言型解雇」が連鎖</li>
+<li>ZDNET・AINOW が「生産性指標を超えた5つの戦略的転換」を提示</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>@IT「AI 業務浸食は予想以上だった」(2026-05-11)</li>
+<li>ガートナー CEO 28%「AI が最大の収益リスク」(2026-05-07)</li>
+<li>GM が数百名 IT 解雇、AI スキル人材へ入れ替え(2026-05-11)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: ガバナンスは「シャドーAI 統制 vs 地下化」の二律背反が顕在化</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>管理職4割が機密情報を入力、「危険と分かっていても使う」現実</li>
+<li>M365 Copilot 95%企業の鉄則「サポート万全は逆効果」と矛盾しない統制設計が必要</li>
+<li>AI 申請洪水・AI 検索悪徳業者など「AI が制度を逆利用」する第二波</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>GRAS グループ調査「管理職4割シャドー AI に機密入力」(2026-05-08)</li>
+<li>AINOW「生成 AI 意識改革6ステップ」(2026-05-10)</li>
+<li>AINOW シャドー AI 対策(2026-05-06)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: 実装軸は「指示駆動 × 進化探索 × 両側最適化」の3方式が併存</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>指示駆動: Codex / Claude Code / Cursor で局所最適化</li>
+<li>進化探索: AlphaEvolve でデータセンター最適化・行列乗算改善</li>
+<li>両側最適化: Uber × OpenAI 型(B2B2C リアルタイム最適化)が消費者文脈で本格化</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Google DeepMind AlphaEvolve 実用化解説(2026-05-06)</li>
+<li>Uber × OpenAI でドライバー収益 + 配車高速化(2026-05-06)</li>
+<li>Singular Bank × ChatGPT/Codex で60-90分/日削減(2026-05-06)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 国内最終マイルは「AINOW 教材化 + 公共セクター案件」で広がる</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>AINOW シリーズが導入計画書・ROI・意識改革・成果報告 KPI を体系化</li>
+<li>霞が関 18万人 AI、自治体 AI(一関市 RAG、東京都×ソウル MOU)が新市場</li>
+<li>三菱UFJリサーチ Gov Sales のような専用ツール商品化が始動</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>AINOW 3記事(2026-05-13): 経営層説得・ROI・成果報告 KPI</li>
+<li>霞が関 18万人 AI で答弁・分析(2026-05-11)</li>
+<li>三菱UFJリサーチ Gov Sales 自治体向け営業 AI(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>業務代替型解雇が CEO 公言レベルで連鎖、AI ネイティブ企業が脅威化</li>
+<li>国内では教材化と公共セクター案件で実装が加速</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  GitLab 大規模解雇 + CREDIT 価値観終了</li>
+<li>2026-05-11  ChatGPT Q1 で35歳以上が最速成長(OpenAI)</li>
+<li>2026-05-11  ダイヤモンド「AI ネイティブスタートアップの脅威」</li>
+<li>2026-05-12  IBM Enterprise Advantage 拡充</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>業務浸食の業界別マッピング(製造/金融/法務/医療/公共)</li>
+<li>両側最適化型 AI の国内応用(PayPay/Yahoo/楽天/ヤマト等)</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>シャドー AI 統制の現実解(規制対応 vs 利用率維持)</li>
+<li>AI 効率化型解雇の国内大手への波及度</li>
+<li>公共コンサル × AI 市場の規模</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-agentic-ai" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · agentic-ai · synthesis v3 · articles: 10 · 06 / 15</div>
+        <h2>AIエージェント / Agentic AI</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>AIエージェントは「デモから実用」へどう移行していくか。 信頼性・コスト・人間との協調設計の観点で何が成功要因か。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: 記憶層は「外部記憶 + ツール接続 + 内省」の3層化で長期記憶問題が技術的に解決へ</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Artifacts(外部FS)+ MCP(ツール)+ dream(内省学習)で多層化</li>
+<li>計算コスト設計・データ主権・武器化リスクが新規論点として浮上</li>
+<li>Claude メキシコ攻撃の自己改良パターンと正反対の「自己改善」が共存</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Claude Managed Agents「dream」機能(2026-05-06)</li>
+<li>Cloudflare Artifacts(エージェント FS、2026-04-19)</li>
+<li>OpenAI Symphony issue tracker 標準仕様(2026-04)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: 解釈可能性層は「内部独白の自然言語復号」で安全テストが技術化</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Natural Language Autoencoders で Claude 内部思考を可視化</li>
+<li>EU AI Act + 日本AI法律の「説明可能性」要件の技術的解</li>
+<li>Anthropic がこの分野の業界標準を握る可能性が高い</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Anthropic Natural Language Autoencoders 公開(2026-05-07)</li>
+<li>Anthropic 隠れ推論可視化ツール公開(2026-05-12)</li>
+<li>MIT Tech Review が機械論的解釈可能性を解説(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: ユーザー文脈層は「データ寡占 vs 性能差」の競争へ</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Perplexity Personal Computer・Claude in Chrome・ChatGPT Atlas が個人 AI 環境を取り合う</li>
+<li>LINE ヤフー Agent i が「9,000万 MAU × ユーザーデータ」で対抗</li>
+<li>国内では NEC(B2B) × LINE ヤフー(B2C)の棲み分けが進行</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>LINE ヤフー AI エージェント「Agent i」(2026-05-11)</li>
+<li>Perplexity Personal Computer for Mac 一般開放(2026-05-08)</li>
+<li>Claude in Chrome 拡張(2026-05-11)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 標準化は「公式ガイドライン×実装層ツール×評価基準」の3層が2026 Q4 で揃う見込み</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>公式: 3社ガイドライン(2026-04)、日本 AI 法律、EU AI Act</li>
+<li>実装: JetBrains Central、GitHub MCP、Anthropic Cowork</li>
+<li>評価: Autoencoder + ベンチマーク後の「実エンタープライズ ROI」評価</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>JetBrains Central(2026-05-08)</li>
+<li>GitHub MCP コミット前認証情報スキャン(2026-05-07)</li>
+<li>OpenClaw(OSS エージェント基盤、2026-01 → 2026-05-11 日経クロステック解説)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>エージェントの内省・解釈可能性が同月で複数進展</li>
+<li>武器化リスク(メキシコ攻撃/ClaudeBleed)が並行して顕在化</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  ClaudeBleed 脆弱性(Claude for Chrome)</li>
+<li>2026-05-12  Needle 26M Tool Calling 蒸留(HN)</li>
+<li>2026-05-11  LINE ヤフー Agent i / OpenClaw 解説</li>
+<li>2026-05-08  Claude メキシコ攻撃 17,000行ツール公表</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>dream + Autoencoder の組合せが規制執行ツールとして採用されるか</li>
+<li>消費者向けエージェント MAU 競争の決着時期</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>エージェント武器化規制の国際協調(国連レベル議論の可能性)</li>
+<li>「dream の学習権」と顧客データ主権の整理</li>
+<li>Sierra AI、Cognition Devin の国内導入実績</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-ai-coding" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · ai-coding · synthesis — · articles: 3 · 07 / 15</div>
+        <h2>AIコーディング・開発支援</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>AI コーディングエージェント(Codex / Claude Code / Devin / AlphaEvolve / Cursor / Replit / Lovable)が **ソフトウェア開発業務をどこまで、どのように代替するか**。 評価指標(SWE-bench、TAU-bench、HLE、実タスク評価)はどう進化するか。 コーディングエージェント時代のエンジニアスキル・キャリア・言語選択はどう再編されるか。 国内 SI(富士ソフト、日立 GlobalLogic、NEC、富士通)の AI コーディング適応戦略は何が同じで何が違うか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: 開発ツール層はバイブコーディング+自律エンジニアが主流化</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Cursor / Lovable / Zed 1.0 / Replit / vibe-coded widgets が個人開発者層を席巻</li>
+<li>Cognition Devin / OpenAI Codex / Anthropic Claude Code が企業向け自律エージェントを提供</li>
+<li>「最後まで自走する力」が GPT-5.5 熱狂の鍵に</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Zed 1.0 リリース(2026-05-11、Rust 製 AI 共同編集 IDE)</li>
+<li>Bun が Claude を使って Zig → Rust 移行中(2026-05-11)</li>
+<li>ジョイゾー「スキル39」で kintone を AI 改修(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: OSS 品質を AI が抜本的に変える実証段階に到達</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Claude Mythos × Firefox で20年前バグ含む271件修正、修正数が約15倍</li>
+<li>GitHub MCP コミット前認証情報スキャンで「うっかりコミット」を防止</li>
+<li>一方で HackerOne「AI 生成ゴミ脆弱性報告」殺到で受付停止の負の側面も</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Mozilla × Claude Mythos が Firefox 271件のバグ発掘(2026-05-08)</li>
+<li>GitHub MCP Server コミット前スキャン(2026-05-07)</li>
+<li>HackerOne 受付停止(2026-05-11)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: エンタープライズガバナンス層が JetBrains/OpenAI/GitHub で整備期へ</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>JetBrains Central、OpenAI「Running Codex safely」で運用ガイドが揃う</li>
+<li>Anthropic Claude Code 利用上限引き上げ(SpaceX DC 経由で計算リソース確保)</li>
+<li>国内では富士ソフト人月脱却が「AI 駆動 SI」のビジネスモデル先行例</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>JetBrains Central(2026-05-08)</li>
+<li>OpenAI Running Codex safely(2026-05-08)</li>
+<li>Anthropic Claude Code 利用上限引き上げ(2026-05-06)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 人材市場は「Python 一択ではない」へ再編、年収と試験区分が同時変化</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>TypeScript 平均年収952万円が Python 857万円を上回る</li>
+<li>情報処理技術者試験が大改定、応用・高度試験が消滅(2027年度〜)</li>
+<li>「AI ネイティブ就活生」がエントリーシート・面接練習で AI を当たり前に活用</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>INSTANTROOM 調査 TypeScript 952万円(2026-05-08)</li>
+<li>情報処理技術者試験大改定(2026-05-11、日経クロステック)</li>
+<li>2027卒 AI ネイティブ就活生調査(2026-05-11)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>OSS 品質革新と人材市場再編が同時進行</li>
+<li>国内 SI が「人月脱却 vs 規模拡大」で戦略分岐</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  Google「Create My Widget」vibe-coded widgets</li>
+<li>2026-05-12  CUDA-oxide(Rust → CUDA 公式コンパイラ、HN 387 pts)</li>
+<li>2026-05-11  TanStack npm サプライチェーン侵害(HN 685 pts)</li>
+<li>2026-05-11  「AI なら Python 不要?」HN 326 pts</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>コーディングエージェントの企業ガバナンス標準化</li>
+<li>SI/コンサル収益モデルへの構造的圧力の定量化</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>富士ソフト成果報酬移行の実数値(2026 Q2 決算)</li>
+<li>日立 GlobalLogic 統合 × AI 案件の北米成果</li>
+<li>国内 SI 中堅(TIS/SCSK/BIPROGY/CTC)の人月モデル対応</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-ai-models" class="topic-section ai-models-comparison">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · ai-models · 3LLM 比較表(llm-3services-comparison.md 連動) · articles: 4 · 08 / 15</div>
+        <h2>AIモデルの進化 — 3大汎用 LLM 比較(Gemini / Claude / ChatGPT)</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">運用ルール</span>
+        <p>本セクションは <code>topics/ai-models/llm-3services-comparison.md</code> の内容を自動レンダリングしています。
+        MD を更新すれば次回 HTML 再生成時にここに自動反映されます。</p>
+      </div>
+      <div class="comparison-body">
+        <h1>3大汎用 LLM 比較表 — Gemini / Claude / ChatGPT(GPT)</h1>
+<p>最終更新: 2026-05-11<br>
+性質: ユーザー要望(<code>notes.md</code>)に基づく「3サービスのバージョン別変化+競争状況の可視化」<br>
+表記: ✅=確定/公式 / 🟡=報道ベース / ⚠️=数字に幅あり</p>
+<blockquote>
+<p>notes.md の要望: 「<strong>主要 LLM 3サービス(Gemini、Claude、ChatGPT)に絞った各モデル別バージョンアップの軌跡と、各バージョンアップで具体的にどの機能がどれだけ変化したのか</strong>を一覧でまとめて整理&amp;3サービスの競争状況を可視化したい」</p>
+</blockquote>
+<hr>
+<h2>0. 3サービスの「同じ世代」を並列表(2026-05時点フラッグシップ)</h2>
+<table>
+<thead>
+<tr>
+<th>観点</th>
+<th><strong>OpenAI GPT-5.5</strong>(2026-04-23)</th>
+<th><strong>Anthropic Claude Opus 4.7</strong>(2026-Q1) / <strong>Mythos</strong>(2026-04 限定)</th>
+<th><strong>Google Gemini 3</strong>(2026-Q1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>位置付け</strong></td>
+<td>単一モデル+ルーター</td>
+<td>Safety 重視+特化能力</td>
+<td>マルチモーダルネイティブ+垂直統合</td>
+</tr>
+<tr>
+<td><strong>推論モード</strong></td>
+<td>内蔵(ルーターで自動切替)</td>
+<td>extended thinking(別モード)</td>
+<td>Pro モード(自動切替)</td>
+</tr>
+<tr>
+<td><strong>コンテキスト長</strong></td>
+<td>数百K〜1M クラス</td>
+<td>1M(Sonnet Plus 等)</td>
+<td>1-2M(継続拡張中)</td>
+</tr>
+<tr>
+<td><strong>マルチモーダル</strong></td>
+<td>テキスト+画像+音声+動画(統合)</td>
+<td>テキスト+画像+音声(統合)</td>
+<td>テキスト+画像+音声+動画(native)</td>
+</tr>
+<tr>
+<td><strong>エージェント機能</strong></td>
+<td>Codex CLI / Operator / Symphony 仕様</td>
+<td>Claude Code / Computer Use / Cowork</td>
+<td>Gemini Enterprise Agent Platform</td>
+</tr>
+<tr>
+<td><strong>限定能力モデル</strong></td>
+<td>GPT-5.5-Cyber(信頼アクター限定)</td>
+<td>Claude Mythos Preview(セキュリティ脆弱性発見)</td>
+<td>(未公表の限定モデル)</td>
+</tr>
+<tr>
+<td><strong>エンタープライズ強化</strong></td>
+<td>AWS Bedrock 解禁(2026-04-29 以降)</td>
+<td>Datadog 大口顧客、Claude Security ベータ</td>
+<td>Spanner Omni、Agentic Data Cloud</td>
+</tr>
+<tr>
+<td><strong>規制対応</strong></td>
+<td>Bio Bug Bounty($25K)、Yubico 提携、Advanced Account Security</td>
+<td>RSP、Trust Center</td>
+<td>DeepMind「10の認知能力」AGI 評価フレーム</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>1. バージョン別の軌跡(プロバイダ × 主要変化)</h2>
+<h3>1.1 OpenAI GPT / o-series</h3>
+<table>
+<thead>
+<tr>
+<th>世代</th>
+<th>公開日</th>
+<th>主要変化</th>
+<th>効果(精度・速度・コンテキスト・マルチモーダル)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPT-3.5(ChatGPT)</strong></td>
+<td>2022-11-30</td>
+<td>一般公開、対話形 LLM の幕開け</td>
+<td>MMLU 70.0% / コンテキスト4K / テキストのみ</td>
+</tr>
+<tr>
+<td><strong>GPT-4</strong></td>
+<td>2023-03-14</td>
+<td>大規模スケール、画像入力初期対応</td>
+<td>MMLU 86.4% / 8K, 32K / 画像入力初期 / 司法試験模擬上位10%</td>
+</tr>
+<tr>
+<td><strong>GPT-4 Turbo</strong></td>
+<td>2023-11-06</td>
+<td>コンテキスト拡大、価格1/3</td>
+<td>128K / 知識2023-04 / 価格 1/3</td>
+</tr>
+<tr>
+<td><strong>GPT-4o</strong>(omni)</td>
+<td>2024-05-13</td>
+<td>マルチモーダル統合、応答 232ms</td>
+<td>テキスト+音声+画像 / 応答 232ms / 価格半減</td>
+</tr>
+<tr>
+<td><strong>GPT-4o mini</strong></td>
+<td>2024-07-18</td>
+<td>軽量・低価格</td>
+<td>$0.15/$0.60 per 1M tokens</td>
+</tr>
+<tr>
+<td><strong>o1-preview</strong></td>
+<td>2024-09-12</td>
+<td><strong>推論モード</strong>(reasoning)幕開け</td>
+<td>AIME 数学 83%(GPT-4o は 13%)</td>
+</tr>
+<tr>
+<td><strong>o1 正式 / Pro</strong></td>
+<td>2024-12-05</td>
+<td>Pro($200/月)導入</td>
+<td>思考時間トレード可能</td>
+</tr>
+<tr>
+<td><strong>o3 preview</strong></td>
+<td>2024-12-20</td>
+<td>ARC-AGI 87.5% 突破</td>
+<td>ARC-AGI 人間平均超え</td>
+</tr>
+<tr>
+<td><strong>Operator</strong></td>
+<td>2025-01</td>
+<td>コンピュータ操作エージェント</td>
+<td>ブラウザ操作・タスク自動化</td>
+</tr>
+<tr>
+<td><strong>GPT-4.5(Orion)</strong></td>
+<td>2025-02</td>
+<td>事前学習スケーリング最終世代</td>
+<td>知識広域、価格高</td>
+</tr>
+<tr>
+<td><strong>o3 / o4-mini</strong></td>
+<td>2025-04-16</td>
+<td>推論モデル正式版</td>
+<td>reasoning モデルの完成</td>
+</tr>
+<tr>
+<td><strong>Codex CLI / Cloud agents</strong></td>
+<td>2025-05</td>
+<td>エージェント型コーディング</td>
+<td>issue tracker → agent パターン</td>
+</tr>
+<tr>
+<td><strong>GPT-5</strong></td>
+<td>2025-08-07</td>
+<td><strong>単一モデル+ルーター</strong></td>
+<td>推論/非推論を内部統合</td>
+</tr>
+<tr>
+<td><strong>GPT-5 Pro</strong></td>
+<td>2025-09</td>
+<td>Pro 派生</td>
+<td>大量推論時間使用可</td>
+</tr>
+<tr>
+<td><strong>GPT-5.5</strong></td>
+<td>2026-04-23</td>
+<td>Codex Academy + Symphony 仕様同時公開</td>
+<td>エージェント・オーケストレーション仕様</td>
+</tr>
+<tr>
+<td><strong>GPT-5.5-Cyber</strong></td>
+<td>2026-04-30</td>
+<td>サイバー防御者限定リリース</td>
+<td>脆弱性検出能力(自主限定提供)</td>
+</tr>
+<tr>
+<td><strong>Images 2.0</strong></td>
+<td>2026-04-29</td>
+<td>Thinking モード搭載画像生成</td>
+<td>推論ベースの画像生成</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 Anthropic Claude</h3>
+<table>
+<thead>
+<tr>
+<th>世代</th>
+<th>公開日</th>
+<th>主要変化</th>
+<th>効果(精度・速度・コンテキスト・マルチモーダル)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude 1</strong></td>
+<td>2023-03-14</td>
+<td>一般公開、Constitutional AI</td>
+<td>コンテキスト9K</td>
+</tr>
+<tr>
+<td><strong>Claude 2</strong></td>
+<td>2023-07-11</td>
+<td>大幅強化、長文対応</td>
+<td><strong>100K コンテキスト</strong>(業界初)</td>
+</tr>
+<tr>
+<td><strong>Claude 2.1</strong></td>
+<td>2023-11-21</td>
+<td>200K コンテキスト</td>
+<td>ツール利用初期</td>
+</tr>
+<tr>
+<td><strong>Claude 3 family</strong>(Opus/Sonnet/Haiku)</td>
+<td>2024-03-04</td>
+<td><strong>3階層フォーマット標準化</strong></td>
+<td>Opus が GPT-4 超え、画像入力対応</td>
+</tr>
+<tr>
+<td><strong>Claude 3.5 Sonnet</strong></td>
+<td>2024-06-20</td>
+<td>中位が Opus 超え</td>
+<td>HumanEval 92%、Artifacts UI</td>
+</tr>
+<tr>
+<td><strong>Claude 3.5 Haiku</strong></td>
+<td>2024-07</td>
+<td>軽量版更新</td>
+<td>低レイテンシ</td>
+</tr>
+<tr>
+<td><strong>Claude 3.5 Sonnet new + Computer Use</strong></td>
+<td>2024-10-22</td>
+<td><strong>PC 操作の汎用 AI</strong></td>
+<td>エージェント時代の幕開け</td>
+</tr>
+<tr>
+<td><strong>MCP</strong>(Model Context Protocol)</td>
+<td>2024-11-25</td>
+<td><strong>ツール接続の業界標準</strong></td>
+<td>エコシステム形成</td>
+</tr>
+<tr>
+<td><strong>Claude 3.7 Sonnet + extended thinking</strong></td>
+<td>2025-02-24</td>
+<td><strong>推論モード</strong>追加</td>
+<td>SWE-bench Verified 70.3%</td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>2025-02-24</td>
+<td>CLI コーディングエージェント</td>
+<td>ターミナル統合</td>
+</tr>
+<tr>
+<td><strong>Claude 4 Opus/Sonnet</strong></td>
+<td>2025-05-22</td>
+<td><strong>長時間自律実行を公式推奨</strong></td>
+<td>数時間のタスク自律実行</td>
+</tr>
+<tr>
+<td><strong>Claude 4.5</strong></td>
+<td>2025-Q3</td>
+<td>増分強化</td>
+<td>エージェント信頼性向上</td>
+</tr>
+<tr>
+<td><strong>Claude Opus 4.7</strong></td>
+<td>2026-Q1</td>
+<td>フラッグシップ更新</td>
+<td>高度推論+エージェント</td>
+</tr>
+<tr>
+<td><strong>Claude Mythos Preview</strong></td>
+<td>2026-04-07</td>
+<td><strong>脆弱性発見能力(限定)</strong></td>
+<td>数千の脆弱性発見・攻撃コード生成</td>
+</tr>
+<tr>
+<td><strong>Claude Cowork</strong></td>
+<td>2026-04-09</td>
+<td>デスクトップエージェント一般提供</td>
+<td>PC 作業自動化</td>
+</tr>
+<tr>
+<td><strong>Claude × Adobe/Blender 等9コネクタ</strong></td>
+<td>2026-04-28</td>
+<td>クリエイティブ統合</td>
+<td>反復作業自動化</td>
+</tr>
+<tr>
+<td><strong>Claude Security</strong>(public beta)</td>
+<td>2026-04-30</td>
+<td>コード脆弱性検出+修正</td>
+<td>エンタープライズ向けセキュリティ AI</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 Google Gemini</h3>
+<table>
+<thead>
+<tr>
+<th>世代</th>
+<th>公開日</th>
+<th>主要変化</th>
+<th>効果(精度・速度・コンテキスト・マルチモーダル)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bard</strong>(LaMDA 系)</td>
+<td>2023-03-21</td>
+<td>プレビュー、出遅れ</td>
+<td>テキスト対話、誤情報炎上</td>
+</tr>
+<tr>
+<td><strong>PaLM 2</strong></td>
+<td>2023-05-10</td>
+<td>Bard 改良</td>
+<td>コード/翻訳改善</td>
+</tr>
+<tr>
+<td><strong>Gemini 1.0</strong>(Ultra/Pro/Nano)</td>
+<td>2023-12-06</td>
+<td><strong>マルチモーダル native 設計</strong></td>
+<td>テキスト+画像+音声+動画</td>
+</tr>
+<tr>
+<td><strong>Gemini Advanced</strong></td>
+<td>2024-02-08</td>
+<td>Bard リブランド</td>
+<td>Gemini Ultra 統合</td>
+</tr>
+<tr>
+<td><strong>Gemini 1.5 Pro</strong></td>
+<td>2024-02-15</td>
+<td><strong>1M トークン</strong>(業界初の規模)</td>
+<td>動画・長文対応</td>
+</tr>
+<tr>
+<td><strong>Gemini 1.5 Flash</strong></td>
+<td>2024-05-14</td>
+<td>軽量・高速</td>
+<td>Workspace 統合、低価格</td>
+</tr>
+<tr>
+<td><strong>Gemini 2.0 Flash</strong></td>
+<td>2024-12-11</td>
+<td><strong>マルチモーダル出力</strong>(画像生成統合)</td>
+<td>Project Astra エージェント</td>
+</tr>
+<tr>
+<td><strong>Gemini 2.5 Pro</strong></td>
+<td>2025-03</td>
+<td>推論モード+Deep Research</td>
+<td>強化推論、リサーチ自動化</td>
+</tr>
+<tr>
+<td><strong>Gemini 2.5 Flash/Flash-Lite</strong></td>
+<td>2025-04</td>
+<td>軽量推論</td>
+<td>低価格推論</td>
+</tr>
+<tr>
+<td><strong>Gemini 3 preview</strong></td>
+<td>2025-Q4</td>
+<td>次世代フラッグシップ</td>
+<td>推論/マルチモーダル統合</td>
+</tr>
+<tr>
+<td><strong>Gemini 3 正式版</strong></td>
+<td>2026-Q1</td>
+<td>フラッグシップ完成</td>
+<td>エージェント+リアルタイム+10M 級コンテキスト</td>
+</tr>
+<tr>
+<td><strong>Gemini Enterprise Agent Platform</strong></td>
+<td>2026-04-22</td>
+<td><strong>ローコードエージェント基盤</strong></td>
+<td>業務エージェント開発</td>
+</tr>
+<tr>
+<td><strong>Spanner Omni + Agentic Data Cloud</strong></td>
+<td>2026-04-22</td>
+<td>データ主権 × エージェント</td>
+<td>オンプレ実行可能</td>
+</tr>
+<tr>
+<td><strong>Gemini in Cars</strong></td>
+<td>2026-04-30</td>
+<td>車載 AI アシスタント</td>
+<td>数百万台展開</td>
+</tr>
+<tr>
+<td><strong>Gemma 4</strong>(オープン)</td>
+<td>2026-05-03</td>
+<td>無料・高品質日本語ローカル LLM</td>
+<td>データ主権用途で強力</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. 機能軸別の3サービス比較進化(2022-2026)</h2>
+<h3>2.1 コンテキスト長(トークン数)の競争史</h3>
+<pre><code>2022-11  GPT-3.5: 4K
+2023-03  GPT-4: 8K/32K    │ Claude 1: 9K           │ Bard: 数K
+2023-07  ─                │ Claude 2: 100K(業界初) │ ─
+2023-11  GPT-4 Turbo: 128K│ Claude 2.1: 200K       │ ─
+2023-12  ─                │ ─                      │ Gemini 1.0: 32K
+2024-02  ─                │ ─                      │ Gemini 1.5 Pro: 1M(業界初の100万)
+2024-12  ─                │ ─                      │ Gemini 2.0 Flash: 1M
+2025-02  ─                │ Sonnet Plus: 1M        │ ─
+2025-04  ─                │ ─                      │ Gemini 2.5 Pro: 1-2M
+2026-04+ GPT-5.5: 数百K-1M │ Opus 4.7: 1M           │ Gemini 3: 10M クラス
+</code></pre>
+<p><strong>勝者</strong>: <strong>Google Gemini</strong>(1M を業界初、現在も最長級、10M クラス)<br>
+<strong>追随</strong>: Anthropic(Claude 2 で100K業界初の長文化、現在1M)<br>
+<strong>3位</strong>: OpenAI(数百K-1M、長文よりも推論性能で勝負)</p>
+<h3>2.2 マルチモーダル(画像+音声+動画)の競争史</h3>
+<pre><code>2023      画像入力: GPT-4(限定) / Claude 3(2024-03)/ Gemini 1.0(native)
+2024-02   動画入力: ─                                / Gemini 1.5 Pro(動画含む)
+2024-05   GPT-4o: テキスト+音声+画像 native(232ms 応答)
+2024-10   Computer Use(Claude): PC 操作
+2024-12   Gemini 2.0 Flash: マルチモーダル出力(画像生成統合)
+2026-04   GPT Images 2.0(Thinking モード)/ Claude × Adobe 9コネクタ / Gemini in Cars
+</code></pre>
+<p><strong>native 統合</strong>: <strong>Gemini</strong>(設計思想で最も統合的)<br>
+<strong>応答速度・対話</strong>: <strong>GPT-4o</strong>(232ms の人間並み応答)<br>
+<strong>クリエイティブ統合</strong>: <strong>Claude</strong>(Adobe / Blender / Photoshop / Autodesk Fusion との9コネクタ)</p>
+<h3>2.3 推論モデル(reasoning)の競争史</h3>
+<pre><code>2024-09  OpenAI o1-preview     ← 推論モデル幕開け、AIME 83%
+2024-12  OpenAI o1正式 / o3 preview
+2025-01  DeepSeek R1(OSS、参考)
+2025-02  Anthropic Claude 3.7 Sonnet + extended thinking
+2025-03  Google Gemini 2.5 Pro(推論モード)
+2025-08  OpenAI GPT-5 ルーター方式(推論を内部統合)
+2026-04  GPT-5.5 / Claude Opus 4.7 / Gemini 3(全社が「推論+非推論統合」へ)
+</code></pre>
+<p><strong>先行</strong>: <strong>OpenAI o1</strong>(2024-09、業界初)<br>
+<strong>追随</strong>: Anthropic(2025-02 extended thinking、ON/OFF 切替)<br>
+<strong>統合</strong>: Google Gemini 2.5(推論モード)、OpenAI GPT-5(ルーター方式)</p>
+<h3>2.4 エージェント機能の競争史</h3>
+<pre><code>2023-06  OpenAI Function Calling
+2023-11  GPT-4 Turbo + GPTs
+2024-04  Anthropic Tool Use(Claude)
+2024-10  **Anthropic Computer Use**(汎用 PC 操作の幕開け)
+2024-11  **Anthropic MCP**(業界標準プロトコル)
+2025-01  OpenAI Operator(ブラウザエージェント)
+2025-02  Anthropic Claude Code
+2025-05  OpenAI Codex CLI + Cloud agents
+2025-06  Anthropic Claude 4(長時間自律実行公式推奨)
+2026-04  OpenAI Symphony 仕様(issue tracker → agent)
+2026-04  Anthropic Claude Cowork(デスクトップエージェント一般提供)
+2026-04  Google Gemini Enterprise Agent Platform(ローコード)
+</code></pre>
+<p><strong>先行</strong>: <strong>Anthropic</strong>(Computer Use 2024-10、MCP 2024-11)<br>
+<strong>ローコード基盤</strong>: <strong>Google</strong>(Gemini Enterprise Agent Platform)<br>
+<strong>コーディング特化</strong>: <strong>OpenAI</strong>(Codex)、<strong>Anthropic</strong>(Claude Code)</p>
+<h3>2.5 価格・コスト効率の進化(API、$/1M tokens)</h3>
+<table>
+<thead>
+<tr>
+<th>モデル</th>
+<th>入力</th>
+<th>出力</th>
+<th>公開日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-4</td>
+<td>$30</td>
+<td>$60</td>
+<td>2023-03</td>
+</tr>
+<tr>
+<td>GPT-4 Turbo</td>
+<td>$10</td>
+<td>$30</td>
+<td>2023-11</td>
+</tr>
+<tr>
+<td>GPT-4o</td>
+<td>$5</td>
+<td>$15</td>
+<td>2024-05</td>
+</tr>
+<tr>
+<td>GPT-4o mini</td>
+<td>$0.15</td>
+<td>$0.60</td>
+<td>2024-07</td>
+</tr>
+<tr>
+<td>Claude 3.5 Sonnet</td>
+<td>$3</td>
+<td>$15</td>
+<td>2024-06</td>
+</tr>
+<tr>
+<td>Claude 3.5 Haiku</td>
+<td>$0.25</td>
+<td>$1.25</td>
+<td>2024-07</td>
+</tr>
+<tr>
+<td>Gemini 1.5 Pro</td>
+<td>$3.5</td>
+<td>$10.5</td>
+<td>2024-02</td>
+</tr>
+<tr>
+<td>Gemini 1.5 Flash</td>
+<td>$0.075</td>
+<td>$0.30</td>
+<td>2024-05</td>
+</tr>
+<tr>
+<td>DeepSeek V3</td>
+<td>$0.14</td>
+<td>$0.28</td>
+<td>2024-12</td>
+</tr>
+<tr>
+<td>GPT-5(参考)</td>
+<td>(公開時の Pro$200/月)</td>
+<td>—</td>
+<td>2025-08</td>
+</tr>
+</tbody>
+</table>
+<p><strong>観察</strong>:<br>
+- 1年で<strong>1桁</strong>のコスト低下が起きている<br>
+- フロンティアモデルは依然高価、軽量版(Flash / mini / Haiku)は急速に下落<br>
+- OSS(DeepSeek、Llama、Gemma)で「桁違いに安い」が常態化</p>
+<hr>
+<h2>3. 「同世代モデル」での競争位置(2026-05 時点フラッグシップ)</h2>
+<table>
+<thead>
+<tr>
+<th>強み</th>
+<th>OpenAI GPT-5.5</th>
+<th>Anthropic Claude Opus 4.7 / Mythos</th>
+<th>Google Gemini 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>総合性能</strong></td>
+<td>★★★★★(総合型)</td>
+<td>★★★★(Safety + コーディング)</td>
+<td>★★★★(マルチモーダル+垂直統合)</td>
+</tr>
+<tr>
+<td><strong>コーディング</strong></td>
+<td>★★★★(Codex Academy)</td>
+<td>★★★★★(Claude Code、SWE-bench先行)</td>
+<td>★★★(Code Assist)</td>
+</tr>
+<tr>
+<td><strong>エージェント</strong></td>
+<td>★★★★(Symphony 仕様)</td>
+<td>★★★★★(Computer Use、MCP、Cowork)</td>
+<td>★★★★(Enterprise Agent Platform)</td>
+</tr>
+<tr>
+<td><strong>長文・コンテキスト</strong></td>
+<td>★★★(数百K-1M)</td>
+<td>★★★★(1M)</td>
+<td>★★★★★(1-2M、10M クラス)</td>
+</tr>
+<tr>
+<td><strong>マルチモーダル</strong></td>
+<td>★★★★(Images 2.0、Voice)</td>
+<td>★★★(画像、Adobe 連携)</td>
+<td>★★★★★(native、車載、医療)</td>
+</tr>
+<tr>
+<td><strong>推論</strong></td>
+<td>★★★★★(ルーター統合)</td>
+<td>★★★★(extended thinking)</td>
+<td>★★★★(2.5 Pro)</td>
+</tr>
+<tr>
+<td><strong>特化能力(限定)</strong></td>
+<td>GPT-5.5-Cyber、Bio Bug Bounty</td>
+<td>Mythos(脆弱性発見)</td>
+<td>(DeepMind co-clinician)</td>
+</tr>
+<tr>
+<td><strong>エンタープライズ</strong></td>
+<td>★★★★(AWS Bedrock 解禁)</td>
+<td>★★★★★(Datadog、Claude Security)</td>
+<td>★★★★★(Spanner Omni、Agentic Data Cloud)</td>
+</tr>
+<tr>
+<td><strong>データ主権・オンプレ</strong></td>
+<td>△</td>
+<td>△</td>
+<td>★★★★(Spanner Omni、Gemma 4)</td>
+</tr>
+<tr>
+<td><strong>オープン補完</strong></td>
+<td>×</td>
+<td>×</td>
+<td>★(Gemma 4)</td>
+</tr>
+<tr>
+<td><strong>コンシューマー(チャット)</strong></td>
+<td>★★★★★(ChatGPT 圧倒)</td>
+<td>★★★(Claude.ai)</td>
+<td>★★★★(Gemini App、Bard 系)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>4. 3社の戦略の差(2026-05時点)</h2>
+<h3>OpenAI</h3>
+<ul>
+<li><strong>戦略</strong>: 「最大規模のフロンティア + 消費者 ChatGPT + Codex 開発者 + 規制対応」の総合型</li>
+<li><strong>強み</strong>: ChatGPT のブランド・ユーザーベース、Codex Academy、ルーター方式の統合</li>
+<li><strong>弱み</strong>: コーディング以外のエージェント領域で Anthropic に遅れ気味、データ主権ハードウェアなし</li>
+<li><strong>2026 動向</strong>: AWS Bedrock 解禁(MS 独占解消)、Stargate でインフラ確保</li>
+</ul>
+<h3>Anthropic</h3>
+<ul>
+<li><strong>戦略</strong>: 「安全性研究 + コーディング/エージェント現金化」の二刀流</li>
+<li><strong>強み</strong>: Computer Use / MCP / Claude Code でエージェント領域先行、Mythos / Security で能力特化</li>
+<li><strong>弱み</strong>: コンシューマー(ChatGPT 級ユーザーベース)、Pentagon 不在(地政学リスク)</li>
+<li><strong>2026 動向</strong>: $50B 調達(評価 $850-900B 報道)、規制業界での Datadog 大口顧客化</li>
+</ul>
+<h3>Google</h3>
+<ul>
+<li><strong>戦略</strong>: 「自社モデル + 自社データ + 自社ディストリビューション」の垂直統合</li>
+<li><strong>強み</strong>: マルチモーダル native、Workspace/Search/Android/Cloud 統合、Gemma 4 でデータ主権</li>
+<li><strong>弱み</strong>: 個別タスクでは OpenAI / Anthropic に追いつけない局面あり</li>
+<li><strong>2026 動向</strong>: Gemini Enterprise Agent Platform、Spanner Omni、6プロトコル整理(中立リーダー)</li>
+</ul>
+<hr>
+<h2>5. 注目すべき構造的論点</h2>
+<ol>
+<li><strong>「Gemini はコンテキストとマルチモーダルで勝つが、Claude はエージェントで勝つ、ChatGPT は消費者で勝つ」</strong> — 用途別の住み分けが安定化中</li>
+<li><strong>3社全てが「限定能力モデル」を持つ</strong>(Mythos / GPT-5.5-Cyber / co-clinician 等)— ガバナンス共通化</li>
+<li><strong>オープン陣営(DeepSeek、Llama、Gemma)が3社の脅威に</strong>: コスト効率 + ローカル運用で侵食</li>
+<li><strong>「ルーター方式」と「extended thinking モード」のどちらが残るか</strong>: GPT-5 と Claude のアプローチ差。Gemini は automatic</li>
+<li><strong>長文コンテキストの実用限界</strong>: 1M-10M 級が技術的に可能でも、実用利用率は依然 100K 未満が大半</li>
+</ol>
+<hr>
+<h2>6. 関連蓄積(他トピックの参照)</h2>
+<ul>
+<li><code>ai-companies/synthesis.md</code> — 各プロバイダの事業戦略・評価額</li>
+<li><code>ai-companies/ma-timeline-2024-2026.md</code> — 資金調達と人材移動</li>
+<li><code>llm-evaluation/synthesis.md</code> — ベンチマーク・解釈可能性・実タスク評価</li>
+<li><code>agentic-ai/synthesis-2025.md</code> — エージェント能力の進化</li>
+<li><code>ai-data-structuring/synthesis.md</code> — MCP・構造化出力・データ整備</li>
+<li><code>ai-regulation/synthesis.md</code> — Mythos / GPT-5.5-Cyber 限定提供、distillation 訴訟</li>
+<li><code>topics/ai-models/model-evolution-timeline.md</code> — 全プロバイダ年表(本ドキュメントの拡張版)</li>
+</ul>
+<hr>
+<blockquote>
+<p>次回更新の触媒: 各社の新フラッグシップ発表時(Gemini 4、Claude Opus 5、GPT-6 等)、または重要な能力突破(AGI 級スコア達成、新ベンチマーク飽和等)</p>
+</blockquote>
+      </div>
+    </section>
+    
+
+    <section id="topic-ai-infra" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · ai-infra · synthesis — · articles: 0 · 09 / 15</div>
+        <h2>AIインフラ・GPU・コスト</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>GPU / データセンター / 半導体の地政学が AI 産業の競争を決定する局面で、 コスト下落 vs 使用量爆発の均衡点はどこか。 NVIDIA 独占 / Arm 連合 / SpaceX 独自 / Google × SpaceX 軌道上 DC など、 インフラ供給構造の再編がどう収束するか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: GPU/半導体層は NVIDIA 独占に Arm 連合 + SpaceX が割り込み</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Arm × Meta「AGI CPU」で x86 → Arm 系データセンター CPU 拡大</li>
+<li>SpaceX Terafab $55B(Texas)で Musk が独自 AI 半導体メーカーへ</li>
+<li>Intel 1.8nm Intel 18A で低価格 MPU まで最先端化</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>SpaceX Terafab $55B(2026-05-08)</li>
+<li>Arm × Meta AGI CPU 共同開発(2026-05-08)</li>
+<li>Intel 株 490%上昇 + 1.8nm 全面化(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: データセンター層は「Pentagon 不在の Anthropic が Musk DC 借用」など政治と物理が交錯</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>SpaceX × Anthropic で Musk が「evil」呼ばわりした Anthropic に GPU 提供</li>
+<li>Google × SpaceX で軌道上 AI データセンターの協議(地球外進出)</li>
+<li>AWS 中東 UAE 復旧に数カ月、紛争影響でクラウド可用性が地政学に依存</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>SpaceX × Anthropic データセンター提携(2026-05-06〜07)</li>
+<li>Google × SpaceX 軌道上 AI DC 協議(2026-05-12)</li>
+<li>AWS UAE 復旧2カ月ぶり報告(2026-05-06)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: コスト動学は「単価90%下落 + 使用量爆発」のJevons パラドックスへ</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Gartner 2030年に1兆パラメータ LLM 推論コスト90%下落予測</li>
+<li>ただしエージェント普及で総支出は増加、ROI 計算が複雑化</li>
+<li>Sakana × NVIDIA TwELL 30%高速化など効率改善が並走</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Gartner「推論90%下落+総支出増」予測(2026-05-12)</li>
+<li>Sakana × NVIDIA TwELL(2026-05-10)</li>
+<li>Cloudflare 1,100 解雇で AI 効率化と過去最高売上が両立(2026-05-08)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 資源・電力層が「銅・水・電力」の争奪戦化</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Amazon が銅鉱山と直接契約、米テック大手の物資争奪が本格化</li>
+<li>Everpure CEO「半導体メモリ4-10倍急騰」で価格70%値上げ</li>
+<li>Stargate / SoftBank Roze / NTT データセンター譲渡で日本も巻き込まれる</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Amazon 銅鉱山と直接契約(2026-05-11)</li>
+<li>Everpure 半導体4-10倍急騰(2026-05-11)</li>
+<li>NTT データG データセンター譲渡で51%増益(2026-05-08)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>AI インフラの地政学化と物理コスト爆発が同時進行</li>
+<li>宇宙データセンターという新フロンティア論議が始動</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  Google × SpaceX 軌道上 DC 協議</li>
+<li>2026-05-12  Google TPU 8i/8t + Willow 量子</li>
+<li>2026-05-12  Cloud Storage Rapid / クラウド Q1 35%成長</li>
+<li>2026-05-11  Amazon 銅鉱山直接契約</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>NVIDIA 独占への独禁法調査(FTC/EC)の動向</li>
+<li>Jevons パラドックスの企業財務影響</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>国内 AI インフラ供給(NTT/SoftBank/ファナック・安川)の主権度合い</li>
+<li>宇宙 DC の実現可能性とコスト推移</li>
+<li>半導体争奪戦下のサプライチェーン再編</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-llm-evaluation" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · llm-evaluation · synthesis v2 · articles: 7 · 10 / 15</div>
+        <h2>LLM評価・解釈可能性</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>ベンチマークと実用性能の乖離はどう埋まっていくか。 評価指標自体がどう進化しているか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: 自動ベンチマーク層は飽和、SWE-bench 型は限界に到達</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>SWE-bench/TAU/OSWorld/GPQA Diamond/HLE などで「全社90%超」の飽和</li>
+<li>Chatbot Arena 等の Elo 評価も差が縮小</li>
+<li>三極化(ChatGPT/Claude/Gemini)前提の機能軸別比較が新標準</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>ChatGPT/Claude/Gemini 三極化(2026-05-08)</li>
+<li>llm-3services-comparison.md(2026-05-11、ユーザー作成)</li>
+<li>@IT「日本語 AI は約1.5倍高い」(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: 解釈可能性層が「思考プロセス忠実度」を新評価軸に追加</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Natural Language Autoencoders で「答案正確性」+「思考プロセス忠実度」の2軸へ</li>
+<li>Anthropic が解釈研究で業界標準を握る可能性</li>
+<li>EU AI Act / 日本 AI 法律の「説明可能性」要件と直結</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Anthropic Natural Language Autoencoders(2026-05-07)</li>
+<li>Anthropic 隠れ推論可視化ツール(2026-05-12)</li>
+<li>Goodfire Silico 機械的解釈可能性公開(2026-05-01)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: 専門家定性証言層がベンチマーク飽和への決定的解</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>フィールズ賞数学者 Gowers の ChatGPT 5.5 Pro 体験記が HN 683 pts</li>
+<li>医学(Harvard ER)、法学(Legora)などのドメイン展開が予想される</li>
+<li>「使える/使えない」境界をトップ専門家が公開言語化</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Gowers の ChatGPT 5.5 Pro 体験記(2026-05-09)</li>
+<li>Harvard 研究 AI が ER 診断で人間医師超え(2026-05-04)</li>
+<li>AI が数学未解決問題を80分で解く(2026-05-03)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 産業応用評価が「異常検知の根拠説明」など独自軸を要求</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>東芝 反事実波形が「AI 判断根拠の波形説明」を産業実装</li>
+<li>NYT「Anthropic は本当に怖いか?」など主要メディアが定性評価に参入</li>
+<li>「AI 買い物失敗5割」など消費者側の評価データも蓄積</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>東芝 反事実波形生成技術(2026-05-12)</li>
+<li>NYT「Anthropic の新 AI は本当に怖い?」(2026-05-12)</li>
+<li>ITmedia 調査「AI 買い物失敗5割」(2026-05-13)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>解釈可能性+定性評価+産業応用評価が同月で複数進展</li>
+<li>ピークデータ警告下で「学習データから何を学んだか」の解明が必須化</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  Anthropic 隠れ推論可視化ツール公開</li>
+<li>2026-05-12  東芝 反事実波形 / NYT「Anthropic 怖い?」</li>
+<li>2026-05-09  Gowers ChatGPT 5.5 Pro 体験記(HN 683 pts)</li>
+<li>2026-05-04  スタンフォード「ピークデータ」警告</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>Gowers 型「専門家定性証言」の他ドメイン展開</li>
+<li>Natural Language Autoencoders の規制標準化</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>日本語特化評価ベンチマークの整備</li>
+<li>「思考プロセス忠実度」のメトリクス標準化</li>
+<li>AI 監査ビジネスでの評価フレーム導入</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-physical-ai" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · physical-ai · synthesis v1 · articles: 0 · 11 / 15</div>
+        <h2>フィジカル AI・AI ロボティクス</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>フィジカル AI(ヒューマノイドロボット・産業ロボティクス・自律機械)が **物理空間でどんな速度で実用化されるか**。 VLA(視覚言語動作、Vision-Language-Action)モデルとロボットハードウェアの **統合は誰が主導するか**。 国産路線(ファナック・安川・KyoHA・Sony・PFN・尾形 AI ロボット協会)vs 海外大手 (Figure / 1X / Optimus / Boston Dynamics / Apptronik / Sanctuary AI)の **競争構造はどう決着するか**。 「マルチモーダル・動画生成」トピックを 2026-05-15 に廃止し、 **身体性(フィジカル AI)に焦点を絞った後継**として本トピックを設置。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: ヒューマノイドロボットは「海外スタートアップ攻勢 vs 国産遅延」の構造で当面差が拡大</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Figure(Brett Adcock)/1X/Optimus/Apptronik/Boston Dynamics/Sanctuary AI が大型調達と量産化で先行</li>
+<li>Meta が humanoid robotics スタートアップ買収(2026-05-02)で AI×身体性に本格参入</li>
+<li>国内は KyoHA SEIMEI(検証機公開)、Sony フィジカル AI 布石が「研究/構想段階」、量産には遠い</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Meta humanoid robotics 買収(2026-05-02)</li>
+<li>KyoHA 純国産ヒューマノイド SEIMEI 公開(2026-05-12、足首破損で動的デモ未達)</li>
+<li>Sony CEO「TSMC 提携 + フィジカル AI 布石」(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: 産業ロボティクスは「国産基盤で情報資源死守」戦略が形成、SDA 主戦場化</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>ファナック・安川電機が「フィジカル AI 国産基盤」を公式表明、情報資源の海外流出を阻止</li>
+<li>三菱電機・オムロンが SDA(Software-Defined Automation)でデータ事業へ転換</li>
+<li>欧米FA大手3社が「ハード売切り → ソフト継続課金」へ転換、日本勢に圧力</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>ファナック・安川電機フィジカル AI(2026-05-11)</li>
+<li>三菱電機・オムロン SDA でデータ事業へ(2026-05-12)</li>
+<li>欧米FA大手の継続課金転換(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: VLA(視覚言語動作)モデルとハードウェア統合の「基盤レイヤ競争」が始動</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Nvidia Isaac が AI 基盤モデルとロボット制御の統合プラットフォームで先行</li>
+<li>Google DeepMind co-clinician 等で「LLM × 物理アクション」の実装パターン化</li>
+<li>国内は NEC(3D 点群90%軽量化)、PFN(PLaMo + ロボティクス)が独自路線</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>NEC 独自 AI で 3D 点群90%軽量化(2026-05-12)</li>
+<li>DeepMind co-clinician(医療補助 AI、2026-05-01)</li>
+<li>尾形哲也 AI ロボット協会(AI ロボット共進化、2026-05-03)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 「データ主権 × 物理空間」が国産優位の数少ない領域として浮上</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>ロボット動作データ・センサーデータ・現場データが国産基盤で確保される動き</li>
+<li>国産 AI ベンダー(PFN/Sakana)との接続で「日本特化フィジカル AI」スタックの可能性</li>
+<li>AI 主権体制(IBM Sovereign Core、日本初 AI 法律)と整合する産業政策的追い風</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>ファナック・安川「国産基盤で情報資源死守」表明(2026-05-11)</li>
+<li>Sony フィジカル AI 布石 + TSMC 提携(2026-05-12)</li>
+<li>IOWN Global Forum — 通信ネットワークの主戦場は宇宙へ(2026-05-03)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>ヒューマノイドロボット海外大手の量産化と国産路線の差が同月で顕在化</li>
+<li>産業ロボティクス × SDA 化が日本 FA 勢の戦略転換を迫る</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  KyoHA SEIMEI / Sony フィジカル AI 布石</li>
+<li>2026-05-12  三菱電機・オムロン SDA / NEC 3D 点群軽量化</li>
+<li>2026-05-11  ファナック・安川電機フィジカル AI 国産基盤</li>
+<li>2026-05-02  Meta humanoid robotics 買収</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>VLA モデル × 国産 LLM(PFN/Sakana)接続の標準化タイミング</li>
+<li>ヒューマノイドロボの B2C 量産化(Figure/1X/Optimus の市場投入)</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>産業ロボ × 国産 AI 基盤連携の具体プロジェクト</li>
+<li>Boston Dynamics × 韓国(Hyundai)、Apptronik × Mercedes 等の OEM 連携</li>
+<li>Sony フィジカル AI 戦略の具体プロダクト発表時期</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-finance-ai" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · finance-ai · synthesis v1 · articles: 4 · 12 / 15</div>
+        <h2>金融×AI(銀行・証券・保険・決済)</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>金融業界(銀行・証券・保険・資産運用・決済)で AI が**業務プロセスのどこに、どの粒度で組み込まれていくか**。 日本のメガバンク・地銀・信託・生損保の AI 採用は、米欧の先行事例と何が同じで何が違うか。 規制(金融庁ガイドライン、Basel、IFRS、米OCC、EU AI Act)が AI 採用速度をどう左右するか。 AI が金融機関の競争優位を変えるか、それとも「全員が同じツールを使う」結果競争優位は別の場所に移るか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: 業務適用は「営業 → アクチュアリー → 定常 → 標準化 → 寡占化」の Stage 1-2 が進行中</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Sakana × SMBC の提案書自動生成が Stage 1 を完了</li>
+<li>Singular Bank × Codex で会議準備/分析が Stage 2 入り(60-90分/日削減)</li>
+<li>MUFG × Google の商品選び〜決済で Stage 2 が消費者向けにも到達</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Sakana × SMBC 複数 AI エージェント提案書(2026-05-03)</li>
+<li>Singular Bank × ChatGPT/Codex 60-90分/日削減(2026-05-06)</li>
+<li>MUFG × Google 商品選び〜決済 AI(2026-05-07)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: ベンダー競合は「Sakana × OpenAI × Anthropic × Google」の4つ巴へ</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Sakana(国内特化)vs PwC×OpenAI(Big4 経由)vs Anthropic Agents for FS</li>
+<li>国内市場分割: SMBC=Sakana、MUFG=Google、Anthropic 系=Goldman/Blackstone</li>
+<li>国産 AI ベンダー間で「業界×銀行×製品」3軸の棲み分けが進行</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Anthropic Agents for Financial Services(2026-05-05)</li>
+<li>OpenAI × PwC CFO 業務再定義(2026-05-05)</li>
+<li>Anthropic × Goldman/Blackstone $1.5B PE 所有企業向け(2026-05-05)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: インフラ層は「データ基盤 × クラウド × 認証」の3課題が同時に立ち上がる</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>三菱UFJ信託 × Snowflake、北陸銀行音声 AI などデータ基盤+業務 AI 統合</li>
+<li>マネーフォワード GitHub 侵害で Fintech × 開発リスクが露呈</li>
+<li>全国140信組 SKC センター8時間障害で国内金融インフラ脆弱性</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>三菱UFJ信託 × Snowflake データマネジメント(2026-05-07)</li>
+<li>マネーフォワード GitHub 侵害で銀行連携停止(2026-05-11)</li>
+<li>全国140信組 SKC センター障害(2026-05-11)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: 新領域として「AI 代理決済」が始動、Stripe × OpenAI が先行</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Stripe × OpenAI で AI が買い物する少額決済が実装段階</li>
+<li>「AI 買い物失敗5割」など消費者側の品質問題も顕在化</li>
+<li>Ramp $40B+ / Kalshi $22B など Fintech × AI 評価額急騰</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Stripe × OpenAI 少額決済(2026-05-12)</li>
+<li>ITmedia「AI 買い物失敗5割」調査(2026-05-13)</li>
+<li>Ramp $40B+ 評価交渉(2026-05-07)/ Kalshi $22B(2026-05-07)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>国内メガバンクが米AI 直接提携で動く第一波</li>
+<li>金融 × データ基盤 × 認証の3課題が同時進行</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-13  OpenAI「How finance teams use Codex」公式</li>
+<li>2026-05-12  Stripe × OpenAI 少額決済 / Anthropic 株式二次警告</li>
+<li>2026-05-11  北陸銀行音声 AI Worker / マネフォ GitHub 侵害</li>
+<li>2026-05-07  MUFG × Google / 三菱UFJ信託 × Snowflake</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>5段階モデル Stage 3(定常化)への進捗時期</li>
+<li>金融庁ガイドラインと米AI 提携の整合性</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>国内 AI ベンダー間の金融市場分割の確定</li>
+<li>規制業界での Sovereign Core 採用</li>
+<li>Stripe × OpenAI 型「AI 代理経済」の国内応用</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-logistics-ai" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · logistics-ai · synthesis v2 · articles: 2 · 13 / 15</div>
+        <h2>物流×AI(倉庫・配送・自動運転)</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>物流業界(倉庫・配送・自動運転トラック・ドローン・サプライチェーン)で AI が **労働力不足・配送コスト・最適化**の3課題をどう解決していくか。 労働力不足・配送コストのメインは、AI/ロボットが現実解になる範囲。 まず最適化領域におけるホワイト人材領域の管理業務がAIエージェントにより代替されている方向性ではないか。 米国先行(Amazon Robotics、Symbotic、Aurora 等)と日本(ヤマト、佐川、楽天、SBS、SoftBank Roze 等) の戦略の差はどこにあり、今後数年でどう進化するか。</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: AI 型分類は「ルールベース機械化 vs エージェンティック AI」で導入難易度が分岐</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>画一化業務(ピッキング・仕分け)はルールベース機械化が現実解</li>
+<li>動的判断(配車・例外処理)はエージェンティック AI 必須</li>
+<li>ステップ的導入で「ルールベース → エージェント」順序が国内主流</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>(notes.md ユーザー仮説、2026-05-11 synthesis v2 反映)</li>
+<li>AWS × アクト・ノード見守りエージェント(2026-05-12)</li>
+<li>Loop 物流データ基盤刷新で輸送コスト可視化(2026-05-07)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: ハードウェア/ロボティクスは「国産基盤死守」戦略が形成</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>ファナック・安川電機が「国産基盤で情報資源死守」を表明</li>
+<li>KyoHA SEIMEI、Sony フィジカル AI 布石で国内コンソーシアム形成</li>
+<li>中国 1X / Figure / Optimus / Sanctuary に対抗</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>ファナック・安川電機フィジカル AI(2026-05-11)</li>
+<li>KyoHA 純国産ヒューマノイド SEIMEI(2026-05-12)</li>
+<li>Sony CEO TSMC 提携 + フィジカル AI 布石(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: データ基盤層は「SDA(Software-Defined Automation)」が主戦場</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>欧米FA大手3社が SDA + 知能の継続課金へ転換</li>
+<li>三菱電機・オムロンが「ハード資産+データ事業」で対抗</li>
+<li>Loop / FourKites / project44 が物流データ基盤を整備</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>三菱電機・オムロン SDA でデータ事業へ(2026-05-12)</li>
+<li>欧米FA大手の継続課金転換(2026-05-12)</li>
+<li>Loop 物流データ基盤刷新(2026-05-07)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: ラストマイル層は自動運転調整局面 + 一次産業エージェント</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Kodiak AI $100M ディスカウント調達で自動運転トラック業界調整</li>
+<li>Rivian AI 音声アシスタント全車展開でEVに AI が標準化</li>
+<li>AWS × アクト・ノード「見守りエージェント」で農林漁業 AI 化</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Kodiak AI $100M ディスカウント調達 株価37%下落(2026-05-07)</li>
+<li>Rivian AI 音声アシスタント全車展開(2026-05-12)</li>
+<li>AWS × アクト・ノード見守りエージェント 工数50%削減(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>国産フィジカル AI コンソーシアムが同月で複数表面化</li>
+<li>欧米 FA 大手の SDA × 継続課金転換が日本に波及</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  KyoHA SEIMEI / Sony フィジカル AI</li>
+<li>2026-05-12  三菱電機・オムロン SDA</li>
+<li>2026-05-11  ファナック・安川電機フィジカル AI</li>
+<li>2026-05-07  Loop 物流データ基盤刷新</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>VLA モデル × 国産 LLM(PFN/Sakana)接続の標準化</li>
+<li>国産フィジカル AI コンソーシアムの拡大</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>ヤマト / 佐川 / 日本郵便の AI 採用パターン</li>
+<li>自動運転トラックの北米 vs 国内戦略差</li>
+<li>SDA × 国内 FA × 国産 LLM の3軸連携</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+
+    <section id="topic-consulting-ai" class="topic-section">
+      <header class="topic-header">
+        <div class="topic-eyebrow">TOPIC · consulting-ai · synthesis v1 · articles: 11 · 14 / 15</div>
+        <h2>コンサルティング業界×AI</h2>
+      </header>
+      <div class="topic-q">
+        <span class="q-label">自分の問い</span>
+        <p>AI導入に対し、コンサル企業によるAIベンチャーをベンダー化し、導入における戦略設計～導入までの管理を行う立ち位置取りをしようとする動きがみられるなか、AIベンダーとコンサル企業のパワーバランスは今後どのように推移するか。 コンサルティング業界(Big4、戦略系、SIer、シンクタンク)で AI が**競争優位・収益モデル・組織構造をどう書き換えるか**。 **作業の AI 化**: 提案書・分析・コード・財務モデルが Codex/Claude/Sakana で自動化されたとき、コンサルの単価・人月モデルはどう変わるか **提供価値の再定義**: 「フレームワーク+人月」→「実装(FDE) + 継続運用」 への移行は本物か、それともコンサルが**AI ベンダーの代理人**化するか **3層分化**: (a) AI ベンダー直接介入(OpenAI Deployment、Anthropic 直営)、(b) 戦略系(McKinsey/BCG/Bain)、(c) 総合系/SI(Accenture/PwC/IBM/Deloitte/Capgemini/NEC/富士通/日立/野村総研)の**棲み分け**がどう確定するか **日本市場の特性**: 富士ソフト人月脱却(2026-04)、日立 GlobalLogic 統合(2026-05)、NEC × Anthropic(2026-05)等の国内 SI 変革は、米系コンサル(Accenture/PwC)の優位を崩せるか **シンクタンク × 自治体**: 三菱UFJリサーチ&amp;コンサル「Gov Sales」(2026-05-12)、霞が関 18万人 AI(同日)等の**公共コンサル × AI**は新セグメントを形成するか **規模圧縮の現実**: Cognition AI(Devin)等の AI ネイティブ企業が**従来のコンサル人月**を構造的に置き換え可能か</p>
+      </div>
+      <div class="topic-body">
+        <div class="topic-main">
+          <h3 class="section-h">主要論点(問い検証の観察+含意)</h3>
+          
+        <article class="point">
+          <div class="point-num">01</div>
+          <div class="point-body">
+            <h4 class="point-head">観察1: プレイヤー位置取りは「5層分化」で確定しつつある</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>戦略立案(McKinsey/BCG/Bain)/ 変革管理(NRI・Big4)</li>
+<li>実装 SI(Accenture/IBM/Capgemini/NEC・富士通・日立)</li>
+<li>公共規制(Big4 監査 + シンクタンク)/ AI ネイティブ侵入(OpenAI/Anthropic/Sierra/Cognition)</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>OpenAI Deployment Co + $4B + Tomoro(2026-05-12)</li>
+<li>NRI「AI と組織の未来」(2026-05-12)</li>
+<li>Cognition AI 日本法人設立(2026-04-29)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">02</div>
+          <div class="point-body">
+            <h4 class="point-head">観察2: 提供価値は「実装層が AI ベンダー直営 FDE モデルで侵食」される</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>OpenAI Deployment Co + Tomoro 買収で FDE モデルが汎用 AI 業界に到来</li>
+<li>Palantir Forward Deployed Engineer モデルが他社にも拡散</li>
+<li>コンサル中抜き(中抜き型) vs コンサル取り込み(取り込み型)の両方が並走</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>OpenAI Deployment Co 設立 + 19社設立パートナー(2026-05-12)</li>
+<li>アクセンチュア × Anthropic 国内本格化(2026-05-12)</li>
+<li>OpenAI × PwC CFO 業務再定義(2026-05-05)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">03</div>
+          <div class="point-body">
+            <h4 class="point-head">観察3: 国内市場は「人月脱却 / 規模拡大 / 米AI 提携」の3戦略に分岐</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>富士ソフト(成果報酬移行)/ 日立 GlobalLogic(規模拡大)/ NEC × Anthropic(米AI 提携)</li>
+<li>中堅 SI(TIS/SCSK/BIPROGY/CTC)の戦略選択が次の試金石</li>
+<li>シンクタンク(NRI/三菱UFJリサーチ)が「公共セクター実プロダクト化」に進出</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>富士ソフト SIer 新体制 人月商売脱却(2026-04-30)</li>
+<li>日立 GlobalLogic + Hitachi Digital Services 統合(2026-05-11)</li>
+<li>三菱UFJリサーチ Gov Sales(2026-05-12)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        <article class="point">
+          <div class="point-num">04</div>
+          <div class="point-body">
+            <h4 class="point-head">観察4: AI ネイティブ脅威は「Tier 2-3 領域を吸収」段階に到達</h4>
+            <div class="point-block">
+              <div class="block-label">概要</div>
+              <ul class="summary-list"><li>Cognition AI(Devin)が自律 AI エンジニア時間貸しモデルを国内展開</li>
+<li>Sierra AI、Decart、Lovable などが SaaS / SI / コンサル を構造的に置換</li>
+<li>戦略系の上位フィー圧迫(GenAI 戦略コンサルの単価半減リスク)</li></ul>
+            </div>
+            <div class="point-block">
+              <div class="block-label cases">事例詳細</div>
+              <ul class="cases-list"><li>Cognition AI 日本法人設立(2026-04-29)</li>
+<li>ダイヤモンド「AI ネイティブスタートアップの脅威」(2026-05-11)</li>
+<li>OpenAI How finance teams use Codex(2026-05-12、Big4 直接競合の続編)</li></ul>
+            </div>
+          </div>
+        </article>
+        
+        </div>
+        <aside class="topic-aside">
+          <div class="aside-box">
+            <h3 class="section-h">直近の重要シグナル(2026-04〜05)</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>AI ベンダーが業界・コンサル両軸で直接侵入を加速</li>
+<li>国内 SI の戦略分岐が同月で複数表面化</li></ul>
+            <div class="block-label cases">事例</div>
+            <ul class="cases-list"><li>2026-05-12  アクセンチュア × Anthropic 国内本格化 + IPA/デロイト不正</li>
+<li>2026-05-12  OpenAI Deployment Co + Tomoro / Anthropic Claude for Legal</li>
+<li>2026-05-11  NEC × Anthropic / 日立 GlobalLogic 統合</li>
+<li>2026-05-04  富士ソフト SIer 新体制 人月脱却</li></ul>
+          </div>
+          <div class="aside-box terracotta">
+            <h3 class="section-h terracotta">次の注視点</h3>
+            <div class="block-label">概要</div>
+            <ul class="summary-list"><li>Big4 全社の AI 提携完了タイミング(Deloitte/EY/KPMG)</li>
+<li>国内 SI 決算で人月モデル崩壊度合いが定量化されるか</li></ul>
+            <div class="block-label cases">事例/論点</div>
+            <ul class="cases-list"><li>OpenAI Deployment Co の初期成果がコンサル収益にどう波及</li>
+<li>AI 監査ビジネス(Big4)の市場規模立ち上がり</li>
+<li>Sakana・PFN 等が同様の米AI 提携を選ぶか独自路線継続か</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+      
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>
+      <strong>ai-news-vault</strong> — 13トピックを横断したAI業界の構造的潮流まとめ。
+      <br>
+      4/7/9/12時の Daily 自動取得時に再生成され GitHub Pages で公開されます(常に最新の Daily 反映)。
+      <br>
+      Last generated: 2026-05-17 12:00 JST
+    </p>
+  </footer>
+</body>
+</html>

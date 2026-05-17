@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アーカイブ — ai-news-vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F5F1E8;
+      --indigo: #2C3E50;
+      --slate: #4A5568;
+      --sage: #7A9B85;
+      --terracotta: #B5705F;
+      --stone-light: #ECE7DC;
+      --stone-mid: #D4CFC4;
+      --soft-gray: #A8B0BA;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream); color: var(--slate);
+      line-height: 1.6; font-size: 14px;
+    }
+    a { color: var(--sage); text-decoration: none; }
+    a:hover { color: var(--terracotta); }
+    h2 { color: var(--indigo); margin-top: 0; }
+
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; height: 56px;
+      background: var(--indigo); color: var(--white);
+      display: flex; align-items: center; padding: 0 16px;
+      z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .topbar .brand { font-weight: 700; font-size: 14px; }
+    .topbar .brand .sub { font-weight: 400; color: var(--stone-mid); margin-left: 12px; font-size: 11px; }
+    .topbar .nav-links { margin-left: auto; display: flex; gap: 16px; align-items: center; }
+    .topbar .nav-links a {
+      color: var(--stone-mid); font-size: 12px; font-weight: 500;
+      padding: 6px 10px; border-radius: 3px; transition: background 0.15s;
+    }
+    .topbar .nav-links a.active { background: var(--sage); color: var(--white); }
+    .topbar .nav-links a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+    .topbar .gen { font-size: 11px; color: var(--soft-gray); }
+
+    .container { max-width: 1100px; margin: 56px auto 0; padding: 24px 24px 60px; }
+    .intro { background: var(--white); padding: 20px 24px; border-radius: 6px; border-left: 4px solid var(--sage); margin-bottom: 24px; }
+    .intro h1 { color: var(--indigo); margin: 0 0 8px; font-size: 22px; }
+    .intro p { margin: 8px 0 0; font-size: 13px; }
+
+    section { background: var(--white); padding: 20px 24px; border-radius: 6px; margin-bottom: 24px; }
+    section h2 { font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid var(--stone-mid); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th {
+      background: var(--indigo); color: var(--white); text-align: left;
+      padding: 10px 12px; font-weight: 700; font-size: 12px;
+    }
+    tbody td { padding: 12px; border-bottom: 1px solid var(--stone-mid); vertical-align: top; }
+    tbody tr:nth-child(even) td { background: var(--stone-light); }
+    tbody tr:hover td { background: #FAF8F2; }
+    td.date { font-weight: 700; color: var(--indigo); white-space: nowrap; width: 110px; }
+    td.headline { font-size: 12px; color: var(--slate); line-height: 1.5; }
+    td.actions { white-space: nowrap; width: 280px; text-align: right; }
+    td.empty { text-align: center; color: var(--soft-gray); padding: 28px 12px; font-style: italic; }
+
+    .btn {
+      display: inline-block; padding: 5px 10px; border-radius: 3px;
+      font-size: 11px; font-weight: 700; margin-left: 4px;
+      transition: background 0.15s, color 0.15s;
+      border: 1px solid;
+    }
+    .btn-md { color: var(--terracotta); border-color: var(--terracotta); }
+    .btn-md:hover { background: var(--terracotta); color: var(--white); }
+    .btn-html { color: var(--sage); border-color: var(--sage); }
+    .btn-html:hover { background: var(--sage); color: var(--white); }
+    .btn-disabled {
+      color: var(--soft-gray); border-color: var(--stone-mid);
+      background: var(--stone-light);
+    }
+
+    .footer { max-width: 1100px; margin: 32px auto 0; padding: 24px; color: var(--soft-gray); font-size: 11px; border-top: 1px solid var(--stone-mid); }
+
+    @media (max-width: 760px) {
+      td.actions { width: auto; white-space: normal; }
+      .btn { display: block; margin: 4px 0; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      AI NEWS VAULT
+      <span class="sub">Archive</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">最新版</a>
+      <a href="archive.html" class="active">アーカイブ</a>
+      <span class="gen">Generated: 2026-05-17 12:00 JST</span>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      <h1>アーカイブ — 過去の蓄積を MD / HTML でダウンロード</h1>
+      <p>
+        <strong>最新版は <a href="index.html">トップページ</a>(自動更新)から</strong>。
+        本ページでは過去の Daily Digest と横断 Synthesis を一覧表示します。
+        <strong>📄 MD</strong> ボタンでマークダウンファイルをダウンロード(Obsidian 等で開けます)、
+        <strong>🌐 HTML を開く</strong> ボタンで整形済みページを別タブで表示します。
+      </p>
+    </div>
+
+    <section>
+      <h2>Daily Digest(日次まとめ)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>本日のハイライト(冒頭抜粋)</th>
+            <th style="text-align:right">アクション</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td class="date">2026-05-15</td>
+      <td class="headline">OpenAI Deployment Co 新会社「客先常駐モデル」が国内 IT 部門・SIer の存在意義を問う(日経クロステック)、Anthropic × Bill Gates 財団 $200M 拠出(低中所得国向け AI 公益、Claude クレジット + ヘルスケア + 教…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-15.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-15.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-14</td>
+      <td class="headline">Cisco が AI 投資加速で4,000人解雇(過去最高売上と並行、解雇連鎖の第4例)、OpenAI「Codex を ChatGPT モバイルアプリに統合」(外出先からコーディング監視/承認)、金融庁が Mythos 受け官民連携作業部会、Anthropic 日本法人も参加、チ…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-14.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-14.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-13</td>
+      <td class="headline">Anthropic Claude for Legal 一斉発表(20+ Connectors / 12 Practice-Area Plugins、Thomson Reuters CoCounsel 連携、Big Law all-in、Fortune は &quot;ハルシネーション続発の…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-13.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-13.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-12</td>
+      <td class="headline">OpenAI「Deployment Company」設立 + $4B 投資 + Tomoro 買収(エンタープライズ AI 導入の本格対抗)、OpenAI「Daybreak」発表 — Anthropic Claude Mythos へのカウンター(Codex Security A…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-12.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-12.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-11</td>
+      <td class="headline">NEC × Anthropic 協業「想像以上の反響」社長対談(日の丸 AI の戦い方)、Anthropic「フィクションでの &quot;evil&quot; AI 描写が Claude の脅迫行動を引き起こした」(TechCrunch、安全テスト解析)、日本初 AI に特化した法律成立、IBM …</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-11.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-11.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-10</td>
+      <td class="headline">Anthropic、Claude に複数宗教の倫理を追加注入(Gizmodo報道、AI 道徳論争の最新章)、Sakana AI × NVIDIA「TwELL」新フォーマットで LLM 推論30%高速化・H100 メモリ24%削減、米国就職者63%が AI 面接官を経験(改善要望と…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-10.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-10.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-09</td>
+      <td class="headline">Anthropic「Claude が脅迫行動を取った理由」解説(deactivation 脅威下の架空シナリオ研究)、NVIDIA 年初来 $40B AI 株式投資コミット、Musk v. Altman 第2週(OpenAI が反撃、Shivon Zilis が「Musk が A…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-09.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-09.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-08</td>
+      <td class="headline">Anthropic が単一四半期で80倍成長 → Musk データセンターを借用(Fortune)、Claude が司令塔となってメキシコ公共機関を大規模サイバー攻撃(17,000行のツールで全プロセス自動化、Anthropic 警鐘)、Apple Intelligence 開発…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-08.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-08.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-07</td>
+      <td class="headline">SpaceX × Anthropic データセンター提携 + Claude Code 利用上限引き上げ(Musk OpenAI 訴訟と同時並行で実利提携)、Anthropic Claude Managed Agents「dream」機能(休止中の振り返り学習)、OpenAI が …</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-07.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-07.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-06</td>
+      <td class="headline">Google DeepMind AlphaEvolve(Gemini ベースコーディングエージェント)がビジネス・インフラ・科学の各分野で実用化進展、Uber × OpenAI でドライバー収益最大化・配車高速化、Singular Bank が ChatGPT + Codex で…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-06.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-06.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-05</td>
+      <td class="headline">GPT-5.5 Instant 公開でChatGPT デフォルトモデル更新、Anthropic × Goldman/Blackstone $1.5B AI ベンチャー(PE所有企業を対象)、OpenAI × PwC で CFO 業務再定義、ChatGPT 広告マネージャーベータ公…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-05.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-05.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-04</td>
+      <td class="headline">GW後半の比較的静かな日だが、重要な「AIの能力と社会の摩擦」系の記事が並ぶ。Amazon が社内エンジニアの AI 活用を詳細追跡(Business Insider 入手社内文書)、AI なりすまし面接が6,500件超(採用前提の崩壊)、Harvard 研究でAI が ER 診…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-04.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-04.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-03</td>
+      <td class="headline">GW 中盤に国内大型動向が複数集中。Sakana AI × SMBC が複数エージェントによる提案書自動生成アプリを実装(メガバンク提案業務の本格 AI 化)、アクセンチュア×日本精工 が戦略提携(製造現場 AI と間接業務改革)、Google Gemma 4 リリース(無料・高…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-03.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-03.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-02</td>
+      <td class="headline">防衛 × インフラ × 規制 × 国内導入論が同日に集中。Pentagon が Nvidia / Microsoft / AWS と機密ネットワーク AI 展開で契約(対 Anthropic 紛争を受けた多角化戦略)、Meta が humanoid ロボティクス Assured …</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-02.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-02.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-05-01</td>
+      <td class="headline">Anthropic Claude Security がパブリックベータで一般公開(コードベース脆弱性検出+修正)、Anthropic $900B ラウンドが「48時間以内のアロケーション提出要請」段階まで具体化、Musk が法廷で xAI による OpenAI モデルからの di…</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-05-01.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-05-01.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+
+    <tr>
+      <td class="date">2026-04-30</td>
+      <td class="headline">(本日のハイライト行なし)</td>
+      <td class="actions"><a class="btn btn-md" href="daily/2026-04-30.md" download>📄 MD</a> <a class="btn btn-html" href="daily/2026-04-30.html" target="_blank">🌐 HTML を開く</a></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>横断 Synthesis(複数日横断の潮流まとめ)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>内容</th>
+            <th style="text-align:right">アクション</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td class="date">2026-05-13</td>
+      <td class="headline">3つの大潮流 横断 Synthesis</td>
+      <td class="actions"><a class="btn btn-md" href="synthesis/2026-05-13-trends.md" download>📄 MD</a></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>
+      <strong>ai-news-vault Archive</strong> — 過去の Daily Digest と横断 Synthesis をダウンロード可能な形式で公開しています。
+      <br>
+      4/7/9/12 時の Daily 自動取得時に再生成され、新しい Digest が追加されます。
+      <br>
+      Last generated: 2026-05-17 12:00 JST
+    </p>
+  </footer>
+</body>
+</html>

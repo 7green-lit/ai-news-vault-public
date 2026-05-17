@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-05-06 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-05-06 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>Google DeepMind AlphaEvolve</strong>(Gemini ベースコーディングエージェント)がビジネス・インフラ・科学の各分野で実用化進展、<strong>Uber × OpenAI</strong> でドライバー収益最大化・配車高速化、<strong>Singular Bank が ChatGPT + Codex で銀行員時間60-90分削減</strong>、<strong>OpenAI B2B Signals</strong>(フロンティア企業の AI 採用パターン研究)、<strong>Anthropic Agents for Financial Services</strong> 公開。<strong>IBM CEO「ソフト産業の従来型成長は困難、AI データ基盤に注力」</strong>(日経)、ランサム被害企業の7割が復旧不能(ITmedia)、Microsoft Digital Defense Report 2025 公開。AINOW は社内管理(ガイドライン/体制/シャドー AI 対策)を解説。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>Google DeepMind AlphaEvolve、Gemini ベースコーディングエージェントが各分野で実用化</h3>
+<ul>
+<li><strong>要約</strong>: AlphaEvolve(Gemini 駆動の進化的コーディングエージェント)が<strong>ビジネス・インフラ・科学</strong>の領域で具体的なインパクトを発揮している現状を解説。Google 内部のデータセンター最適化・行列乗算アルゴリズム改善等の実績がある。<strong>Codex/Claude Code/Devin と異なる「進化的探索」アプローチ</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>agentic-ai</code>, <code>ai-models</code>, <code>llm-evaluation</code></li>
+<li><strong>ソース</strong>: <a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank" rel="noopener">DeepMind Blog</a> / 2026-05-06</li>
+</ul>
+
+<h3>Singular Bank、ChatGPT + Codex で銀行員時間 60-90 分/日削減</h3>
+<ul>
+<li><strong>要約</strong>: スペインのデジタルバンク Singular Bank が<strong>「Singularity」</strong>という内部アシスタントを ChatGPT + Codex で構築、<strong>会議準備・ポートフォリオ分析・フォローアップ</strong>で1日60-90分削減。Sakana × SMBC、OpenAI × PwC と並ぶ<strong>金融×AI 実装事例</strong>。</li>
+<li><strong>トピック</strong>: <code>finance-ai</code>, <code>enterprise-ai</code>, <code>ai-coding</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/singular-bank" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-05-06</li>
+</ul>
+
+<h3>Anthropic「Agents for Financial Services」公開</h3>
+<ul>
+<li><strong>要約</strong>: Anthropic が<strong>金融サービス向けエージェント</strong>ソリューション群を公式整理して発表。<strong>Anthropic も金融市場本格進出</strong>のメッセージング。Sakana × SMBC(2026-04)、OpenAI × PwC(2026-05-04)に対するアンスリピックの応答。</li>
+<li><strong>トピック</strong>: <code>finance-ai</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE1IS1R3ZVd5NUxtWGJjRlFBQXZfOXJPS2xlY0wtaWZhSmx0M2RNaFUwN3FCU1Y3bTh5dkhqOEtIUE94UXFtT2l1MEk0WFZyUVRYV1Fsc1JrMEU?oc=5" target="_blank" rel="noopener">Anthropic Blog(Google News)</a> / 2026-05-05</li>
+</ul>
+
+<h3>Uber × OpenAI でドライバー収益最大化・配車高速化</h3>
+<ul>
+<li><strong>要約</strong>: Uber が <strong>OpenAI の AI アシスタントと音声機能</strong>を導入、ドライバーの収益最大化(配車選択 AI)とライダーの配車高速化を実現。リアルタイム市場での<strong>消費者向け生活インフラ AI 統合</strong>事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/uber" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-05-06</li>
+</ul>
+
+<h3>OpenAI B2B Signals — フロンティア企業の AI 採用パターン研究</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 自主の<strong>B2B Signals 研究</strong>で、フロンティア企業が <strong>AI 採用を深化させ、Codex 駆動のエージェントワークフローをスケールし、持続的な競争優位</strong>を築くパターンを公開。エンタープライズ AI 導入の体系的方法論。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/introducing-b2b-signals" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-05-06</li>
+</ul>
+
+<h3>IBM CEO「ソフト産業の従来型成長は困難、AI データ基盤に注力」(日経)</h3>
+<ul>
+<li><strong>要約</strong>: IBM の Arvind Krishna CEO が<strong>「ソフトウェア産業の従来型成長モデル」</strong>の限界を指摘、<strong>AI データ基盤(IBM watsonx + Sovereign Core 後継)</strong>への注力を表明。<code>/strategy-hypothesis.md</code> v2 の「SAT が基盤」と同方向の業界トレンド。</li>
+<li><strong>トピック</strong>: <code>ai-data-structuring</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9uTzBuWmstZ0pxOUhNYUM3MDFuYjNuanBEamlvQjdfMlNsZ0JRUlA3cjYyQXJycF9FWnFmSjR5VEFFY3RxX0M1VS04bC1iN2ZCdXZkeUpRRXF5bTRoYnNadkFoWm9OanV4aVgtTA?oc=5" target="_blank" rel="noopener">日経新聞(Google News)</a> / 2026-05-05</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>Microsoft Digital Defense Report 2025 — 10のセキュリティ対策</h3>
+<ul>
+<li><strong>要約</strong>: Microsoft が<strong>100兆件超の攻撃兆候</strong>を分析した年次レポートを公開。サイバー攻撃の現状、主要標的、<strong>国家関与の脅威、AI 活用動向</strong>を踏まえた<strong>10の対策</strong>を提言。CISA KEV、CrowdStrike QuiltWorks と並ぶ業界連合的提言。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-data-structuring</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/06/news014.html" target="_blank" rel="noopener">@IT</a> / 2026-05-06</li>
+</ul>
+
+<h3>ITmedia「ランサムウェアから復旧できない 7割の企業」</h3>
+<ul>
+<li><strong>要約</strong>: ランサム被害企業の<strong>7割が完全復旧できない</strong>現実。<strong>生成 AI 導入と IT 運用ラクさは直結しない</strong>という構造的指摘。復旧力と IT 運用の本質を再考。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/enterprise/articles/2605/06/news017.html" target="_blank" rel="noopener">ITmedia エンタープライズ</a> / 2026-05-05</li>
+</ul>
+
+<h3>OpenAI ChatGPT プライバシー解説 — 学習データと管理</h3>
+<ul>
+<li><strong>要約</strong>: ChatGPT が<strong>世界を学習しながらどうプライバシーを守るか</strong>の公式説明。学習データ削減、ユーザー制御、会話を AI モデル改善に使うかの選択肢を整理。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/how-chatgpt-protects-privacy" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-05-06</li>
+</ul>
+
+<h3>AINOW「生成 AI 社内管理の作り方」 — ガイドライン+体制+シャドー AI 対策</h3>
+<ul>
+<li><strong>要約</strong>: AINOW シリーズの続編。<strong>部署ごとに勝手に複数 AI ツールを使い始める「シャドー AI」化</strong>への情シス・法務・コンプラ担当向け管理手順を解説。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://ainow.ai/2026/05/06/278050/" target="_blank" rel="noopener">AINOW</a> / 2026-05-06</li>
+</ul>
+
+<h3>Richard Dawkins「AI は意識を持っている、本人が気付いていないだけ」</h3>
+<ul>
+<li><strong>要約</strong>: 進化生物学者 Richard Dawkins が <strong>AI 意識論</strong>で踏み込んだ発言、The Guardian 報道。Anthropic「Claude の脅迫行動」(2026-05-09)、Claude に宗教倫理追加(2026-05-10)の文脈で AI 意識・倫理論議が活発化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQUS1PS05QR1RGLWVKLXZlUHR2b2dXNlNZTWlJMVBUbllpTkMtSElwLXY1emtfZkx6MmYtZjVFRU1fc0tOWEFFdkMyei14d0dueFBodW15UXNJVDJ1LWkyRTEwaWFudUUxZ2FOUE1rS2tRanZPS2FJdWhBRlpjaVBXbUpGUksyWjZrSUZ0WllzMDBndzVqd3AxRVZIeExOb1FwcklyR2VMdFV1TUs1UURUZU80NEgwZw?oc=5" target="_blank" rel="noopener">The Guardian(Google News)</a> / 2026-05-05</li>
+</ul>
+
+<h3>OpenAI「ChatGPT Futures: Class of 2026」 — 学生イノベーター26名</h3>
+<ul>
+<li><strong>要約</strong>: AI を使って研究・起業・社会インパクトを生み出す<strong>学生26名</strong>を ChatGPT Futures プログラムで認定。<strong>教育・若年層への OpenAI ブランド浸透</strong>戦略。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>(教育)</li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/introducing-chatgpt-futures-class-of-2026" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-05-06</li>
+</ul>
+
+<h3>ITmedia「クレカを止めても被害は止まらない」 — アカウント侵害第二幕</h3>
+<ul>
+<li><strong>要約</strong>: ITライター宮田健氏が遭遇した Amazon アカウント侵害の事例レポート。<strong>クレカ停止後も執拗な不正利用が続く</strong>現実。アカウントセキュリティ層(Stripe Link、OpenAI Yubico 等)の重要性を裏付け。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/enterprise/articles/2604/30/news010.html" target="_blank" rel="noopener">ITmedia エンタープライズ</a> / 2026-05-05</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>AlphaEvolve(進化的コーディング)が Codex / Claude Code / Devin とどう違うか</strong> — 進化的探索アプローチの優位性</p>
+<p>2. <strong>金融×AI の3つ巴</strong>: Sakana × SMBC、OpenAI × PwC、Anthropic Agents for Financial Services の住み分け</p>
+<p>3. <strong>IBM CEO 発言「ソフト産業の従来型成長困難」</strong> —  の SAT 戦略と同方向、業界共通認識化</p>
+<p>4. <strong>AI 意識論</strong>(Dawkins、Anthropic 倫理研究)が AI 規制議論に与える影響</p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>ai-coding</code> / <code>agentic-ai</code> 蓄積推奨</strong>: AlphaEvolve</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: Singular Bank × ChatGPT/Codex、Anthropic Agents for Financial Services</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: Uber × OpenAI、OpenAI B2B Signals、AINOW シャドー AI 対策</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: IBM CEO 発言「AI データ基盤」</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: Microsoft Digital Defense Report 2025、Dawkins AI 意識論</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>

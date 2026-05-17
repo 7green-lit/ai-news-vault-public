@@ -1,0 +1,17 @@
+# Private content — DO NOT publish
+# Stockmark 関連は管理者ローカルのみ保持
+source/topics/stockmark/
+synthesis/*stockmark*
+
+# Personal working memory (notes, strategy hypotheses)
+**/notes.md
+**/strategy-hypothesis.md
+
+# Python caches
+__pycache__/
+*.pyc
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp

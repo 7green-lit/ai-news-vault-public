@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-05-01 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-05-01 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>Anthropic Claude Security がパブリックベータで一般公開</strong>(コードベース脆弱性検出+修正)、<strong>Anthropic $900B ラウンドが「48時間以内のアロケーション提出要請」段階</strong>まで具体化、<strong>Musk が法廷で xAI による OpenAI モデルからの distillation を認める証言</strong>、<strong>Stripe Link が AI エージェントの自律決済対応</strong>、<strong>Goodfire の解釈可能性ツール Silico リリース</strong>。エージェントの「お金を扱う」「コードを直す」「事故責任を負う」がそれぞれ別文脈で同時前進した日。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>Anthropic Claude Security、パブリックベータで一般公開</h3>
+<ul>
+<li><strong>要約</strong>: コードベースをスキャンして脆弱性を検出、修正案までワンストップで提示する AI セキュリティツール。クローズドプレビューから昇格。AI を悪用した攻撃が増える中で「AIで防御」の Anthropic 版回答。</li>
+<li><strong>カテゴリ</strong>: モデル発表 / プロダクト</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>ai-coding</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/aiplus/articles/2605/01/news051.html" target="_blank" rel="noopener">ITmedia AI+</a> / 2026-04-30, <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxONGtrUnY1Q09ES2lLNFpMcU9ZaVgtQ3I1azNCeDFpb1ZlQTdqZkRfbEk0NVRhYzVtSEdJdmJfQUpHMzZJeW92cF92azNtdzdRbjdqZEZ6ZjdwWFlnZ2RIdkh1V1gwUmFxalJVUXYzU0V6VWdxTHJIU1diLU1lU0dmakRHNVVrM3I5RjZ0eTZNbTY0OEdjTEhVNjdHWFNhVWNmeG5Ub2VvNk80c2ZkMURLSDNDQnBkZkVwTVE?oc=5" target="_blank" rel="noopener">SiliconANGLE</a>, <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE5YemY3ZkNDZ1g3TUJfbTNCazN3c29oTzUxOEJ2MWRxcV9sY2NXMC1ZbDBzMFpCcktucUJKNG9URWdlZ25QYVJqRTRsLWpUSEo5dFRVVGxtMVdxTG1jMFppTVFGNGRKQQ?oc=5" target="_blank" rel="noopener">The New Stack</a>, <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNTTJRa2xyX3NPRnhuU3dpaUtpQl9feWJSd3lYY0VORWlkNU0wOTVOTm5Ud0NQVW9aRC1QR2x4ak9qR2pjYXluZTlnOHNtMTJGT2dyejlldUpHZURLSmQyQzVndExacUNmaXc2T3pGRk9QZW1XampDeEZ2UlVzVXdiOVI5N0lBNWtwaGNGZVlqSU8tT29tZWswWTFWeWxkVmMz0gGmAUFVX3lxTE5lMVZMaW54VHRFR3MxeTRUaUVmWEgzeGgtcnl0TktqdzFPUV9ZVENBQ3lSX3lKdVRBVVhUMXpSTXRMRVNCMWVLNHZJZU9JR2l4UkJJZWxGczdTVGl1cUtXTUc5TWlpYy1GVTVzQkstbzFib0IxdnRUUGl4dklUVFRZRkVHN1NlOHItbWNpTWg1dGhIb1BEdFJOUkU2dkZuZm1FNTNCelE?oc=5" target="_blank" rel="noopener">SecurityWeek</a></li>
+</ul>
+
+<h3>Anthropic $900B 調達ラウンド、「48時間以内のアロケーション提出」段階に</h3>
+<ul>
+<li><strong>要約</strong>: 投資家に対し48時間以内にアロケーションを提出するよう要請、ラウンドは2週間以内にクローズの可能性。報道ベースの $850-900B レンジから具体プロセスへ。</li>
+<li><strong>カテゴリ</strong>: 資金調達(続報)</li>
+<li><strong>トピック</strong>: <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/" target="_blank" rel="noopener">TechCrunch</a> / 2026-04-30</li>
+</ul>
+
+<h3>Musk、法廷で xAI が OpenAI モデルから distillation で Grok を訓練したと証言</h3>
+<ul>
+<li><strong>要約</strong>: Musk vs Altman 公判で重大な認め発言。「Distillation」(大モデルが小モデルの教師になる手法)はフロンティア各社が現在防止しようとしている運用。証言が事実なら xAI と OpenAI 間の利用規約違反論点が拡大する。</li>
+<li><strong>カテゴリ</strong>: 規制・訴訟</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>llm-evaluation</code></li>
+<li><strong>ソース</strong>: <a href="https://www.theverge.com/ai-artificial-intelligence/921546/elon-musk-xai-openai-trial-model-distillation" target="_blank" rel="noopener">The Verge</a> / <a href="https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/" target="_blank" rel="noopener">TechCrunch</a> / 2026-04-30</li>
+</ul>
+
+<h3>Stripe Link、AIエージェントが自律決済できるデジタルウォレットとして公開</h3>
+<ul>
+<li><strong>要約</strong>: ユーザーがカード/銀行/サブスクを Link に接続し、AIエージェントに承認フロー経由で支出権限を委任できる仕組み。<strong>「エージェントが買い物する」を金融インフラ側で正式に支える</strong>最初の主要プラットフォーム。</li>
+<li><strong>カテゴリ</strong>: プロダクト / インフラ</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/" target="_blank" rel="noopener">TechCrunch</a> / 2026-04-30</li>
+</ul>
+
+<h3>Goodfire、機械的解釈可能性ツール「Silico」を公開</h3>
+<ul>
+<li><strong>要約</strong>: SF発スタートアップ。AIモデルの内部パラメータを学習中に覗いて調整できる解釈可能性ツール。モデル制作者が<strong>従来不可能と思われていた粒度で挙動を制御できる</strong>と主張。</li>
+<li><strong>カテゴリ</strong>: 研究 / プロダクト</li>
+<li><strong>トピック</strong>: <code>llm-evaluation</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://www.technologyreview.com/2026/04/30/1136721/this-startups-new-mechanistic-interpretability-tool-lets-you-debug-llms/" target="_blank" rel="noopener">MIT Technology Review</a> / 2026-04-30</li>
+</ul>
+
+<h3>DeepMind、AI co-clinician(医療向け補助AI)構想を発表</h3>
+<ul>
+<li><strong>要約</strong>: AI が医師の補助として機能する「co-clinician」モデル研究を公開。GPT-5.5-Cyber と同様、<strong>特定領域の高度AIを高信頼アクター限定で出す</strong>戦略の医療版。</li>
+<li><strong>カテゴリ</strong>: 研究 / 業界動向</li>
+<li><strong>トピック</strong>: <code>multimodal</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://deepmind.google/blog/ai-co-clinician/" target="_blank" rel="noopener">Google DeepMind Blog</a> / 2026-04-30</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>Meta、AI投資加速のため社債で250億ドル調達</h3>
+<ul>
+<li><strong>要約</strong>: AI投資計画引き上げ後の資金調達。Meta は売上の6割をAI投資に回す異常水準を維持。CapEx の財務インパクトが債券市場へ波及する局面。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNYzRiRE9yRXVwTjhlTjZQM3N4YXlJOWloQWtIRFpsRU10MGVrcUZHODE3cU1vVy1YRU80MDhkZlQ5cWFRQ0hhakthWGpDRk51UThsYjNaMW5XOGJlYWlQX3AzT2FfZ3U2LV9oVlRfUXFkYW5JamZqUGVwQzBxVjhQaQ?oc=5" target="_blank" rel="noopener">Reuters(Google News)</a> / 2026-04-30, <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9DT01TM0ltelQ0TWU5VHVvZTh0YlNwUnN2aVh2TGVweFZlY0ZtOE5CcFFVSy16VzQwYUFnRGhLWnlYVFdCWFJYajZyZlMwMk5Dd1NJRWdYVmp5blNleEZoR2tFNU1lRE1VRzZSTg?oc=5" target="_blank" rel="noopener">日経新聞(テック4社AI投資116兆円)</a> / 2026-04-30</li>
+</ul>
+
+<h3>Legal AI の Legora、$5.6B 評価で Harvey と本格競合</h3>
+<ul>
+<li><strong>要約</strong>: 法務AIの2強(Harvey vs Legora)の評価額急騰。広告キャンペーン合戦も開始。垂直特化AIの収益性を試金石として注目。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/04/30/legal-ai-startup-legora-hits-5-6-valuation-and-its-battle-with-harvey-just-got-hotter/" target="_blank" rel="noopener">TechCrunch</a> / 2026-04-30</li>
+</ul>
+
+<h3>OpenAI、ChatGPT に高度アカウントセキュリティ + Yubico 提携</h3>
+<ul>
+<li><strong>要約</strong>: フィッシング耐性ログイン、強化された復旧、アカウント乗っ取り対策。Yubico ハードウェアキーとの統合で消費者向け AI アカウントの保護を底上げ。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/advanced-account-security" target="_blank" rel="noopener">OpenAI Blog</a> / <a href="https://techcrunch.com/2026/04/30/openai-announces-new-advanced-security-for-chatgpt-accounts-including-a-partnership-with-yubico/" target="_blank" rel="noopener">TechCrunch</a> / 2026-04-30</li>
+</ul>
+
+<h3>ホワイトハウス、AI駆動型サイバー攻撃でテック各社に協力要請</h3>
+<ul>
+<li><strong>要約</strong>: White House が大手テックに対し AI を悪用した攻撃への対応で支援を求める姿勢。Claude Mythos 騒動・GPT-5.5-Cyber リリースの直後で、政策側の動きが本格化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOS3FNOWtWSV9VSlMxZlRKRktGUkFwcnFHSDJkMXJ4aHFGdGgzdk9QNVZPWjVnbXZ0X1N6a00wNkFDdEprd2poSlVhdUtTRncxdE9vZUxnSkQycDJYUkhLVUxobnZVTFI2TjU4ajYzWEd5OVpFcFdXa3h2emgyU05Wdm9UN1pRU1JDcFNITnpR?oc=5" target="_blank" rel="noopener">Politico(Google News)</a> / 2026-04-30</li>
+</ul>
+
+<h3>Google Gemini、車載アシスタントとして数百万台のクルマに展開開始</h3>
+<ul>
+<li><strong>要約</strong>: Google built-in 搭載車向けに Gemini が Google Assistant を置き換える。自然対話・車両情報取得・設定操作。Apple CarPlay / Android Auto への影響は今後。</li>
+<li><strong>トピック</strong>: <code>multimodal</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/04/30/googles-gemini-ai-assistant-is-hitting-the-road-in-millions-of-vehicles/" target="_blank" rel="noopener">TechCrunch</a> / <a href="https://www.theverge.com/tech/921117/google-gemini-ai-assistant-cars-upgrade" target="_blank" rel="noopener">The Verge</a> / 2026-04-30</li>
+</ul>
+
+<h3>IBM Granite 4.1、8B モデルが 32B MoE と同等性能</h3>
+<ul>
+<li><strong>要約</strong>: IBM のオープンソース系列。8B(密)が 32B(MoE)に匹敵する性能を主張。エンタープライズ向け軽量モデルの実用性ライン。</li>
+<li><strong>トピック</strong>: <code>llm-evaluation</code>, <code>ai-coding</code></li>
+<li><strong>ソース</strong>: <a href="https://firethering.com/granite-4-1-ibm-open-source-model-family/" target="_blank" rel="noopener">Hacker News(firethering.com)</a> / 2026-04-30</li>
+</ul>
+
+<h3>OpenAI、Mythos批判の口の渇かぬうちに GPT-5.5-Cyber も限定公開へ</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 解説。「Anthropic が Mythos を制限したのを批判していた OpenAI が、自社 Cyber では同じ制限戦略を取った」という構造の皮肉を指摘。<strong>「能力の高いAIは出さない」が業界標準化</strong>する局面。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/" target="_blank" rel="noopener">TechCrunch</a> / 2026-04-30</li>
+</ul>
+
+<h3>Apple、AI需要による Mac 売れすぎで Q1 〜 Q2 供給制約</h3>
+<ul>
+<li><strong>要約</strong>: Apple が「AI 開発者向けの Mac 需要を見誤った」と認める。Mac mini / Studio / Neo が品薄継続。Apple Silicon の AI 推論性能が需要を呼んだ形。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/04/30/apple-was-surprised-by-ai-driven-demand-for-macs/" target="_blank" rel="noopener">TechCrunch</a> / 2026-04-30</li>
+</ul>
+
+<h3>Anthropic、Datadog の大口顧客に</h3>
+<ul>
+<li><strong>要約</strong>: Hunterbrook 報道。Anthropic が Datadog の重要新規顧客として浮上。<strong>Anthropic 自体のインフラ可観測性投資</strong>の規模感が示唆される(自分の Mythos / Code 等を運用するための内部消費)。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE10d29TZ3JOQmRpWml5NVpIbWNKaXEwcm15M1JhS2tVYk1iOE9JYVI5R3M0Tk4wTE1WUmRuUWs0c042Zmc4QWE2TXhqbWFCVHc?oc=5" target="_blank" rel="noopener">Hunterbrook(Google News)</a> / 2026-04-30</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><strong>エージェント / プロダクト</strong></li>
+</ul>
+<p>  - <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5STEt1WHJpR3J0VnNjODZra2xrNGo1YWotQk42SThFalMtZUdJNDZnd2JMTnZQbHZYYlNWTTI5UnJUSWUtYUNnaHFISWJxaW9Hb1lJdzlIVTg4eHpoVElIUXA1MTVwQ3FaYVFJ?oc=5" target="_blank" rel="noopener">Anthropic「How people ask Claude for personal guidance」公開</a> — Anthropic自身による Claude 利用実態調査(Anthropic Blog) / 2026-04-30</p>
+<p>  - <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE9BVGZ3amV1RDdQX09xWTJQUDMtWTB4OWpiZDZDVU9jTGVPMHJ4dTRaOVlXdEZuRGxFeEZPMlpTanIyV2RWSG9iLW8tX04yNnVTVXRmakdKUGxTYXlKWFJJ?oc=5" target="_blank" rel="noopener">ServiceNow、自律実行する「AI社員」管理環境を強化</a> / 2026-04-30</p>
+<p>  - <a href="https://techcrunch.com/2026/04/30/salesforce-is-crowdsourcing-its-ai-roadmap-with-customers/" target="_blank" rel="noopener">Salesforce、顧客と一緒に AI ロードマップをクラウドソース</a> / 2026-04-30</p>
+<p>  - <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9KU1cyTkgwSG9XWjZ6QjdDZFRSZENvRWFuVXVrVWZrNHRuUTdqdnE2ZHZBbUlXXzhiejlqRHZEOXZ2Y2JESXVBTDZMMW80NGR2SURkZ0JhN000am9iYk5mc1loX19tTE9obWNwQ2N5Um54OERDVjc5X2NwYUQ2WG8?oc=5" target="_blank" rel="noopener">楽天トラベル「Rakuten AI」に予約機能追加</a> / 2026-04-30</p>
+<p>  - <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPRk5vbmt1Mk8tR2hsZENYMHZSQlZkOHdpeE9ncXQ3RnNhdDJmZTlvQ3ZsUDJ2SmlIMXdvY2Z4a0JlTG92SndZcjllM3J5dlZ6VTJoRjhwbk5DelZzakw3bVFXWHpiTEhxOEpOR1lJZmJBX1JCNFZ6dWoxLXUyLUNDazdQVEM4cER6TjBhb2NmYkZUeHlNcXpKQkF3RmlEaUNjWWZvYg?oc=5" target="_blank" rel="noopener">AWS Solution Provider Caylent、Anthropic Claude 専門ユニットを設立</a> / 2026-04-30</p>
+<p>  - <a href="https://techcrunch.com/2026/04/30/x-announces-a-rebuilt-ad-platform-powered-by-ai/" target="_blank" rel="noopener">X、AI による広告プラットフォーム再構築</a> / 2026-04-30</p>
+
+<ul>
+<li><strong>業界マクロ・政策</strong></li>
+</ul>
+<p>  - <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZzQ3aV9wSjl0bkVOSFgyaEtERzVKSmlEZkJLNngtUkp0eF8tc3BsQzJBRkJMeXpVM1NtS18wenlWc3U0U1oyRXo2WHNKNnpFVExWeUpyMkdxZUQzeng1cHZNdHl2UVlWQnRIWE4tbm5zQVJ3azd3LTUzQVAzWTdJSXdCLXRQQnoz?oc=5" target="_blank" rel="noopener">米Q1 GDP +2.0% 成長、AI 投資が下支え</a> / 2026-04-30</p>
+<p>  - <a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1SeDVfdmZVUlhtcGhCOTZMY3RyeDVBVVE4cFBPNHk2ZmFyY1JhR3hrYzRMbkk5WVcyQ3lvNW13ZzhoS0ota2dXMXEyRGVJbUQ2VFlJ?oc=5" target="_blank" rel="noopener">米調査:政府の AI エージェント導入が民間部門を上回る可能性</a> — ZDNET Japan / 2026-04-30</p>
+<p>  - <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxPVklWQnVZZzQ1d0dHUmJ5aVN1T3ZHVTBqMUNsLWgxdjBvRzJsRFFudG9vbk5KZUs4R29naWFUZHU4eHllQmt3N0NCN0RlM1VxRjA2NmltTjFpOTVnYjBJc3ktQTctYkhjbmVhNVZqUWNPdks4ZkJpYTVqek1xSXpPZGJoSjNzel95Y3E3Nnhpa09fSlVEWXhxX010UGFXa0txT2FQOXhTajNrZmJ5VHg5MkJQbENtQUFwdEZMQQ?oc=5" target="_blank" rel="noopener">Forbes: Claude Mythos が輸出規制を「盲目的予測」に貶める</a> — 規制論の急展開 / 2026-04-30</p>
+
+<ul>
+<li><strong>国内動向</strong></li>
+</ul>
+<p>  - <a href="https://monoist.itmedia.co.jp/mn/articles/2605/01/news024.html" target="_blank" rel="noopener">横浜ゴム、AI×シミュレーションでタイヤ金型設計を加速</a> / 2026-04-30</p>
+<p>  - <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9tRW1JNklCdW9NTUk3N3F2cEhHQ0pQT1FRV1BpanNkZlhiOTY5SHlZWG9semFkVnFtNi1fS2JvWnZpdE4tNU53d3VGbHJEMUpZN0VnOUZyaUUwanpPREJNdUdPYXpZNGVSNWdjZTNQai1CQVV2VTdxcHQycHVaYkk?oc=5" target="_blank" rel="noopener">都内小中高生の4割が「宿題にAI利用」(東京都調査、1年で倍増)</a> / 2026-04-30</p>
+<p>  - <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE40dDh2OW1rLTByNTFyZHp1eUZqbjJOa01lYk5oLWcwVTZtMXF6bWg0b2hreEZlWUR2TElkdnI2Nm9oOE1XYVl4UHUzei1xblhxLWNocDE5YW50NkNEZU5XQzJDOEI4Q1dhSVlTRERUc0ZnWWZrVmhNTXhadnVrdEU?oc=5" target="_blank" rel="noopener">10代女性の半数がAIに悩み相談(共同通信)</a> — 男性は3割未満 / 2026-04-30</p>
+<p>  - <a href="https://xtech.nikkei.com/atcl/nxt/mag/nnw/18/041600243/041600001/" target="_blank" rel="noopener">日経クロステック特集: 運用現場の生成AI活用、3つの使いどころ</a> / 2026-04-30</p>
+
+<ul>
+<li><strong>コミュニティ・カルチャー</strong></li>
+</ul>
+<p>  - <a href="https://twitter.com/theo/status/2049645973350363168" target="_blank" rel="noopener">Hacker News: Claude Code が &quot;OpenClaw&quot; 含むコミットを拒否(or 課金増)</a> — バイラル話題 / 2026-04-30</p>
+<p>  - <a href="https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/" target="_blank" rel="noopener">Shai-Hulud風マルウェアが PyTorch Lightning に混入</a> — サプライチェーン攻撃 / 2026-04-30</p>
+<p>  - <a href="https://www.theverge.com/ai-artificial-intelligence/915970/meta-manus-ai-ads-website-slop" target="_blank" rel="noopener">Meta が買収した Manus、「AI で簡単に儲かる」広告で炎上</a> / 2026-04-30</p>
+<p>  - <a href="https://www.theverge.com/tech/921159/smart-glasses-review-wearable-even-realities-g2-meta-ray-ban-rokid-lucyd-oakley-meta-vanguard" target="_blank" rel="noopener">The Verge: スマートグラスは増えたが「やることがない」</a> / 2026-04-30</p>
+
+<ul>
+<li><strong>続報(昨日以前のダイジェスト掲載済み)</strong></li>
+</ul>
+<p>  - Musk vs Altman 公判: Birchall 証言 + 全証拠まとめ(<a href="https://www.theverge.com/ai-artificial-intelligence/921713/musk-v-altman-jared-birchall-screw-up-xai" target="_blank" rel="noopener">The Verge</a>)</p>
+<p>  - Microsoft-OpenAI 提携改訂の詳細解説(<a href="https://www.theverge.com/tech/921210/microsoft-openai-partnership-divorce-notepad" target="_blank" rel="noopener">The Verge</a>)</p>
+<p>  - SoftBank Roze IPO計画(複数報道)</p>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>「AIで攻撃」と「AIで防御」が同日に進む構造</strong> — Mythos の脆弱性発見能力に対し、Anthropic 自身が Claude Security で守る側を提供。同じ会社が攻撃可能性と防御能力を両売りする時代の倫理は?</p>
+<p>2. <strong>distillation は規約違反か独立技術か</strong> — Musk の証言は「OpenAI のモデルを使って訓練した」を含意。これが各社利用規約の禁止条項に該当する場合、業界全体に距離感の再定義が及ぶ。DeepSeek にも飛び火するか。</p>
+<p>3. <strong>「AIエージェントが買い物する」の決済インフラ標準化</strong> — Stripe Link は Visa/Mastercard 直結のエージェント決済を正式に支える。エージェント側の偽トランザクション、過剰課金、責任分界が新たな論点に。</p>
+<p>4. <strong>解釈可能性ツール(Goodfire Silico)が規制側に効くか</strong> — モデルの内部を覗く技術が EU AI Act の透明性義務を満たす実装手段になり得るか。</p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>agentic-ai</code> トピック蓄積推奨</strong>: Stripe Link、Anthropic Claude Security、Anthropic「How people ask Claude」、ServiceNow AI社員、Salesforce ロードマップ</li>
+<li><strong><code>ai-companies</code> トピック蓄積推奨</strong>: Anthropic $900B 進捗(48時間アロケーション)、Meta $25B 社債、Apple Mac供給制約、Legora $5.6B、Datadog顧客化、Caylent専門ユニット</li>
+<li><strong><code>ai-regulation</code> トピック蓄積推奨</strong>: Musk証言(distillation)、White House サイバー要請、Forbes Mythos輸出規制論、OpenAI Yubico統合</li>
+<li><strong><code>llm-evaluation</code> トピック蓄積推奨</strong>: Goodfire Silico、IBM Granite 4.1</li>
+<li><strong><code>multimodal</code> トピック蓄積推奨</strong>: Gemini in cars、DeepMind co-clinician、スマートグラス記事</li>
+<li><strong>深掘り候補(WebFetchで一次情報確認推奨)</strong>:</li>
+</ul>
+<p>  - Anthropic Claude Security の対応言語・統合形式</p>
+<p>  - Stripe Link の AI エージェント承認フロー仕様</p>
+<p>  - Goodfire Silico の技術ブログ</p>
+<p>  - Musk 証言の正確な distillation 言及内容</p>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>
