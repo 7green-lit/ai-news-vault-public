@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-05-17 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-05-17 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>Anthropic、エージェント AI の「不適切な目標達成行動」抑制訓練手法を公開</strong>(Ledge.ai — 「なぜ正しいか」の理由学習が RLHF を超える、Mythos 系の自律エージェント基盤強化)、<strong>Anthropic AI は「夢を見る」 — 自己改善型エージェント構築へ</strong>(Business Insider — Synthetic / Richard Socher と並走)、<strong>「AI エージェントが侵入経路」「レビューが追い付かない」 — 自律化するほど必要なガバナンス</strong>(@IT 詳報)、<strong>OpenAI Greg Brockman がプロダクト戦略を統括</strong>(TechCrunch — 前日「役員シャッフル」(2026-05-16)の中身判明)、<strong>Cerebras $60B 評価、初期は月 $8M 燃やしていた</strong>(TechCrunch — IPO 後の振り返り)、<strong>The haves and have nots of the AI gold rush</strong>(TechCrunch — AI バブル格差論)、<strong>Nectar Social $30M Series A</strong> Menlo リード(マーケティング OS)、<strong>arXiv AI 全自動論文の著者を 1 年 BAN</strong>(英語版 TechCrunch 続報)、<strong>OpenAI vs Anthropic — 24時間差で対極の AI 規制論</strong>(JBpress / 米中首脳会談裏側)、<strong>米中が恐れる「最悪のシナリオ」AI 対話で協調探る</strong>(毎日新聞)、<strong>台湾なしでは生成 AI は成立しない — 習近平の核心的利益</strong>(日経)、<strong>「中国なしに AI グラスは作れない」 — サプライチェーン80% 掌握</strong>(Yahoo)、<strong>韓国ネイバー AI 検索に「信頼できる出典」表示</strong>、<strong>ロボット盲導犬登場 — 育成コスト500万円の壁を AI が突破</strong>(Forbes)、<strong>上場企業 27年3月期 6 年連続最高益 — AI ブームが原油高を吸収</strong>(日経)、<strong>AI 検索でも SEO は変わらない — Google が解説</strong>、<strong>若手を AI で代替する企業は 10 年後にスキルが断絶</strong>(TechTarget)、<strong>なぜ AI 導入は失敗するのか — 経営層が軽視する「デジタルワーカー教育」</strong>(Forbes)、<strong>Sony Xperia 1 XIII AI Camera Assistant 釈明</strong>(The Verge)。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>Anthropic、エージェント AI の「不適切な目標達成行動」抑制訓練手法を公開</h3>
+<ul>
+<li><strong>要約</strong>: Ledge.ai。<strong>Anthropic がエージェント AI の「不適切な目標達成行動(misaligned goal-pursuing)」を抑える訓練手法を公開</strong>、<strong>従来のチャットベース RLHF では不充分</strong>、<strong>「なぜそれが正しいか」の理由を学習させることが重要</strong>と論文発表。Mythos 系の自律エージェント拡張(2026-05-16 Apple 脆弱性発掘)、Anthropic + Gates 財団 $200M(2026-05-15)、Veeam AI エージェント暴走対策(2026-05-16)と並走する<strong>「自律エージェント × ガバナンス」</strong>領域の核心研究。<strong>「AI psychosis 企業」(Mitchell Hashimoto, 2026-05-16)、AI ラジオホスト実証(同日)に対する解法側の提示</strong>。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>llm-evaluation</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE5vOTdHYnpyLUdtdklKVjZoMmJ6MkU2aXR1RlVzaGZKcVBwQkJMa01PNW12dWF5YnNZbjQxQXVXbkx4X1VuY210X0NIdlRqa1hyWUdYc3NJbW1MZnd4TnZLbm1TVnVGcW4wU3licVBsbFlrWEk?oc=5" target="_blank" rel="noopener">Ledge.ai</a> / 2026-05-17</li>
+</ul>
+
+<h3>Anthropic AI は「夢を見る」 — 自己改善型エージェント構築へ</h3>
+<ul>
+<li><strong>要約</strong>: Business Insider Japan。<strong>Anthropic が「AI が夢を見る(オフライン自己内省)」という機構を経て自己改善型エージェントを構築</strong>するアプローチを発信。<strong>Richard Socher Synthetic $650M「AI が AI を作る」</strong>(2026-05-14)、OpenAI 役員シャッフル(2026-05-16)、Greg Brockman プロダクト戦略統括(同日)と並走する<strong>「自己改善 × 自律エージェント」最前線</strong>。前項の「不適切目標抑制」と並ぶ Anthropic 同日発信、<strong>Anthropic がエージェント基盤思想で OpenAI に一歩先行</strong>を狙う構図。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>ai-models</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1xNEhZdGE4eWtWM2ZJV2tydE1CWUZteGJJV3FteG1jSmFqdGtLbjRVVGtIb1d5aWREZWRycC1KbUl1UV9naTc0Q2xDY25GVGhNSmh0cVZCWk93ak5WU0FicEI1aURFR0ZWSkJtdmtXSEc0SUZzeWRSdFE5V1pUZw?oc=5" target="_blank" rel="noopener">Business Insider Japan</a> / 2026-05-17</li>
+</ul>
+
+<h3>「AI エージェントが侵入経路」「レビューが追い付かない」 — 自律化するほど必要なガバナンス</h3>
+<ul>
+<li><strong>要約</strong>: @IT / ITmedia 共通記事。<strong>自律 AI エージェント時代の運用設計が問われる段階に到達</strong>、<strong>「AI エージェントそのものが侵入経路になる」「レビューが追い付かない」</strong>といった現場課題を体系化。<strong>Veeam AI エージェント暴走対策(2026-05-16)、Anthropic 不適切目標抑制(同日)、AI psychosis 企業(2026-05-16)と直結</strong>、エージェントハブ化(SAP / Notion / Microsoft / Salesforce)が標準化された今、<strong>エージェント運用 SecOps / GovOps が次の主戦場</strong>へ。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>ai-regulation</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/17/news003.html" target="_blank" rel="noopener">@IT</a> / <a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1zd3dTbU03ZDV6eV9QSjZvd1VuSmUyMmhfcGVBRTJ3c3RBM1ZLcFlTdzVCdGI3Sk9HQUZNNXpRamtOdFlUakRZWUtDTk9ycjJFTTRtTjg3N0FVRXBoX3RGT2RPUTUzTHNONW5GUERHOW5CZw?oc=5" target="_blank" rel="noopener">ITmedia</a> / 2026-05-17</li>
+</ul>
+
+<h3>OpenAI 共同創業者 Greg Brockman、プロダクト戦略を統括へ</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch スクープ。<strong>OpenAI 共同創業者 Greg Brockman がプロダクト戦略を統括</strong>、前日「役員シャッフル」(2026-05-16)の中身判明。<strong>AI エージェント戦の勝者を狙う</strong>(The Verge, 同日)布陣として、<strong>創業者を製品最前線に配置</strong>する象徴的人事。Musk × Altman 公判 Week 3(2026-05-16)で Brockman が「Greg Altman」と誤称されたエピソードと対照的に、<strong>OpenAI 中核プロダクトレイヤの再集中</strong>を示す。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/16/openai-co-founder-greg-brockman-reportedly-takes-charge-of-product-strategy/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-17</li>
+</ul>
+
+<h3>Cerebras $60B 評価、初期は月 $8M 燃やしていた</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 振り返り。<strong>Cerebras($60B 評価、$5.5B IPO 2026-05-14)が初期には月 $8M を燃やしていた</strong>段階を振り返り、<strong>「あの頃ほぼ死にかけていた」</strong>回顧。<strong>AI チップ専業の超長期勝負</strong>を示すケーススタディ、NVIDIA $40B(2026-05-09)、AMD × IBM(2026-05-16)、Intel 1.8nm、Google TPU 8i/8t、SpaceX Terafab と並ぶ<strong>AI 半導体多極競争</strong>の歴史的文脈。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/16/60b-ai-chip-darling-cerebras-almost-died-early-on-burning-8m-a-month/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-17</li>
+</ul>
+
+<h3>The haves and have nots of the AI gold rush</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 評論。<strong>AI ゴールドラッシュの「持つ者と持たざる者」格差</strong>を構造分析、<strong>AI 大手 + GPU 富裕層 vs その他</strong>の二極化が<strong>IPO・採用・データ・電力 4 軸で顕在化</strong>。Cerebras $5.5B(2026-05-14)、xAI スタッフ流出50名超(2026-05-15)、Silicon Valley 電力不足(2026-05-16)、米国民 DC 反対70%(2026-05-15)と並ぶ<strong>AI ブーム構造論</strong>の総合考察。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-infra</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/16/the-haves-and-have-nots-of-the-ai-gold-rush/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-17</li>
+</ul>
+
+<h3>上場企業27年3月期、6年連続で最高益 — AI ブームが原油高を吸収</h3>
+<ul>
+<li><strong>要約</strong>: 日経新聞決算記事。<strong>上場企業の27年3月期決算予想で6年連続最高益</strong>、<strong>AI ブームが原油高による圧迫を吸収</strong>。レゾナック AI 特需2.3倍(2026-05-15)、SBG Arm、信越化学、SUMCO 等 AI 半導体材料銘柄の好調が<strong>マクロ指標として確認</strong>された段階。<strong>「AI 需要 = 国内製造業の主動力」</strong>という構図が決算で明示。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9MZEs4SEFHNVpvZ0FSWXVNejVCNWs4NUtueWFyNVkxMnZFb2NVX2M0Ml9aa09Va21uc05fN3NLenNmQU9HZHloLVNJTkYtWl9vSzJqTHBOaGxMdVY5cEZ4OGFsSHYyaFJZQ21USQ?oc=5" target="_blank" rel="noopener">日本経済新聞</a> / 2026-05-17</li>
+</ul>
+
+<h3>台湾なしでは生成 AI は成立しない — 習近平の核心的利益</h3>
+<ul>
+<li><strong>要約</strong>: 日経新聞分析。<strong>台湾(TSMC)なしでは現在の生成 AI は成立しない構造</strong>、<strong>習近平氏がこだわる「核心的利益」の本丸は AI サプライチェーン</strong>と分析。米中 AI 対話協調(同日 毎日新聞)、AI 規制主導権争い(同日 JBpress)、AI グラス中国80%(同日)と並ぶ<strong>AI 地政学</strong> 4 連発。台湾有事リスクは<strong>AI 産業全体の最大単一リスク</strong>として明示化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-infra</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9yU3U5RnpzdUZtaWRHNkp2aUhfdUpHdHppTWJMU083MU1Pb04zYjRlQzloY09Xb0pPNG9HZHVHVUlsdElEcmFkaktTQ3pjbWlkdW8zSXJrRTUtS0dqdER5WGN3YlhZVjAtT05PSQ?oc=5" target="_blank" rel="noopener">日本経済新聞</a> / 2026-05-17</li>
+</ul>
+
+<h3>OpenAI vs Anthropic — 24時間差で対極の AI 規制論</h3>
+<ul>
+<li><strong>要約</strong>: JBpress 連載「生成 AI 事件簿」。<strong>米中首脳会談の裏側で、OpenAI が「中国を含めるべき」、Anthropic が「中国を引き離すべき」という24時間差で対極の AI 規制論を表明</strong>。AI 覇権の次の戦場は規制側に移行、<strong>ベンダー間の地政学スタンス分化</strong>が鮮明化。Anthropic + Gates 財団(2026-05-15)、OpenAI × Malta(2026-05-16)、米中 AI 対話協調(同日 毎日)と並ぶ<strong>AI ガバナンス国際レイヤ</strong>の主戦場化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5yNVhhVVBuTXU1T1BpWFdicHdzVmRfQldHY2diZDJOT0UwUUZDQkRrREtSdUdwMl9xYkxhdTJKSHREblVEUkdKd1Z3TVJpVTlra2xYQzNB?oc=5" target="_blank" rel="noopener">JBpress</a> / 2026-05-17</li>
+</ul>
+
+<h3>Anthropic Mythos / arXiv BAN(英語版続報) — 学術品質維持の本格執行</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 詳報。<strong>arXiv が「AI に全てを任せた論文」の著者を1年間 BAN するポリシーを公式化</strong>(2026-05-14 ポリシー → 2026-05-16 The Verge 報道 → 2026-05-17 TechCrunch 続報)。<strong>研究者単位の制裁を学術プラットフォームが本格運用</strong>する歴史的事例。HackerOne 受付停止(2026-05-11)、AI 申請洪水(2026-05-12)、Frontier AI × CTF(2026-05-16)と並ぶ<strong>学術・セキュリティ・行政の AI slop 境界線設定</strong>の連続実装。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>llm-evaluation</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-17</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>Nectar Social、$30M Series A — Menlo Ventures リード(マーケティング OS)</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>マーケティング OS「Nectar Social」が Menlo Ventures リードで $30M Series A 調達</strong>、ブランド・パフォーマンス・コンテンツ・コマースを統合する AI ネイティブマーケ基盤。Adobe「AI に無視されるブランドは消滅」(2026-05-15)、Google 検索スパム規約 AI 操作禁止(2026-05-16)に並ぶ<strong>AEO 時代のマーケスタック再構築</strong>事例。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/16/marketing-operating-system-nectar-social-raises-30m-series-a-in-round-led-by-menlo/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-17</li>
+</ul>
+
+<h3>米中が恐れる「最悪のシナリオ」 — AI 対話で協調探る</h3>
+<ul>
+<li><strong>要約</strong>: 毎日新聞「AI 新世紀」連載。<strong>米中首脳会談の裏側で AI 対話チャネルが設けられ、両国が「最悪のシナリオ」(暴走 AI / 自律兵器 / インフラ攻撃)を共通認識として協調点を探る</strong>段階に。日経「台湾なし 生成 AI 成立せず」(同日)、JBpress「AI 規制対極論」(同日)と並ぶ<strong>米中 AI 外交</strong>の同日 3 連発、<strong>規制レイヤが主戦場化</strong>の文脈整理。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFBVczhzZG5ZWmh1ZGxJUVAteFE5MmVIWFBvQmdpWFpBdHBYYm9iclRaTGlDaGhKVDBBV0pGODgxMVVsaGdVTlRYSmtiWGhmV3p1V0NFNnBZamJHbDQ3Uk03SFJSTVhPZUR3?oc=5" target="_blank" rel="noopener">毎日新聞</a> / 2026-05-17</li>
+</ul>
+
+<h3>「中国なしに AI グラスは作れない」 — サプライチェーン80% 掌握</h3>
+<ul>
+<li><strong>要約</strong>: Yahoo ニュース(東洋経済 / 週刊エコノミスト系)。<strong>AI グラス(Meta Ray-Ban / Apple AR 等)製造サプライチェーンの80% を中国が掌握</strong>、<strong>「中国なしに AI グラスは作れない」</strong>と分析。台湾 = 生成 AI(同日 日経)、AI 規制対極論(同日 JBpress)と並ぶ<strong>AI 地政学</strong>の周辺機器層、Physical AI / ウェアラブル領域の地政学リスク。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>physical-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5PdWcwQmp0UUlJYjd2MXJBQ1pTd3FoQ3dfU2hUZURWUW5CYVRsVHpPQ0RvNERkRXcyOUxfU2RIbWxfcE5RMUh0bHowTTZFMEdNQm9DSFNpUmRWZUJ4bUNONENScC1IT3NTdGo3MkFCcUlHY0h5Zm9wUzF4c1N5eGM?oc=5" target="_blank" rel="noopener">Yahoo ニュース</a> / 2026-05-17</li>
+</ul>
+
+<h3>韓国ネイバー、AI 検索に「信頼できる出典」表示</h3>
+<ul>
+<li><strong>要約</strong>: KOREA WAVE / Yahoo。<strong>韓国ネイバーが AI 検索の信頼度を向上するため「信頼できる出典」を明示表示</strong>する機能を開始。<strong>Perplexity / SearchGPT / Google AI Overviews / Bing 等の AI 検索全体に共通する課題</strong>への一国対応事例、朝日 × 日経 vs Perplexity 訴訟(2026-05-15)、Google スパム規約改定(2026-05-16)と並ぶ<strong>AI 検索 × 出典明示</strong> の規範形成。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1hb3JObnk5SjhQNWk4M2dySUlTUk9EbTVNYjk2QUk2dG9BNmhYTFVYd0J1RUczbXJsTTJjbERqV2pBZ2VjQ3lZRGc3VW9TT044MlhfeW5OWWZ4QndZTkV4N3AyZjQ5WnJUNFlBdmlqODZJNWtvY2lNRmVOVXFQNEU?oc=5" target="_blank" rel="noopener">KOREA WAVE / Yahoo</a> / 2026-05-17</li>
+</ul>
+
+<h3>AI 検索でも SEO は変わらない — Google が解説</h3>
+<ul>
+<li><strong>要約</strong>: ツギノジダイ。<strong>Google が「AI 検索(AI Overviews)時代でも SEO の本質は変わらない」と公式解説</strong>、必要・不要な対策を明確化。一方で Adobe「AI に無視されるブランドは消滅」(2026-05-15)、Nectar Social $30M(同日)、Google 検索スパム規約 AI 操作禁止(2026-05-16)と並走する<strong>AEO 時代の規範</strong>の二重メッセージ:「ファンダメンタル不変、操作行為は明示禁止」。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5tblpOU2FRaU9jTEtWNHBlbGhtdDNmV1lwQUlHRzZhanc2bVZodUZHUTAyd3FDeEE5YWVmanByaElEQnd5c0tUSkJEa01JTE9WR3c?oc=5" target="_blank" rel="noopener">ツギノジダイ</a> / 2026-05-17</li>
+</ul>
+
+<h3>若手を AI で代替する企業は10年後にスキルが断絶 — TechTarget</h3>
+<ul>
+<li><strong>要約</strong>: TechTarget Japan / Yahoo。<strong>新人・若手領域を AI で全代替する企業は、10年後に「シニア育成パイプライン」が断絶する</strong>と警鐘。AI 導入7割格差(2026-05-16)、AI psychosis 企業(同日)、AI 導入失敗論(同日 Forbes)と並走する<strong>人材育成 × AI のジレンマ</strong>の戦略論。<strong>「短期生産性 vs 中長期スキル蓄積」</strong>の経営判断。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5ibjZMczdDTlU2N2JIMTV0UXU1Z3diZXZaYVJ1RWF0N052YWJTMGJDU2hIOXRTVG5qd0ExWW8yNDM3ZFFjTWRiNGJHNWJDX1hFYmVpZ0N4bWxBVlNMUUVvazhRV3FrM1lETTkzSl90dDlUV3pNNlAzUkd0MHF3X00?oc=5" target="_blank" rel="noopener">TechTarget / Yahoo</a> / 2026-05-17</li>
+</ul>
+
+<h3>なぜ AI 導入は失敗するのか — 経営層が軽視する「デジタルワーカー教育」(Forbes)</h3>
+<ul>
+<li><strong>要約</strong>: Forbes JAPAN。<strong>AI 導入失敗の主因は「デジタルワーカー(社内 AI 活用人材)の教育を経営層が軽視」</strong>にあると分析。AI 導入7割格差(2026-05-16)、若手 AI 代替リスク(同日)、生成 AI 業務効率化8選(2026-05-16)、AI psychosis 企業(同日)と並ぶ<strong>「AI を使う側」論議</strong>、<strong>コンサルティング/研修需要の継続的拡大</strong>を示唆。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE5PSWR0bTRNTV9BQTBadGxldHNRWm1mLXhnUXR2ZnBlUDZYQ3pPNENFcE8yLS1DTUMtQmZKTk5PRlZ4WnR4Zk5aU3ZqTXBtNmVBVmNjSHE5Q20?oc=5" target="_blank" rel="noopener">Forbes JAPAN</a> / 2026-05-17</li>
+</ul>
+
+<h3>盲導犬育成コスト500万円の壁、AI が突破 — ロボット盲導犬登場</h3>
+<ul>
+<li><strong>要約</strong>: Forbes JAPAN。<strong>盲導犬育成コスト500万円 × 1頭育成期間2年の構造的壁を AI が突破</strong>、<strong>言葉を話すロボット盲導犬が登場</strong>。Physical AI × 福祉 × 国内事例、NVIDIA SANA-WM(2026-05-16)、renue Drawing Agent(2026-05-15)、デンソー SCM(同日)と並ぶ<strong>実世界 AI 応用 + 国内事例</strong>。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE8wUmVxMFJtRkU4RlQzYXB0RW5WeXltQ0pWTXRlNGdHZkM3UFZNZUROQTNneGlxQnB0UUc5NjhfdUlicEktazFnNkR3bXRVbGJNMUM3bThGb2Q?oc=5" target="_blank" rel="noopener">Forbes JAPAN</a> / 2026-05-17</li>
+</ul>
+
+<h3>Sony Xperia 1 XIII の AI Camera Assistant、Sony が「悪くない」と釈明</h3>
+<ul>
+<li><strong>要約</strong>: The Verge。<strong>Sony Xperia 1 XIII の AI Camera Assistant に「悪い」評価が広がる中、Sony が機能の意図と設計を釈明</strong>。Xperia 1 VIII デザイン一新(2026-05-15)、iOS ビジュアルインテリジェンス(2026-05-14)と並ぶ<strong>スマホ × AI カメラ UX 戦争</strong>の最新章、Apple Intelligence の不振と並走する<strong>カメラ × AI Agent 体験の難所</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.theverge.com/tech/932133/sony-xperia-1-xiii-ai-camera-assistant" target="_blank" rel="noopener">The Verge</a> / 2026-05-17</li>
+</ul>
+
+<h3>AI 規制の主導権は誰が握るのか — JBpress 連載総論</h3>
+<ul>
+<li><strong>要約</strong>: JBpress「生成 AI 事件簿」。<strong>AI 規制の主導権争いを5回連載で詳報</strong>(本記事は1/5)、OpenAI / Anthropic の対極論(同日)、米中対話協調(同日 毎日)、台湾 = 生成 AI(同日 日経)、AI グラス中国80%(同日)を統合する<strong>AI ガバナンス国際レイヤの構造論</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5yNVhhVVBuTXU1T1BpWFdicHdzVmRfQldHY2diZDJOT0UwUUZDQkRrREtSdUdwMl9xYkxhdTJKSHREblVEUkdKd1Z3TVJpVTlra2xYQzNB?oc=5" target="_blank" rel="noopener">JBpress</a> / 2026-05-17</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1DUDJ0cldBLWpublVhekg2X3FsdldMZUZnNk5rRFl4RUxFR3R6R2FBUzFXcDBfMWhPQnNXR3NidHhuLXBIODRlcW1sMGZHUFVOSmpLZy1RUkZZUWNNaWxpUEx6eS1hM256MkdrQUd5SDRNdXNSRVBDX1JwUE85QVk?oc=5" target="_blank" rel="noopener">AI で労働時間を増やすな — 20年勝ち抜く起業家が教える「穏やかな起業」(Yahoo)</a> — Calm Company × AI 哲学論</li>
+<li><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE82bE5IV0RMb25BVG1reFBwTW5sYTk1ZmI4NDdLeFRib1JYcGdtUzhieS1pelZDblJFcDQ5ZVZDMHEwN1hfS3FxTjdNRC1qbVE4Ujg4cDVBZ2hrU0NjRzNNYzFyLW5fWlBNZzRjT3BiUWlUV055ODB1R0dzbzAzNGM?oc=5" target="_blank" rel="noopener">AI が1秒で出す「100案」より、人間が1時間悩む「1案」が強い(ダイヤ・オンライン / Yahoo)</a> — 人間の判断価値論</li>
+<li><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE1qUU9vZXhjcktzdEpwRTY3WEpMYjZOdWpTZU53dWdyVnZzVng5ZWkxSDEwNzVvMk1pYmxfSzNkRVRpTHNFYVB6aDNzdVJEeWl4YU14RDZOS3U?oc=5" target="_blank" rel="noopener">人間らしさこそが最強の武器 — AI 時代のビジネス戦略(Forbes)</a> — ヒューマンスキル戦略</li>
+<li><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5sNDl5S3pMZEc1Zzc5U1VGVEh6T3hRWEhjRlRaM21feDZzVVo5SW1GZzJzd3FxdjBpcDN2b2gyTmZBdjBaR2FUUlh6cHRvRktmTDloYVZPdXJpTWFjcllKc2t4ZGRNVDI2LU16bDJEeUtPZ1BKSEdMWTRwRFg2aVE?oc=5" target="_blank" rel="noopener">AI は複雑で難しい?「人体に例える」と理解・活用しやすくなる(Yahoo)</a> — AI リテラシー啓発</li>
+<li><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNNTVTYnJKQ2w5LV9EbWJNVEVTajFCMmE2dzM3ZG1qaHNBR3BhT1NBZVM4RVd3QlRzUXVIYlNaMlRxSE8zalY4elRKWUppajZtTlROWkVNWXdjMlc5NkFKWC1uSHJ1TmZ3VmxtZ25BdU1CUkxCOTB6OGE4QWNZQkM3VThGM0tNUmcyV1VPT25qMjB0UENkbk1DZHVqMkdKLUEwZUE?oc=5" target="_blank" rel="noopener">ヴィクトリアマイル2026 AI 予想(sportingnews)</a> — 競馬 AI 予想(エンタメ)</li>
+<li><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOeWtCTVRLV3BEdTRsTjN4c042STAxdm5DNFJ5R0N1NHpIblRoNE1RbDE2bzhMNzRaTlExalhLNVJYSFJwQzRrN3laSG5FdlZFdkI1LVo5OGZkRTlDODFzYVNOSXVXR3RFWGJEZkVhRGF3MG84U25LSWRCSnVVeXFfSk9n?oc=5" target="_blank" rel="noopener">スマホ・SNS・AI に関する質問募集 — 子ども科学電話相談(NHK)</a> — 子ども向け AI 啓発</li>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/17/news006.html" target="_blank" rel="noopener">イオン、神奈川で「駅前スーパー」強化(ITmedia)</a> — 流通戦略(AI 関連薄)</li>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/17/news004.html" target="_blank" rel="noopener">奄美のホテル、初年度1億円赤字から「癒し路線」で再生(ITmedia)</a> — 観光事業再生</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>Anthropic 同日2発(不適切目標抑制 + AI が夢を見る)</strong>: <strong>自律エージェント基盤思想で Anthropic が一気に押し出し</strong>、OpenAI(Brockman プロダクト統括)に対して<strong>研究 × 思想レイヤで先行</strong>を狙う構図 — エージェント運用ガバナンス(同日 @IT)もこの研究が直接の解</p>
+<p>2. <strong>AI エージェント運用課題が「侵入経路」「レビュー追いつかず」レイヤへ</strong>: SAP / Notion / Microsoft のエージェントハブ化が標準化された結果、<strong>運用 SecOps/GovOps が次の主戦場</strong>、Veeam(2026-05-16)・Anthropic 不適切目標抑制(同日)が解側ラインナップを形成</p>
+<p>3. <strong>AI ガバナンス国際レイヤの4連発(米中対話 / 規制対極論 / 台湾核心利益 / AI グラス中国80%)</strong>: <strong>AI 地政学が完全に主戦場化</strong>、生成 AI / Physical AI / AI グラス / 規制論まで一気通貫の中国-米国 軸論議が表面化</p>
+<p>4. <strong>AI 導入失敗の連続論(7割格差 + デジタルワーカー教育軽視 + 若手代替リスク + AI psychosis)</strong>: <strong>「AI を使う側の人間」</strong>論議が日本市場で集中、コンサル・研修・人材育成領域の継続的拡大ニーズが裏付けられた</p>
+<p>5. <strong>The haves and have nots + Cerebras 振り返り + 上場企業最高益</strong>: <strong>AI ゴールドラッシュの3層(超勝者・国内製造業好調・敗者)</strong>が同日に確認、AI バブル構造論の整理段階</p>
+<p>6. <strong>韓国ネイバー「信頼できる出典」 + Google「SEO 不変」 + Nectar Social $30M + arXiv BAN 続報</strong>: <strong>AI 検索/AEO/AI slop 4 連発</strong>、AI コンテンツ流通の規範形成が同日に集中</p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>agentic-ai</code> 蓄積推奨</strong>: Anthropic 不適切目標抑制訓練、Anthropic「AI が夢を見る」自己改善、AI エージェント運用ガバナンス、OpenAI Brockman プロダクト統括、Sony AI Camera Assistant</li>
+<li><strong><code>ai-models</code> 蓄積推奨</strong>: Anthropic 自己改善エージェント、Anthropic 訓練手法(RLHF を超える理由学習)</li>
+<li><strong><code>ai-companies</code> 蓄積推奨</strong>: OpenAI Brockman、Cerebras 振り返り、AI gold rush haves/have nots、Nectar Social $30M、Anthropic 同日2発、AI 規制対極論、ネイバー出典表示</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: 米中 AI 対話協調、台湾 = 生成 AI 核心利益、AI 規制対極論(OpenAI vs Anthropic)、AI グラス中国80%、ネイバー出典表示、Google SEO 解説、AI 検索 SEO 不変、arXiv BAN 続報、エージェント運用ガバナンス</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: AI 導入失敗論(Forbes)、若手 AI 代替リスク、AI gold rush、上場企業最高益、Nectar Social マーケ OS、エージェント運用設計</li>
+<li><strong><code>consulting-ai</code> 蓄積推奨</strong>: AI 導入失敗(デジタルワーカー教育軽視)、若手 AI 代替リスク、AI リテラシー教育需要</li>
+<li><strong><code>ai-infra</code> 蓄積推奨</strong>: Cerebras 振り返り、AI gold rush、上場企業最高益、台湾 = 生成 AI、AI グラス中国80%</li>
+<li><strong><code>physical-ai</code> 蓄積推奨</strong>: AI ロボット盲導犬(育成500万円の壁突破)、AI グラス中国80%</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: 上場企業27年3月期6年連続最高益(AI ブーム決算分析)</li>
+<li><strong><code>ai-coding</code> 蓄積推奨</strong>: (本日該当無し)</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: ネイバー「信頼できる出典」(出典構造化)</li>
+<li><strong><code>llm-evaluation</code> 蓄積推奨</strong>: arXiv BAN 続報、Anthropic 訓練手法(理由学習)</li>
+<li><strong><code>logistics-ai</code> 蓄積推奨</strong>: (本日該当無し)</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>
