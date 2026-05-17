@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-05-18 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-05-18 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>Anthropic Mythos が Apple Mac セキュリティ機構を回避</strong>(LinkedIn — 5/16 続報、Apple OS の最深層に到達)、<strong>「AI Mythos で増す攻撃力」米サイバー防衛が「全部守るのは無理」と認める</strong>(ビジネス+IT — 攻撃側 AI の本格化)、<strong>中国の生成 AI ドラマ工場 — 1日470本・制作費9割減</strong>(MIT Technology Review)、<strong>中国ショートドラマに「AI 俳優」</strong>(日経) — <strong>中国 AI コンテンツ攻勢 3 連発</strong>、<strong>タイタンインテリジェンスが感情・声質も AI 吹き替え 200 言語対応</strong>(日経)、<strong>Eric Schmidt の AI コメンスメントスピーチを Univ of Arizona 学生がブーイング</strong>(The Verge / TechCrunch — AI 過信への学生反発)、<strong>Apple Siri 刷新で「自動削除チャット」</strong>(TechCrunch / The Verge)、<strong>Musk × OpenAI 公判で「信頼」が決定的論点に</strong>(TechCrunch — Week 3 続報)、<strong>AI エージェント進化で「SaaS の死」</strong>(日経ビジネス) — 同日に<strong>「人売りベンダーは悔い改めよ — SIer 下克上のチャンス」</strong>(日経クロステック)、<strong>荏原製作所「AI 内製 + マルチクラウド」 / NGK 化合物結晶探索 / アスカ × 東北大 AI ロボシステム / 積水化学 DX / SBI 新生銀脱インド製パッケージ</strong>(国内製造業 × AI 5 連発)、<strong>半導体売上8割増 月1000億ドル肉薄</strong>(日経クロステック、26年3月)、<strong>Google 最新 AI 半導体の設計思想転換</strong>(日経クロステック)、<strong>AI 投資が世界貿易を救済 — 2026年は2.5%減速予測</strong>(ダイヤモンド)、<strong>AI 画像普及で2割クリエーター減収 + 創作物と AI の区別必要 / 専門機関</strong>(日経 W 連発 — クリエイター労働市場の臨界)、<strong>Gemini 有料版が Gmail 連携大幅強化 — 1画面で作業完結</strong>(日経クロステック)、<strong>Best Software in Japan 2026 生成 AI 機能評価 — 3位 Notion</strong>(ダイヤモンド)、<strong>TechCrunch Mobility: 自動車業界の AI スキル軍拡競争</strong>、<strong>安野党首「みらい」AI で革新する民主主義</strong>(時事)、<strong>フィジカル AI 第104回 / 日本ロボット産業マーケ力</strong>(デジタルクロス + 日経クロステック)、<strong>DuckDB Quack プロトコル / AWS Interconnect multicloud(Oracle・Google 接続)</strong>(Publickey)。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>Anthropic Claude Mythos、Apple Mac セキュリティ機構を回避と報道</h3>
+<ul>
+<li><strong>要約</strong>: LinkedIn 経由報道。<strong>Anthropic の Mythos(自律 AI セキュリティリサーチエージェント)が Apple Mac の中核セキュリティ機構を回避</strong>してきたと指摘。Mythos Firefox 271件発掘(2026-05-08)、Anthropic Mythos × Apple ソフト脆弱性(2026-05-16)、macOS M5 初の公開カーネルメモリ破損エクスプロイト(2026-05-15)に直接連動、<strong>AI バグハンティングが Apple Silicon 最深層に到達</strong>した段階。<strong>Apple セキュリティの試練期</strong> + <strong>AI 攻撃側の能力臨界</strong>を同時に示す。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQTkNobkV1WlF3cnJSSS1PMnRoOEIxMHFFQ1lFV1cwczdFdDNWdHFqbmpTb1kydzZPa2plTlM4S3h4aWNXTEFSRzBZb0NmeFNQMHdTQzlTRVFmUUJNN0tYRXA2Nkh3alFMZnVhSWt2NG9nMVg3Uk9xSm9ZRjVub2pYWGpZUGVKZ3N0SUlCQQ?oc=5" target="_blank" rel="noopener">LinkedIn(Google News 経由)</a> / 2026-05-18</li>
+</ul>
+
+<h3>「AI Mythos で攻撃力増す」 — 米サイバー防衛、「全部守るのは無理」と認める</h3>
+<ul>
+<li><strong>要約</strong>: ビジネス+IT 詳報。<strong>米国のサイバー防衛コミュニティが「Mythos クラスの AI 攻撃エージェントの登場で、全防御は不可能」と公式に認めた</strong>段階。Mythos Apple Mac セキュリティ回避(同日 LinkedIn)、Google Wiz「AI で脆弱性発掘の速度と費用は劇的に変化」(2026-05-14)、Frontier AI × CTF(2026-05-16)と並ぶ<strong>AI × 攻撃側非対称優位</strong>の確立報道。<strong>「優先的に守るべき領域を選別する戦略」</strong>への防衛側パラダイム転換を提示。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>agentic-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE5wUE56aXQ4dHFyWmI4MDVQTnlqTUNVNGFlaGQ4TE1BZW5helhIZDdmbkVkbVhZSUk4Q0tjZTI4STVUVDgxdTB2ZzRPMEpfQkk?oc=5" target="_blank" rel="noopener">ビジネス+IT</a> / 2026-05-18</li>
+</ul>
+
+<h3>中国の生成 AI ドラマ工場 — 1日470本・制作費9割減</h3>
+<ul>
+<li><strong>要約</strong>: MIT Technology Review 詳報。<strong>中国がショートドラマ制作で生成 AI を全面活用、1日470本制作・制作費9割減</strong>を達成、<strong>世界のドラマ工場</strong>として急浮上。同日 日経「中国ショートドラマに AI 俳優」、日経「タイタンインテリジェンス感情・声質も AI 吹き替え200言語」と合わせて<strong>中国 AI コンテンツ攻勢 3 連発</strong>、<strong>Sora/Veo3 / SANA-WM(2026-05-16)に対する中国側の量産軸答え</strong>。エンタメ × Physical AI(俳優・吹替・音声)の交差点。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-models</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQaVRVRU9FTURVT1BuWGdicXpudVZDZVJSTjJYUkJBclU1WTlISUFaMUU2VUNFOHpCY1V2RDR3Mm5hSkEwZmFLS3NtWklRSS1KbjhyWkhPdVdzS3FIUzRDcWVYbWdYSXJHZ294QXJLZmIwRXItZGtoMkl4VGRra1BzaWswS0UzUXRoNkFqZlJwU0tuRjV1R01qSw?oc=5" target="_blank" rel="noopener">MIT Technology Review</a> / <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE54Z05MLTg1d2NiSVNMQ3VlR0xzY1R0aVFZeExhc3JOa0Z6djhEUXdIb3FENjlPZFhiMGVCQmlKR1hZTEV0STYzTGJNUmphV2FjMDJ6cENqSkVEcXNpWl9QSEpsY0NsTmdQLWZzQw?oc=5" target="_blank" rel="noopener">日経(AI 俳優)</a> / <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE05NmZIdEM4ZUZoVXhLZ3gwb0VLRVdxZnNwYXpPbEJQZEd6MWppdmlXbXVhSWp6aEVDRjAzdHZMUjE0TVJiOUxjQjhpb3QyMnNqaEkyQ2NKdWh1RW12dHNsVXNpZmhVTkxyMWhyUg?oc=5" target="_blank" rel="noopener">日経(タイタン200言語)</a> / 2026-05-18</li>
+</ul>
+
+<h3>AI エージェント進化で「SaaS の死」 — パラダイムシフトの行方</h3>
+<ul>
+<li><strong>要約</strong>: 日経ビジネス電子版。<strong>「SaaS の死」をエージェント時代のパラダイムシフトとして特集</strong>、SAP Autonomous Suite(2026-05-15)、Notion AI ハブ、Microsoft Edge Copilot、Veeam AI データ管理(2026-05-16)、エージェント運用ガバナンス(2026-05-17)と並ぶ<strong>「SaaS → エージェント基盤」</strong>移行論。「AI ネイティブか、死か」(2026-05-15 日本オラクル)、「人事領域は SaaS is Dead しづらい」(同日 リンクアンドモチベーション)に続く<strong>国内 SaaS 危機感</strong>の継続テーマ。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOUnBPdmdKdW1PQ18talJjeVBWSjhIMlJ0LXhLY1MzYW1VY0lvSHRLSVI3RGg5azZ6OElNb2FtVlVLcnNqcF8xLUxfTW9ENVRqdmFuazN5S2k0ZkxnUXBrblh5aGQ1U1g0VjdoaTVRbHJOWURSbG9mdnVHS2hnZURkVGxOeHVDdw?oc=5" target="_blank" rel="noopener">日経ビジネス</a> / 2026-05-18</li>
+</ul>
+
+<h3>「人売りベンダーは悔い改めよ — 今だけ SIer 下克上のチャンスあり」</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック評論。<strong>「人売りベンダー」(従来型 SES)の経営者に対し悔い改めを求める論考</strong>、<strong>生成 AI + エージェント時代に SIer 下克上のチャンスは今だけ</strong>と提示。OpenAI Deployment Co 客先常駐(2026-05-15)、Anthropic + OpenAI FDE + PE(同日)、アクセンチュア × Google Cloud(同)、アクセンチュア × Anthropic(2026-05-12)に続く<strong>コンサル/SIer 業界変革</strong>の国内論評、AI ベンダー直営 FDE との衝突を念頭に<strong>国内 SIer の生存戦略</strong>を直撃。</li>
+<li><strong>トピック</strong>: <code>consulting-ai</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/column/18/00148/051200435/" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-18</li>
+</ul>
+
+<h3>半導体売上高、驚異の8割増で月1000億ドル肉薄 — 26年3月</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック。<strong>世界半導体売上が前年比8割増、月1000億ドルに肉薄</strong>(26年3月実績)。レゾナック AI 特需2.3倍(2026-05-15)、上場企業27年3月期6年連続最高益(2026-05-17)、Cerebras $60B(同日)、AMD × IBM(2026-05-16)と並走する<strong>AI 半導体マクロ指標</strong>、<strong>「AI ブーム = 半導体産業のスーパーサイクル」</strong>を最も明確に示す数字。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/column/18/00001/11739/" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-18</li>
+</ul>
+
+<h3>Google 最新 AI 半導体、設計思想転換の狙い — 現地リポート</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック現地レポート。<strong>Google が投入した最新 AI 半導体(TPU 8i/8t 後継)の設計思想を現地リポート</strong>、<strong>汎用 AI チップから「Gemini エンドツーエンド最適化」への転換</strong>が浮上。NVIDIA $40B 投資(2026-05-09)、Cerebras IPO(2026-05-14)、AMD × IBM(2026-05-16)、半導体売上8割増(同日)と並ぶ<strong>AI 半導体多極化 + 自社特化路線</strong>の新フェーズ。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/column/18/03520/051500011/" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-18</li>
+</ul>
+
+<h3>Eric Schmidt の AI コメンスメントスピーチ、Arizona 大学生がブーイング</h3>
+<ul>
+<li><strong>要約</strong>: The Verge / TechCrunch。<strong>元 Google CEO Eric Schmidt がアリゾナ大学の卒業式で AI をテーマにスピーチ、学生からブーイング</strong>を浴びる。TechCrunch は別記事で<strong>「2026年に卒業式スピーチを行うなら AI に触れるな」</strong>と評論。AI 導入7割格差(2026-05-16)、AI psychosis 企業(同日)、若手 AI 代替リスク(2026-05-17)、AI 導入失敗論(同日)と並走する<strong>AI 過信への学生・人材側からの反発</strong>、AI ナラティブの飽和。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://www.theverge.com/ai-artificial-intelligence/932203/university-of-arizona-students-boo-eric-schmidt-ai-commencement" target="_blank" rel="noopener">The Verge</a> / <a href="https://techcrunch.com/2026/05/17/if-youre-giving-a-commencement-speech-in-2026-maybe-dont-mention-ai/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-18</li>
+</ul>
+
+<h3>国内製造業 × AI 内製/エージェント — 5連発(荏原 / NGK / アスカ / 積水化学 / SBI 新生銀)</h3>
+<ul>
+<li><strong>要約</strong>: 同日 5 連発の国内事例。</li>
+</ul>
+<p>  - <strong>荏原製作所「AI 内製 + マルチクラウド」</strong>(JBpress) — 2人の試作ボットから全社的生成 AI プロジェクトへ</p>
+<p>  - <strong>NGK 化合物結晶探索ソフト + 生成 AI で大規模計算コード</strong>(デジタルクロス) — マテリアル × 生成 AI</p>
+<p>  - <strong>アスカ × 東北大発新興 AI ロボシステムで人手不足解消</strong>(中部経済新聞) — Physical AI + 製造</p>
+<p>  - <strong>積水化学工業の現在進行 DX、基幹系刷新後の次の挑戦</strong>(日経クロステック)</p>
+<p>  - <strong>SBI 新生銀行、次世代勘定系刷新 — 脱インド製パッケージ</strong>(日経クロステック)</p>
+<p>  - デンソー SCM AI エージェント(2026-05-15)、レゾナック AI 特需(同日)、KDDI 基地局強化学習(2026-05-14)に続く<strong>国内 DX/AI 内製事例の集積週</strong>。</p>
+<ul>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>ai-data-structuring</code>, <code>physical-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9sVVBZdkFQNmdZUHBfZ3dlT0lEdHEwVWliWG5VYVJ4MTVEMGVXdVJIYkktNDFSTFJNUVdjRVNuVFRSOUJFdEZFdDNJVHBjWkF5amlwN0hR?oc=5" target="_blank" rel="noopener">JBpress(荏原)</a> / <a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE44azI4cjJRSC15UzdXYUNmSGFxbFVFSVlhZDA3Z0h4SE15YjFPby1CMDIwc0syWnhoa2ZucklKc1hRNUJNZVNCYzFnU1Z6UEdta0hGLTVRLUExbWpkT1pzdF9KUQ?oc=5" target="_blank" rel="noopener">デジタルクロス(NGK)</a> / <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE11cWduMXJsOXJzOUQ0aERQU1Z5WV91cXY3UnhBVXNkVFZPNHF5UGkwT0E2SnhNTFZNbjdJcG1KMkVDM05VME5tT3hZdk1SNF9ZUUc1eW5PdU1Ma1hzZlNrbmNjTUJ4MGlmTDFxQ3pHMngyMmM?oc=5" target="_blank" rel="noopener">中部経済新聞(アスカ)</a> / <a href="https://xtech.nikkei.com/atcl/nxt/column/18/03585/051400005/" target="_blank" rel="noopener">日経クロステック(積水化学)</a> / <a href="https://xtech.nikkei.com/atcl/nxt/column/18/03609/051400005/" target="_blank" rel="noopener">日経クロステック(SBI 新生銀)</a> / 2026-05-18</li>
+</ul>
+
+<h3>Apple Siri 刷新 — 「自動削除チャット」機能</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch / The Verge。<strong>Apple Siri 刷新で「自動削除チャット」機能の搭載</strong>が報道、<strong>プライバシー再設計</strong>を Apple Intelligence 不振の挽回策として位置付け。Apple Intelligence 訴訟390億円和解(2026-05-08)、OpenAI 訴訟検討(2026-05-15)、iOS 26.5 / macOS M5 セキュリティ修正(同日)、Anthropic Mythos × Mac(同日)と並走する<strong>Apple AI 体験再構築</strong>の最新ピース。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/17/apples-siri-revamp-could-include-auto-deleting-chats/" target="_blank" rel="noopener">TechCrunch</a> / <a href="https://www.theverge.com/tech/932207/siri-apple-intelligence-auto-deleting-chats" target="_blank" rel="noopener">The Verge</a> / 2026-05-18</li>
+</ul>
+
+<h3>Musk × OpenAI 公判で「信頼(trust)」が決定的論点に</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 詳報。<strong>Musk × OpenAI 公判の判決を左右する論点が「信頼」に絞られた</strong>段階、双方が「相手の信頼性を崩す」戦術に。Closing Arguments(2026-05-15)、Week 3(2026-05-16)、Brockman プロダクト統括(2026-05-17)と続く<strong>OpenAI ガバナンス危機の連続報道</strong>、判決が<strong>OpenAI 非営利 → 営利転換 + AI 創業ストーリーの法的妥当性</strong>の最初の主要判例になる。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/17/why-trust-is-a-big-question-at-the-elon-musk-openai-trial/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-18</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>AI 投資が世界貿易を救済 — 2026年は2.5%減速予測</h3>
+<ul>
+<li><strong>要約</strong>: ダイヤモンド・オンライン。<strong>昨年の世界貿易は AI 投資に支えられ高関税下でも5%近い成長</strong>、<strong>2026年は2.5% への減速予測</strong>。半導体売上8割増(同日)、上場企業最高益(2026-05-17)、AI gold rush 格差(同日)と並ぶ<strong>AI ブームのマクロ寄与</strong>確認、ただし<strong>減速予測は AI 投資依存リスクの裏返し</strong>でもある。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>finance-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE9VUmxDeTlFeTJ3WlVaVVVvUWhWQ2VXbzlLLXplZGVwWVo5cjUxRHdhc2IwVWhyVHlwWk5RQ3NWNUdBX0dfNlVmT2RHeEbSAU9BVV95cUxQNl9RRFV5d2xYTUpMT0NJY3FyM1Q3aHh6bkZvbWNaV01iZE04dFBISmd2Tmw5R3V1S0VGYi1LZzVISXR2ODg3WEJfdWk3WWI0?oc=5" target="_blank" rel="noopener">ダイヤモンド・オンライン</a> / 2026-05-18</li>
+</ul>
+
+<h3>AI 画像普及で2割クリエーター減収 + 創作物と AI 区別 / 専門機関</h3>
+<ul>
+<li><strong>要約</strong>: 日経新聞 2 連発。<strong>AI 画像普及により直近1年で2割のクリエーターが減収</strong>、<strong>企業からの受注減</strong>が要因。同日「クリエーターどう守る? 創作物と AI 区別、権利保護へ専門機関」も併載 — <strong>クリエイター労働市場の臨界</strong>が国内紙面に到達、朝日 × 日経 vs Perplexity 訴訟(2026-05-15)、YouTube ディープフェイク検出拡大(2026-05-16)、arXiv AI slop BAN(同日)と並走する<strong>コンテンツ生産者保護 vs AI 自動生成</strong>の同時並走議論、政策・規制が次のフェーズへ。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTFBkNFVYZjluNUNoYl9LZUwzYUpZbjNLQ0E3cU9XSXdBYnRCZzRlQy1xOHgtNmRjX1duRWdSR1V6aTVTT2VMQkpQWkZ6dThVemF4OGtmdkhDVkxRQXd6SEkySkZMR2ZvUGlRTG9wdg?oc=5" target="_blank" rel="noopener">日経新聞(減収)</a> / <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTFBoY0h1aGZKemxzcUNtNDBBeVBhLXdDLUdpS1RCM2l4V1JVV2pka2dtSi1XejNCdUtpeFI1ZF9Sc242U3BsZGlNaXNJNm5Sd0tld1pEanByMDViU1NEMUFFWVVNY19SMmVGWjBMQw?oc=5" target="_blank" rel="noopener">日経新聞(専門機関)</a> / 2026-05-18</li>
+</ul>
+
+<h3>Gemini 有料版、Gmail 連携が大幅強化 — 1画面で作業完結</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック。<strong>Gemini 有料版が Gmail 連携を大幅強化</strong>、<strong>メール画面内で AI ワークフロー完結</strong>。OpenAI ChatGPT 個人向け資産管理 + Plaid(2026-05-16)、Notion AI ハブと並走する<strong>消費者 × 生活レイヤ統合</strong>の Google 版、Workspace 全方位 × Gemini の本格化。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/column/18/03588/041400008/" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-18</li>
+</ul>
+
+<h3>Best Software in Japan 2026 生成 AI 機能評価ランキング — 3位 Notion</h3>
+<ul>
+<li><strong>要約</strong>: ダイヤモンド・オンライン先行公開。<strong>Best Software in Japan 2026 の生成 AI 機能評価で 3 位 Notion</strong>、ベスト20 が選出。リンクアンドモチベーション人事 SaaS(2026-05-15)、Notion AI ハブ、Microsoft Edge Copilot、SAP Autonomous Suite と並ぶ<strong>国内 SaaS の AI 機能成熟度評価</strong>の市場側ベンチマーク。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE83dVVZYlpaNmRlUUNfSTVPYVpPMXpwRTg2XzAydjhRQ1Ytek1ZdzUwbURob2dEQ0RtdmlTcUZLTHZINXBqR0txdFZadHY?oc=5" target="_blank" rel="noopener">ダイヤモンド・オンライン</a> / 2026-05-18</li>
+</ul>
+
+<h3>フィジカル AI 第104回 + 日本ロボット産業に期待</h3>
+<ul>
+<li><strong>要約</strong>: デジタルクロス連載 + 日経クロステック。<strong>AI ネイティブ時代 → フィジカル AI / 自律ネットワーク</strong>への進化を体系化(デジタルクロス第104回)、<strong>「フィジカル AI で問われるマーケティングの力」</strong>として日本のロボット産業に期待(日経クロステック)。NVIDIA SANA-WM(2026-05-16)、AI ロボット盲導犬(2026-05-17)、AI グラス中国80%(同日)と並ぶ<strong>Physical AI トピックの国内本格化</strong>、製造業 5 連発(同日)とも接続。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTFB6RENHSnNBWUlfYkhQRnFJU2xabV9raFZLWV8taGtiVjY2b3R5RHloVmIwZ3RrWF9ZRk1WTEtZbEJCUnNrWC0zVkVGamNUcHVRNDdRTXlJOXlPNGdCN2prNlF2dmRBN1RxRUpKZGpQQ1lGUVl1TklUcQ?oc=5" target="_blank" rel="noopener">デジタルクロス</a> / <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9qM2ZMQnNHOHhXdjMwc1hRRnYwYkJOWmhNTERnbmNRMTdudVl3TkltWlQ1UUNoUFFmaktnNzRZZThfd25kMzFRamdyNi1HQ3NlTEdMS21qbnBkcHAya2FmUHZicEIyZzkwZGJ1dA?oc=5" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-18</li>
+</ul>
+
+<h3>TechCrunch Mobility: 自動車業界の AI スキル軍拡競争</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch Mobility。<strong>自動車業界に「AI スキル軍拡競争」が到来</strong>、メーカー・サプライヤーが争うように AI 人材獲得。トヨタ・スズキ中国製 SoC 採用(同日)、デンソー SCM AI エージェント(2026-05-15)、AI ロボット盲導犬(2026-05-17)と並ぶ<strong>国内・グローバル モビリティ AI</strong>シフトの本格化。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/17/techcrunch-mobility-the-ai-skills-arms-race-is-coming-for-automotive/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-18</li>
+</ul>
+
+<h3>トヨタ・スズキが中国製 SoC 採用へ — 20代以下注目第7位</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック。<strong>トヨタ・スズキが車載 SoC で中国製採用を進める</strong>、20代以下の読者注目度第7位。台湾 = 生成 AI 核心利益(2026-05-17)、AI グラス中国80%(同日)、AI ドラマ工場(同日)と並ぶ<strong>中国 AI 半導体・コンテンツの世界供給網支配</strong>を国内自動車も追認する象徴的動き、地政学リスクの再考材料。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>physical-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/column/18/02156/051100376/" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-18</li>
+</ul>
+
+<h3>安野党首「みらい」 — AI で革新する民主主義</h3>
+<ul>
+<li><strong>要約</strong>: 時事ドットコム。<strong>「みらい」党首 安野貴博氏が AI で革新する民主主義を語る</strong>、政治レイヤでの AI 活用論。AI 規制対極論 OpenAI vs Anthropic(2026-05-17)、米中 AI 対話協調(同日)、AI ガバナンス国際レイヤ(同日)と並ぶ<strong>国内政治 × AI</strong>の文脈、選挙・政策形成への AI 活用が次フェーズに。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTFBmd1FlWTd5QTF5M3lfWDJTd0xlV0ZSeExHeF9hT2xYUFplNGpTRzRpTTJUTDR4UWpYSm96TWdvSXVKWERtQmwzSFpUZEVtaXZnQURncjlHaTU?oc=5" target="_blank" rel="noopener">時事ドットコム</a> / 2026-05-18</li>
+</ul>
+
+<h3>DuckDB「Quack」プロトコル — DuckDB クライアント/サーバ化</h3>
+<ul>
+<li><strong>要約</strong>: Publickey。<strong>DuckDB をクライアント/サーバ化する「Quack」プロトコルが登場</strong>、複数 DuckDB インスタンス間で接続可能に。ローカル分析 DB → ネットワーク分析 DB への移行、SAP Business AI Platform(2026-05-15)、Veeam(2026-05-16)と並走する<strong>AI 時代のデータ基盤プロトコル</strong>進化。</li>
+<li><strong>トピック</strong>: <code>ai-data-structuring</code>, <code>ai-coding</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://www.publickey1.jp/blog/26/duckdbquackduckdb.html" target="_blank" rel="noopener">Publickey</a> / 2026-05-18</li>
+</ul>
+
+<h3>AWS Interconnect - multicloud、Oracle Cloud と閉域網直結を追加</h3>
+<ul>
+<li><strong>要約</strong>: Publickey。<strong>AWS Interconnect - multicloud に Oracle Cloud との閉域網直結機能が追加</strong>、既存の Google Cloud 直結に続く。<strong>マルチクラウド時代のネットワーク標準化</strong>、デンソー オラクル SCM(2026-05-15)、AMD × IBM ハイブリッド(2026-05-16)、SAP × Anthropic/AWS/Google/Microsoft 全方位(同日)と並ぶ<strong>マルチクラウド × AI 基盤</strong>の連続事例。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://www.publickey1.jp/blog/26/awsoracle_cloudaws_interconnect_-_multicloudgoogle_cloud.html" target="_blank" rel="noopener">Publickey</a> / 2026-05-18</li>
+</ul>
+
+<h3>真実を見抜く「ファクト眼」が AI 時代に必要 — 日経クロステック</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック評論。<strong>AI 時代に必要な「ファクト眼」(真実を見抜く力)</strong>を提示、AI 生成物・ディープフェイク・幻覚参照との共存スキル論。AI ラジオホスト実証(2026-05-16)、Anthropic 不適切目標抑制(2026-05-17)、AI 画像クリエーター減収(同日)、若手 AI 代替リスク(2026-05-17)と並走する<strong>「AI 時代のリテラシー」</strong>主流化の連続発信。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>llm-evaluation</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/column/18/03605/042800001/" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-18</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/18/news049.html" target="_blank" rel="noopener">ファミリーマートが「広告会社化」 — 店舗・アプリ・サイネージをつないだ新戦略(ITmedia)</a> — リテールメディア(AI 関連薄)</li>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/18/news011.html" target="_blank" rel="noopener">明暗分かれた「無印良品」と「ニトリ」(ITmedia)</a> — リテール経営比較</li>
+<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/18/news002.html" target="_blank" rel="noopener">IT 担当者不在の物流企業、4年かけてたどり着いた「自走する DX」(@IT)</a> — 国内中小 DX 事例</li>
+<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/18/news008.html" target="_blank" rel="noopener">ノート PC バッテリー膨張・発火リスク可視化「powercfg」習慣(@IT)</a> — IT 運用 Tips</li>
+<li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/03558/032600001/" target="_blank" rel="noopener">施設の全国展開を実現したマーケティング理論に基づく空間設計(日経xtech)</a> — 空間設計</li>
+<li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/01679/040600276/" target="_blank" rel="noopener">現金が使えない「完全キャッシュレスバス」(日経xtech)</a> — 公共交通 DX</li>
+<li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/00086/00404/" target="_blank" rel="noopener">PayPay 上場後初の決算発表(日経xtech)</a> — フィンテック決算</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>Mythos × Apple Mac セキュリティ回避 + 米国「全部守るのは無理」</strong>: <strong>AI 攻撃エージェントの非対称優位が公式に認知</strong>された段階、CISO/SOC の戦略は「全部守る」から「優先選別 × AI 自動対抗」へ転換 — Anthropic 不適切目標抑制(2026-05-17)が解側の核心研究として位置付け</p>
+<p>2. <strong>中国 AI コンテンツ 3 連発(ドラマ工場 / AI 俳優 / 200言語吹替)</strong>: <strong>量産・コスト・多言語の3軸で中国が AI コンテンツ世界供給を狙う</strong>、Sora/Veo3 + 西側コンテンツ業界に対する<strong>「規模・速度」軸の挑戦状</strong></p>
+<p>3. <strong>国内製造業 × AI 5連発(荏原 / NGK / アスカ / 積水化学 / SBI 新生銀)</strong>: <strong>「AI 内製 + マルチクラウド + マテリアル × 生成 AI」</strong>が国内大手の標準パターンに、デンソー SCM(2026-05-15)、KDDI 基地局(2026-05-14)、レゾナック(2026-05-15)と統合した<strong>国内産業 × AI ナラティブ完成期</strong></p>
+<p>4. <strong>「SaaS の死」+「人売りベンダー悔い改めよ」</strong>: 同日に<strong>SaaS と SES 双方の伝統モデルへの引導</strong>が国内紙誌で表明、<strong>エージェント × AI ベンダー FDE × SI 下克上</strong>の3軸変化が同時進行</p>
+<p>5. <strong>Eric Schmidt 学生ブーイング + クリエイター減収 + ファクト眼</strong>: AI 時代の人間側論議が<strong>「過信反発 / 労働市場破壊 / リテラシー必要」3レイヤ</strong>で連続発信、AI 飽和ナラティブの臨界</p>
+<p>6. <strong>半導体売上8割増 + Google AI 半導体設計転換 + トヨタ・スズキ中国 SoC + AI 投資世界貿易救済</strong>: <strong>AI 半導体スーパーサイクルが世界マクロを支配</strong>しつつ、<strong>中国軸への部分転換</strong>も同時に発生、地政学 × 産業構造の同時転換</p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>agentic-ai</code> 蓄積推奨</strong>: Mythos × Apple Mac セキュリティ回避、米国サイバー防衛論、「SaaS の死」エージェント進化、TechCrunch Mobility AI 軍拡</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: Mythos 攻撃力増、クリエイター AI 画像減収 + 専門機関、安野党首 AI 民主主義、Apple Siri 自動削除、Musk × OpenAI 公判信頼論、トヨタ・スズキ中国 SoC</li>
+<li><strong><code>ai-companies</code> 蓄積推奨</strong>: Mythos × Apple、Apple Siri 刷新、Musk × OpenAI 公判、Google AI 半導体設計転換、Gemini Gmail 強化、Best Software 2026 ランキング、中国 AI ドラマ工場、AI 投資世界貿易</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: 「SaaS の死」エージェント、人売りベンダー悔い改めよ、荏原 AI 内製、NGK 化合物探索、積水化学 DX、SBI 新生銀勘定系、Best Software 2026、Gemini Gmail、ファクト眼、AI 画像クリエーター減収</li>
+<li><strong><code>consulting-ai</code> 蓄積推奨</strong>: 「人売りベンダー悔い改めよ」SIer 下克上、Schmidt 学生ブーイング、ファクト眼、AI 過信ナラティブ反発</li>
+<li><strong><code>ai-infra</code> 蓄積推奨</strong>: 半導体売上8割増(月1000億ドル)、Google AI 半導体設計転換、AWS Interconnect Oracle 直結、トヨタ・スズキ中国 SoC、AI 投資世界貿易救済</li>
+<li><strong><code>ai-models</code> 蓄積推奨</strong>: 中国 AI ドラマ工場(MIT TR)、AI 俳優、タイタンインテリジェンス 200 言語吹替、Google AI 半導体 ↔ Gemini 統合最適化</li>
+<li><strong><code>physical-ai</code> 蓄積推奨</strong>: フィジカル AI 第104回、日本ロボット産業マーケ力、アスカ × 東北大 AI ロボシステム、TechCrunch Mobility 自動車 AI、AI 俳優</li>
+<li><strong><code>ai-coding</code> 蓄積推奨</strong>: DuckDB Quack プロトコル</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: NGK 結晶探索 + 大規模計算コード、荏原 AI 内製、DuckDB Quack、SBI 新生銀勘定系</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: AI 投資世界貿易救済 + 2026 減速、半導体売上8割増、SBI 新生銀次世代勘定系</li>
+<li><strong><code>logistics-ai</code> 蓄積推奨</strong>: 自走する DX(IT 担当者不在物流企業)、完全キャッシュレスバス</li>
+<li><strong><code>llm-evaluation</code> 蓄積推奨</strong>: ファクト眼(AI 時代リテラシー)、Mythos 攻撃力増(攻撃側評価)</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>
