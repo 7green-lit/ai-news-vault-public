@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-05-19 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-05-19 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>KPMG × Anthropic グローバル戦略提携 — 27.6 万人に Claude 統合 + Digital Gateway 開始</strong>(WSJ / KPMG / Anthropic 三方公式)、<strong>日立 × Anthropic 提携 — グループ29万人に Claude 導入、社会インフラ分野展開</strong>(ITmedia / 国内最大級の AI ベンダー × SI 同盟)、<strong>OpenAI 共同創設者 Andrej Karpathy が Anthropic にジョイン</strong>(ITmedia AI+ — 人材重力場の決定的移動)、<strong>Anthropic vs 米政府 ワシントン DC 法廷対決 — AI 企業ブラックリスト</strong>(CNBC)、<strong>Sakana AI「DGM」発表 — 自身のコードを書き換え成長する AI エージェント</strong>(ITmedia — 自己改変エージェント本格化)、<strong>Claude Managed Agents on Cloudflare 発表</strong>(Cloudflare — エージェント実行基盤)、<strong>三井住友FG × 富士通 × ソフトバンク、国産ヘルスケアデータ基盤 3 社連携</strong>(日経xtech / ITmedia AI+)、<strong>Google Gemini に個人向け AI エージェント — 質問答えるだけでなく「作業代替」(米国先行)</strong>(ITmedia AI+)、<strong>Google AI サブスク最上位値下げ + 月額1万4500円新プラン</strong>(ITmedia AI+)、<strong>OpenAI Content Provenance — 安全で透明な AI 生態系</strong>(OpenAI 公式 — C2PA / 来歴規範)、<strong>OpenAI 新設バグ報奨プログラム「3つの急所」 + 脱獄バグ拒否方針</strong>(@IT)、<strong>Claude Code UI 刷新 — 3つのビューモード</strong>(@IT)、<strong>Dell Deskside Agentic AI — ローカル AI エージェント PC + NVIDIA GB10/GB300</strong>(Publickey)、<strong>OpenAI Codex × Dell オンプレ提携 — クラウド依存超え</strong>(innovaTopia)、<strong>みずほFG: AI エージェント開発を2週間 → 数日に短縮</strong>(@IT)、<strong>大東建託 Oracle オンプレ設置型クラウドで基幹系刷新</strong>(@IT)、<strong>Musk × OpenAI 訴訟敗訴 — その理由</strong>(MIT Technology Review、5/15-17 Closing/Trust 論点からの終局)、<strong>Forge — 8B モデル + Guardrails で agentic タスク53% → 99%</strong>(Show HN)、<strong>Apple 新アクセシビリティ機能 + Apple Intelligence</strong>、<strong>AI ミュトスに危機感、政府が対応案</strong>(Yahoo — 国内政府の初動)、<strong>CISA Admin が AWS GovCloud キーを GitHub にリーク</strong>(Krebs on Security)、<strong>Stilta $10.5M YC+a16z — 忘れられた特許再発見</strong>(リーガル AI)、<strong>Sprocket データ分析エージェント に仮想ペルソナレビュー</strong>。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>KPMG × Anthropic グローバル戦略提携 — 27.6 万人に Claude 統合、Digital Gateway 開始</h3>
+<ul>
+<li><strong>要約</strong>: WSJ スクープ + KPMG / Anthropic 三方公式発表。<strong>KPMG が Anthropic とグローバル戦略提携、Claude を27.6 万人(コア事業 + 全グローバルワークフォース)に統合</strong>、<strong>Digital Gateway Powered by Claude を立ち上げ、グローバル税務・アドバイザリープラットフォームを刷新</strong>。アクセンチュア × Anthropic 国内本格化(2026-05-12)、アクセンチュア × Google Cloud 新プログラム(2026-05-15)、アクセンチュア × SAP 中堅 ERP(2026-05-13)、デロイト/PwC 等の AI 戦略と並ぶ<strong>Big4 × AI ベンダー直結</strong>の決定的事例、コンサル業界 × AI ベンダー直営 FDE 構造に<strong>Big4 自身が AI ベンダーに統合される</strong>新フェーズ。</li>
+<li><strong>トピック</strong>: <code>consulting-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPWDAwY1hyM1BycDFwRmZzSTRjdmdlbXl5a1BDdlE0MEgybV8wTUdfTHNCaVQ0WndKeEU2WUZaMl9QWkhWR2YydjJMUzVuYlNjRjJHcGt5eF83MXhjaURTZTFtUTBocF8xOHY2c3FLVFVWNDNpc0g5eTk4NmxUU0Iwb01ueEcwaHBwb0cwYV9zRzB3dE5FUHJ2Z2pyYnZMM1BFSWc?oc=5" target="_blank" rel="noopener">WSJ</a> / <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE1zZmhvQzU4QVIxdzNIOVJmdDZ5ZTZRVGxKM3lyekJZSDFxZ3VTTm1nd2gtTFBRTDM0U1o1ZTltTERLTndqOTN3VUMyLU50MjUwanRQdVpnRGo1LTZMay1wbUM2WVZpVzhlRVlMSUpjeUdIblE4Rl9QZw?oc=5" target="_blank" rel="noopener">KPMG 公式</a> / <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE5iemlXdko4M2RsQ1FKVGVnaV9BUWEtUGZrTkdsaDlwczI1UE10OG5FU0JHbkdiZmFzTmN0UXpNRjhySHBiSk5YeG83XzU2RkF0dWhWbWZia2k?oc=5" target="_blank" rel="noopener">Anthropic 公式</a> / 2026-05-19</li>
+</ul>
+
+<h3>日立 × Anthropic 提携 — グループ29万人に Claude 導入、社会インフラへ</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia 速報。<strong>日立製作所が Anthropic と提携、日立グループ29 万人に Claude などの AI を導入</strong>、<strong>社会インフラ分野にも展開へ</strong>。同日 KPMG × Anthropic 27.6 万人(WSJ)と合わせて、<strong>Anthropic が同日に56 万人規模の B2B コア導入2発を発表</strong>する歴史的日。NEC グローバル(2026-05-13)、Anthropic Claude for Small Business(2026-05-14)、Anthropic + Gates 財団 $200M(2026-05-15)、Anthropic Mythos × Apple(同日)、Anthropic「夢を見る AI」自己改善(2026-05-17)に続く<strong>Anthropic の B2B/B2G/B2NGO 全方位拡張</strong>、<strong>国内大手 × Anthropic の最大規模事例</strong>、社会インフラへの拡大宣言は OpenAI Deployment Co 客先常駐(2026-05-15)と直接競合する。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>consulting-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/news/articles/2605/19/news120.html" target="_blank" rel="noopener">ITmedia</a> / 2026-05-19</li>
+</ul>
+
+<h3>OpenAI 共同創設者 Andrej Karpathy、Anthropic にジョイン</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia AI+ 速報。<strong>OpenAI 共同創設者 Andrej Karpathy が Anthropic にジョイン</strong>、人材重力場の決定的移動。Mira Murati(Thinking Machines、2026-05-14)、Richard Socher Synthetic $650M(同日)、xAI スタッフ流出50名超(2026-05-15)、OpenAI 役員シャッフル → Brockman プロダクト統括(2026-05-17)に続く<strong>AI 大手間人材流動の最大級事件</strong>、<strong>KPMG/日立 × Anthropic と同日の Anthropic 4 連発</strong>、OpenAI 退社の最大級人物 → Anthropic という<strong>シンボリックインパクト</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/aiplus/article/2605/20/2000000006/" target="_blank" rel="noopener">ITmedia AI+</a> / 2026-05-19</li>
+</ul>
+
+<h3>Anthropic vs 米政府、ワシントン DC 法廷対決 — AI 企業ブラックリスト</h3>
+<ul>
+<li><strong>要約</strong>: CNBC。<strong>Anthropic が米政府を相手に DC 連邦裁判所で法廷対決</strong>、<strong>米政府の AI 企業ブラックリスト措置をめぐる争い</strong>。KPMG/日立 × Anthropic グローバル展開(同日)、Karpathy 移籍(同日)と並走する<strong>Anthropic の B2B 拡大 × 政府との対立</strong>の同時進行、AI 規制レイヤの主戦場化(2026-05-17)が<strong>米政府 vs AI ベンダー直接対決</strong>へ進化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPa1RvNFhEWGt0RFRjUnlGRlUtRDFTWmIzbWRtcDhxWlV6ZU1tVXQ3aEk2ZDkxOU9wdDg4OVBCSWtla2lKYjZHY05QVmExQTJQVUgwZ2NpZVdMdHpIeDd3VnY2YmN1Tm0xQ2tqVHFDd1dRaVZLaXRNeDdWN1RQLVdIbHJib0xYZXBOSWZledIBkgFBVV95cUxQakwzbmRrT0lheTNfV2dkdXFxUXVHMkpXWWJKTk9SRVRXLVh1UWdPbUx6YjdmVHJPMWljZXJCMV9TRjdpWXd5ejE1U2NpcW9oMGZlWHM4d0xLekV6NVM2RWkwTE0wOTF6Q2lDYzdTSUswOFdCd19TZ0VNR0tYY2lJS21GX3FnLU1zRUhhSHdQNnJHdw?oc=5" target="_blank" rel="noopener">CNBC</a> / 2026-05-19</li>
+</ul>
+
+<h3>Sakana AI「DGM」発表 — 自身のコードを書き換え成長する AI エージェント</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Sakana AI が新エージェント「DGM(Darwin Gödel Machine)」を発表</strong>、<strong>自身のコードを書き換えながら成長する自己改変エージェント</strong>。Anthropic「AI が夢を見る」自己改善型エージェント(2026-05-17)、Anthropic 不適切目標抑制訓練(同日)、Richard Socher Synthetic $650M「AI が AI を作る」(2026-05-14)と並ぶ<strong>自己改善エージェント主軸トピック</strong>の国産代表事例、Sakana × NVIDIA TwELL(2026-05-15)、リコー LMM GENIAC(同日)に続く<strong>国産 AI の最先端研究</strong>。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>ai-models</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFBtM245dDZUeHRiTnpkUjF5amNrR08td3ZGMXU3dHJZMHh0SjY1VVg4SldyeWVVTDl6Z2RkWVB3SDlaMlN6VFNnbGRyRFdHbDV3bzBSMEFvU0pKZkVwOHc4dU9BdXpJU2hUcktLM0R0YzhnUGViUFFlVks2MA?oc=5" target="_blank" rel="noopener">ITmedia</a> / 2026-05-19</li>
+</ul>
+
+<h3>三井住友FG × 富士通 × ソフトバンク、国産ヘルスケアデータ基盤 — 3社連携</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック / ITmedia AI+ / 日テレ / 日経共同報道。<strong>SMBC + 富士通 + ソフトバンクが国産ヘルスケア基盤を共同構築</strong>、<strong>医療費抑制 + AI 健康アドバイス</strong>を狙う。日立 × Anthropic 社会インフラ展開(同日)と並走する<strong>国内ナショナル AI インフラ構築</strong>の本格化、<strong>金融 × IT × 通信 × ヘルスケア4軸連携</strong>は国内 AI 産業の体制論。Anthropic + Gates 財団 ヘルスケア(2026-05-15)、Veeam AI データ管理(2026-05-16)、KDDI 基地局(2026-05-14)に並ぶ<strong>国家インフラ × AI</strong> トレンド。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>finance-ai</code>, <code>ai-companies</code>, <code>ai-data-structuring</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/news/24/03234/" target="_blank" rel="noopener">日経クロステック</a> / <a href="https://www.itmedia.co.jp/aiplus/article/2605/19/2000000005/" target="_blank" rel="noopener">ITmedia AI+</a> / <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE5XcGpwdWpuYnFiYktuXzczZnRjdWFxNDBZYllsNHZNanFVSHF2bUU4eDhzd0JFbDRJMlZuVXdvNm40RTRicDZGcm9XWGd3Z3BUYXFpYWUzVUs1dnljT3BtNy12Qm1halFJLXhSZw?oc=5" target="_blank" rel="noopener">日本経済新聞</a> / 2026-05-19</li>
+</ul>
+
+<h3>Google Gemini に個人向け AI エージェント — 「作業代替」段階へ(米国先行)</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia AI+。<strong>Google が Gemini に個人向け AI エージェントを導入</strong>、<strong>「質問に答えるだけでなく作業を代替」</strong>、<strong>米国先行展開</strong>。同日「Google AI サブスク最上位値下げ + 月額1万4500円新プラン」(ITmedia AI+)、Gemini Gmail 連携強化(2026-05-18)と合わせ、<strong>Google の消費者 AI エージェント本格化 3 連発</strong>。OpenAI ChatGPT 個人向け金融 + Plaid(2026-05-16)、ChatGPT × Malta(同日)に対する<strong>Google の消費者 AI レイヤ反撃</strong>。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/aiplus/article/2605/20/2000000007/" target="_blank" rel="noopener">ITmedia AI+(エージェント)</a> / <a href="https://www.itmedia.co.jp/aiplus/article/2605/20/2000000008/" target="_blank" rel="noopener">ITmedia AI+(値下げ)</a> / 2026-05-19</li>
+</ul>
+
+<h3>Cloudflare、Claude Managed Agents 発表 — エージェント実行基盤</h3>
+<ul>
+<li><strong>要約</strong>: Cloudflare 公式。<strong>Claude Managed Agents on Cloudflare 発表</strong>、<strong>Anthropic Claude を Cloudflare ネットワーク上でマネージドエージェントとして実行可能</strong>に。KPMG/日立 × Anthropic 同日(56 万人規模)、Karpathy 移籍(同日)と並走する<strong>Anthropic 基盤の全方位拡張</strong>、エッジ × エージェント実行基盤として <strong>Workers AI / R2 / D1 と統合</strong>。AWS Bedrock / Azure / Vertex AI の Anthropic 提供と並ぶ<strong>マネージドエージェントの第4軸プラットフォーム</strong>確立。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-infra</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFBacXJVMnl1SmVCN2t2c2VNM19xTlVjdzg4eU9OcDZzcUM3X1RxeGNyUlRYVnhxLUZpTDZMV3hEbmtweUZmOGd2ZkxqZGNwdGxXRmZnblpPSWU0amptZDlv?oc=5" target="_blank" rel="noopener">Cloudflare Blog</a> / 2026-05-19</li>
+</ul>
+
+<h3>Musk × OpenAI 訴訟敗訴の理由 — MIT Technology Review 終局解説</h3>
+<ul>
+<li><strong>要約</strong>: MIT Technology Review。<strong>Musk × OpenAI 訴訟で Musk が敗訴</strong>、その理由を詳報。Week 3(2026-05-16)、信頼が決定論点(2026-05-18)、Closing Arguments Steven Molo 崩壊(2026-05-15)、xAI スタッフ流出(同日)からの<strong>約3週公判の終局</strong>。判決は<strong>OpenAI 非営利 → 営利転換 + AI 創業ストーリーの法的妥当性</strong>で OpenAI 側勝訴、AI 業界ガバナンスの最初の主要判例として確立。OpenAI 役員シャッフル → Brockman プロダクト統括(2026-05-17)後の体制強化と合わせ、<strong>OpenAI の経営自由度</strong>が増した結果。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/" target="_blank" rel="noopener">MIT Technology Review</a> / 2026-05-19</li>
+</ul>
+
+<h3>OpenAI Content Provenance — 安全で透明な AI 生態系</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 公式。<strong>OpenAI が「Content Provenance(コンテンツ来歴)」イニシアチブを推進</strong>、<strong>C2PA / 改ざん検出 / 来歴メタデータ</strong>で<strong>安全で透明な AI 生態系</strong>を目指す。クリエイター AI 画像減収(2026-05-18)、AI 画像クリエーター保護専門機関(同日)、YouTube ディープフェイク検出拡大(2026-05-16)、朝日 × 日経 vs Perplexity 訴訟(2026-05-15)に対する<strong>OpenAI 側からの規範形成提案</strong>、規制レイヤ主戦場化(2026-05-17)を<strong>自社主導の枠組み提示</strong>で先回り。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>ai-data-structuring</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/advancing-content-provenance" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-05-19</li>
+</ul>
+
+<h3>Dell Deskside Agentic AI 発表 — ローカル AI エージェント PC、NVIDIA GB10/GB300 搭載</h3>
+<ul>
+<li><strong>要約</strong>: Publickey。<strong>Dell が「Deskside Agentic AI」シリーズを発表</strong>、<strong>ローカルで AI エージェントを動かすデスクトップ PC</strong>を含む製品ライン。<strong>NVIDIA GB10 / GB300 搭載</strong>でローカル推論を実現、<strong>OpenAI Codex × Dell オンプレ提携</strong>(同日 innovaTopia)とも連動。クラウド AI 依存からの<strong>オンプレ/ローカル AI エージェント基盤</strong>シフト、SAP / Veeam / Anthropic Mythos のクラウド側展開とは逆軸、<strong>プライバシー/データ主権</strong>重視の B2B 大手向け基盤。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.publickey1.jp/blog/26/aipcdell_deskside_agentic_ainvidia_gb10gb300.html" target="_blank" rel="noopener">Publickey</a> / <a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE8yd19KY3R2Vzhfel9tYU1rQXhJUXhKQ0I1aXVrNmhhcTQ1WjJWeVNfSmM2V3paWmltQ1hxcVdsR1dYeU83QmdwTUltR1VneExJQmg0?oc=5" target="_blank" rel="noopener">innovaTopia(OpenAI × Dell)</a> / 2026-05-19</li>
+</ul>
+
+<h3>みずほFG、AI エージェント開発を2週間 → 数日に短縮 — 「自走するエージェント工場」</h3>
+<ul>
+<li><strong>要約</strong>: @IT 取材。<strong>みずほFGが AI エージェントの開発期間を従来の2週間から最短数日に短縮する仕組みを実装</strong>、<strong>社内 AI エージェント工場化</strong>。三井住友FG × 富士通 × SoftBank ヘルスケア基盤(同日)、日立 × Anthropic 社会インフラ(同日)、デンソー SCM AI エージェント(2026-05-15)、SBI 新生銀次世代勘定系(2026-05-18)、積水化学 DX(同)に並ぶ<strong>国内大手のエージェント内製化トレンド</strong>、<strong>メガバンクの AI エージェント工場化</strong>が新しい標準モデルへ。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>finance-ai</code>, <code>enterprise-ai</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/19/news044.html" target="_blank" rel="noopener">@IT</a> / 2026-05-19</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>OpenAI、新設バグ報奨プログラムで狙う「3つの急所」 — 脱獄バグは拒否</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>OpenAI が新設バグ報奨プログラム(Bug Bounty)を発表</strong>、<strong>「3つの急所」</strong>(モデル盗用 / Sandbox エスケープ / インフラ侵害?)を主軸、<strong>「脱獄(jailbreak)はバグと認めない」方針</strong>を明示。Anthropic 不適切目標抑制(2026-05-17)、Mythos × Apple(2026-05-18)、米国「全部守るのは無理」(同日)、Forge Guardrails 53→99%(同日 Show HN)と並走する<strong>AI セキュリティ規範の二分(モデル攻撃 vs 脱獄)</strong>の方針整理。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/19/news046.html" target="_blank" rel="noopener">@IT</a> / 2026-05-19</li>
+</ul>
+
+<h3>Claude Code UI 刷新 — 3つのビューモード追加で「エディタ切り替え手間ゼロ」</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>Claude Code が UI を刷新、3つのビューモード(編集 / プレビュー / ハイブリッド)を追加</strong>、エディタ切り替えの手間がゼロに。Microsoft Claude Code ライセンス取消(2026-05-14)、VS Code Agent window(同日)、Clawdmeter OSS(2026-05-15)、Lovable × Atech vibe-coding(同)に並ぶ<strong>AI コーディング体験成熟期</strong>の最新章、<strong>Anthropic 自社プロダクト × Microsoft 離反</strong>の Claude Code 主戦場化。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/19/news030.html" target="_blank" rel="noopener">@IT</a> / 2026-05-19</li>
+</ul>
+
+<h3>大東建託、Oracle オンプレ設置型クラウドで基幹系刷新 — 約 40 の DB 統合</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>大東建託が Oracle のオンプレ設置型クラウドで基幹系を刷新</strong>、<strong>約 40 の DB 基盤を統合</strong>。デンソー SCM オラクル(2026-05-15)、SBI 新生銀次世代勘定系(2026-05-18)、積水化学 DX(同)、荏原製作所 AI 内製 + マルチクラウド(同)、AWS Interconnect multicloud Oracle 直結(同)と並ぶ<strong>国内製造業/不動産業の DB 基盤統合 + AI 内製化トレンド</strong>、<strong>Oracle が国内大手基幹系の有力選択肢化</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-data-structuring</code>, <code>enterprise-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/19/news049.html" target="_blank" rel="noopener">@IT</a> / 2026-05-19</li>
+</ul>
+
+<h3>AI ミュトス(Mythos)に危機感、政府が対応案 — 国内政府の初動</h3>
+<ul>
+<li><strong>要約</strong>: Yahoo ニュース。<strong>日本政府が Anthropic Mythos クラスの AI 攻撃エージェントに危機感を表明、対応案を準備</strong>、米国「全部守るのは無理」と認める(2026-05-18)、Mythos × Apple Mac セキュリティ回避(同日)に続く<strong>日本政府の初動</strong>。Mythos Firefox 271件発掘(2026-05-08)、Google AI ゼロデイ阻止(2026-05-12)、Google Wiz 警鐘(2026-05-14)に続く<strong>国内政府 × AI 攻撃側対策レイヤ</strong>の最新動向、安野党首 AI 民主主義(2026-05-18)に続く政治レイヤの AI 取り扱い。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTFB3SThqWW5zZ0ZhbDRqaUN3eHBoXzdsbDhZd3ZnOE85SEZQMG5KZGthTVFWTmQ1YmkxbWFDSnNiOWh6LVZSVENraS1FSzI1ajNW?oc=5" target="_blank" rel="noopener">Yahoo</a> / 2026-05-19</li>
+</ul>
+
+<h3>Apple、新アクセシビリティ機能 + Apple Intelligence 更新</h3>
+<ul>
+<li><strong>要約</strong>: Apple Newsroom。<strong>Apple が新アクセシビリティ機能と Apple Intelligence 更新を発表</strong>、<strong>視覚 / 聴覚 / 認知 / モビリティ</strong>多領域の AI 支援。Apple Siri 自動削除チャット(2026-05-18)、iOS 26.5 セキュリティ修正(2026-05-15)、Apple Business 200か国(同)と並ぶ<strong>Apple AI 体験再構築</strong>、<strong>Apple Intelligence 訴訟390億円和解(2026-05-08)後のラッシュ的機能発表</strong>で挽回戦略本格化。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>agentic-ai</code>, <code>physical-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/" target="_blank" rel="noopener">Apple Newsroom</a> / 2026-05-19</li>
+</ul>
+
+<h3>Forge — Guardrails で 8B モデル 53% → 99% on agentic tasks(Show HN)</h3>
+<ul>
+<li><strong>要約</strong>: GitHub / Hacker News 注目。<strong>「Forge」 — Guardrails 適用により 8B パラメータの小型モデルでエージェント評価が 53% → 99% に</strong>、<strong>フロンティアモデル並みの精度</strong>。Anthropic 不適切目標抑制(2026-05-17)、OpenAI バグ報奨(同日)、AI ラジオホスト実証(2026-05-16)に並ぶ<strong>LLM 信頼性向上ガードレール</strong>の代表的 OSS 実例、<strong>小型モデル + 制約 = 大型モデル代替</strong> という設計思想。</li>
+<li><strong>トピック</strong>: <code>llm-evaluation</code>, <code>agentic-ai</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://github.com/antoinezambelli/forge" target="_blank" rel="noopener">GitHub: antoinezambelli/forge</a> / 2026-05-19</li>
+</ul>
+
+<h3>CISA Admin、AWS GovCloud キーを GitHub にリーク</h3>
+<ul>
+<li><strong>要約</strong>: Krebs on Security スクープ。<strong>CISA(米国サイバーセキュリティ・インフラセキュリティ庁)Admin が AWS GovCloud キーを GitHub にリーク</strong>、<strong>米政府ヒューマンエラーによる重大セキュリティ事故</strong>。OpenAI サプライチェーン攻撃(2026-05-15)、Mythos × Apple(2026-05-18)、米国「全部守るのは無理」(同)と並走する<strong>政府 × クラウド × AI</strong> セキュリティの皮肉な事例、<strong>「AI 攻撃を恐れる側がヒューマンエラーで穴を開ける」</strong>構図。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/" target="_blank" rel="noopener">Krebs on Security</a> / 2026-05-19</li>
+</ul>
+
+<h3>Stilta、$10.5M シード(YC + a16z) — 忘れられた特許再発見</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Stilta が YC + a16z リードで $10.5M シード調達</strong>、<strong>企業が忘れた特許を再発見してマネタイズする AI レガルプロダクト</strong>。Anthropic Claude for Legal(2026-05-12)、KPMG × Anthropic グローバル税務(同日)と並ぶ<strong>リーガル/IP × AI 領域</strong>の連続ファンディング、<strong>専門業務 × AI 知識資産再発見</strong>が新領域として確立。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>consulting-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/19/legal-tech-announced-stilta-announces-10m-seed-backed-by-yc-and-a16z-months-after-launch/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-19</li>
+</ul>
+
+<h3>Status AI、$17M — Gamified Social Media、Paprclip(Survivor 出演者)</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 2 記事。<strong>Status AI が $17M 調達、フィードを離れ「インタラクティブエンタメ」化する Gamified Social Media</strong>、別記事で <strong>Survivor 出演者 Kyle Fraser / Kamilla Karthigesu が目標管理アプリ Paprclip を発表</strong>。Nectar Social $30M(2026-05-17)、Bench/Synthetic と並ぶ<strong>生活/エンタメ × AI スタートアップ</strong>の連続資金調達、AI 経由消費(Adobe 評, 2026-05-15)の新形態。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/19/gamified-social-media-network-status-announces-17m-funding-to-help-usher-in-new-era-of-social-networking/" target="_blank" rel="noopener">TechCrunch(Status AI)</a> / <a href="https://techcrunch.com/2026/05/19/survivor-stars-kyle-fraser-and-kamilla-karthigesu-introduce-a-goal-tracking-app-paprclip/" target="_blank" rel="noopener">TechCrunch(Paprclip)</a> / 2026-05-19</li>
+</ul>
+
+<h3>デノード × AWS、エージェント型 AI のデータ基盤を強化</h3>
+<ul>
+<li><strong>要約</strong>: ｄメニューニュース。<strong>デノード(Denodo)が AWS との連携でエージェント型 AI のデータ仮想化基盤を強化</strong>。Veeam AI データ管理(2026-05-16)、SAP Business AI Platform(2026-05-15)、DuckDB Quack(2026-05-18)、AWS Interconnect multicloud(同)と並ぶ<strong>エージェント時代のデータ基盤再設計</strong>事例。</li>
+<li><strong>トピック</strong>: <code>ai-data-structuring</code>, <code>ai-infra</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFBsYmtGOUZnNEpZb0R1eTNNLVFYUWU4WXczWWZNVHFFblhxUDN6ajYxTXZHTkFxcmdLeXNNSjZ5THRoX2JudkktcHRyTlZMal9wM2I2UndKQy1YNVBuRDdwQ1VJa2JPbFZkWUJHM080R25zcmZEVkhxNUhkTdIBgAFBVV95cUxPTEhSNnFKNnZWdHd2ZVoyaVVaOW9vOXdMblZOM1RBWVZvLTBNcWlrVlVCa0R0MnJENnViRXFwOEJuaUp0bHdpUVBOY3N1eHVGSFNEdjlVOXpobEJ1alF1R1ZYeExLTk1vTmVjYVAyU0NMTzQzYUI4ZHBtTmlpQ3BIMQ?oc=5" target="_blank" rel="noopener">ｄメニュー(Yahoo 経由)</a> / 2026-05-19</li>
+</ul>
+
+<h3>Sprocket データ分析エージェントに仮想ペルソナレビュー機能</h3>
+<ul>
+<li><strong>要約</strong>: コマースピック。<strong>Sprocket がデータ分析エージェントに仮想ペルソナレビュー機能を追加</strong>、<strong>自社データ基盤から顧客ペルソナを生成し施策検討</strong>。Nectar Social マーケ OS(2026-05-17)、Adobe AEO(2026-05-15)、Best Software Notion 3位(2026-05-18)に並ぶ<strong>国内マーケ × AI エージェント</strong>事例。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>enterprise-ai</code>, <code>ai-data-structuring</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBDb3lJcDJ6LWgyaTdXeHoxMHA2WV9YMk8tMWNDRGw3WHRxdkJiUEdPUU9jejRmQ012OFJuNUNyaWYyR0Q0UTlSd29fVmdta2tlTjVMcnBB?oc=5" target="_blank" rel="noopener">コマースピック</a> / 2026-05-19</li>
+</ul>
+
+<h3>ai&amp; × トゥモロー・ネット、エンタープライズ AI 本格運用を目指す業務提携</h3>
+<ul>
+<li><strong>要約</strong>: VOIX。<strong>ai&amp; とトゥモロー・ネットがエンタープライズ AI の本格運用を目指して業務提携</strong>、国内企業向け AI エージェント運用支援。みずほ AI エージェント工場化(同日)、エージェント運用ガバナンス(2026-05-17)、Best Software 2026(2026-05-18)と並走する<strong>国内エージェント運用 × ベンダー連携</strong>事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTFBjT0hBY0ZILURPYWcwR2VxVThLWTR4SnEtLWlTbXk3cDNydTItUkVRMnktX3JoM0xqYUM0Mk82QlhESnBaTXBLNlBxbUxReGIyNE9OelpIaUxVMTEzMnQyOVdzM1BFXzdteUJpVmNUaXo?oc=5" target="_blank" rel="noopener">VOIX</a> / 2026-05-19</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/19/news111.html" target="_blank" rel="noopener">大和ハウス、「戦地」に住宅を届ける — ウクライナ復興で日本式プレハブ(ITmedia)</a> — 戦災復興 × 建設(AI 関連薄)</li>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/19/news061.html" target="_blank" rel="noopener">大阪メトロ、「EV バスの墓場」ついに移送開始(ITmedia)</a> — モビリティ末期処理</li>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/19/news022.html" target="_blank" rel="noopener">くら寿司、AI で餌やり自動化 — 通常約2倍に育った「大型生さば」発売(ITmedia)</a> — 養殖 × AI 国内事例</li>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/19/news011.html" target="_blank" rel="noopener">観光地が次に狙うインバウンド客(ITmedia)</a> — 観光戦略(AI 関連薄)</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>Anthropic 4 連発(KPMG 27.6 万 + 日立 29 万 + Karpathy 移籍 + 政府法廷対決)</strong>: <strong>同日に B2B/B2C/人材/法廷の4軸で Anthropic がメガ展開</strong>、<strong>OpenAI に対して 56 万人規模のコア導入で先行</strong>、Karpathy 移籍は<strong>AI 業界人材重力場の決定的シフト</strong></p>
+<p>2. <strong>コンサル業界 × AI ベンダー直結の最終フェーズ</strong>: KPMG × Anthropic + 日立 × Anthropic + ai&amp; × トゥモロー・ネット同日、<strong>「人売りベンダーは悔い改めよ」(2026-05-18)</strong> の翌日に<strong>Big4 自身が AI ベンダーに統合</strong>される事例、コンサル業界変革は<strong>収束局面</strong>へ</p>
+<p>3. <strong>Musk × OpenAI 訴訟 Musk 敗訴</strong>: AI 業界ガバナンスの最初の主要判例が <strong>OpenAI 経営自由度を確認</strong>、Brockman プロダクト統括(2026-05-17)後の体制強化と合わせ<strong>OpenAI 経営層に追い風</strong>、ただし Anthropic の同日展開と人材移籍で<strong>OpenAI vs Anthropic の主戦場が AI ベンダー間競争へ完全に移行</strong></p>
+<p>4. <strong>国産 AI インフラ4軸構築</strong>: 国産ヘルスケア基盤(SMBC + 富士通 + SoftBank)、日立 × Anthropic 社会インフラ、みずほ AI エージェント工場、大東建託 Oracle DB 統合 — <strong>金融 / 社会 / 工場 / 業務系の4軸で国産 × AI が同日に進展</strong></p>
+<p>5. <strong>Sakana AI DGM + Forge Guardrails 53→99%</strong>: <strong>自己改変エージェント + ガードレール基盤による小型モデル革新</strong>、Anthropic 自己改善エージェント(2026-05-17)、Synthetic「AI が AI を作る」と合わせ<strong>AI 自律進化の本格化</strong>(国産 Sakana + OSS Forge)</p>
+<p>6. <strong>OpenAI Content Provenance + 日本政府 Mythos 対応案 + CISA リーク</strong>: <strong>AI 規範形成 vs 政府初動 vs ヒューマンエラー漏洩</strong> が同日に起こり、<strong>AI 規制レイヤ全体のグレード変化</strong>が浮き彫り、安野党首 AI 民主主義(2026-05-18)とも接続</p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>ai-companies</code> 蓄積推奨</strong>: KPMG × Anthropic 27.6 万、日立 × Anthropic 29 万、Karpathy → Anthropic 移籍、Anthropic vs 米政府、Cloudflare Claude Managed Agents、Sakana AI DGM、Google Gemini 個人エージェント、Apple アクセシビリティ、OpenAI Content Provenance、Musk 敗訴、Dell Deskside Agentic AI、Stilta $10.5M、Status AI $17M、OpenAI バグ報奨、Claude Code UI 刷新</li>
+<li><strong><code>consulting-ai</code> 蓄積推奨</strong>: KPMG × Anthropic 27.6 万 + Digital Gateway 税務刷新、日立 × Anthropic 社会インフラ、Stilta レガル AI、ai&amp; × トゥモロー・ネット、みずほ AI エージェント工場、コンサル収束局面論</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: KPMG × Anthropic、日立 × Anthropic、国産ヘルスケア基盤(SMBC + 富士通 + SB)、みずほ AI エージェント工場、大東建託 Oracle 基幹系、デノード × AWS、Sprocket ペルソナ、ai&amp; × トゥモロー、Forge ガードレール、Google Gemini 個人エージェント</li>
+<li><strong><code>agentic-ai</code> 蓄積推奨</strong>: Cloudflare Claude Managed Agents、Sakana AI DGM 自己改変、Dell Deskside Agentic AI、Google Gemini エージェント、Forge Guardrails、みずほ AI エージェント工場、デノード × AWS、Sprocket ペルソナ、Claude Code UI、Apple Intelligence、AI ミュトス政府対応</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: Anthropic vs 米政府ブラックリスト、Musk 敗訴(MIT TR 終局)、OpenAI Content Provenance、OpenAI バグ報奨「3つの急所」、AI ミュトス政府対応案、CISA AWS GovCloud リーク</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: 国産ヘルスケア基盤(SMBC + 富士通 + SB)、みずほ AI エージェント工場、KPMG × Anthropic 税務、Stilta レガル特許</li>
+<li><strong><code>ai-models</code> 蓄積推奨</strong>: Sakana AI DGM 自己改変エージェント、Karpathy → Anthropic 移籍、Forge 8B + ガードレール(53→99%)</li>
+<li><strong><code>ai-infra</code> 蓄積推奨</strong>: Cloudflare Claude Managed Agents、Dell Deskside Agentic AI(GB10/GB300)、OpenAI Codex × Dell オンプレ、AWS Interconnect Oracle 直結、大東建託 Oracle、デノード × AWS、CISA リーク、Anthropic API インフラ</li>
+<li><strong><code>ai-coding</code> 蓄積推奨</strong>: Claude Code UI 刷新(3 ビューモード)、Forge OSS、OpenAI Codex × Dell オンプレ</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: 国産ヘルスケア基盤、デノード × AWS、Sprocket ペルソナ、大東建託 DB 統合、OpenAI Content Provenance</li>
+<li><strong><code>physical-ai</code> 蓄積推奨</strong>: Apple Intelligence アクセシビリティ機能</li>
+<li><strong><code>llm-evaluation</code> 蓄積推奨</strong>: Forge 8B ガードレール 53→99%、OpenAI バグ報奨「3つの急所」</li>
+<li><strong><code>logistics-ai</code> 蓄積推奨</strong>: (本日該当無し / EV バスの墓場は逆ベクトル)</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>
