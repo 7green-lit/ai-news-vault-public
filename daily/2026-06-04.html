@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-06-04 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-06-04 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>東大松尾研 × Anthropic × PKSHA「Japan AI Index」構築 — AI が日本の雇用 / 産業 / 経済 / 教育に与える影響を可視化</strong>(EnterpriseZine / PR TIMES / ITmedia / IT Leaders / トレーダーズ・ウェブ 5 媒体報道 — 国産 AI 政策と Anthropic の決定的連携)、<strong>日本政府が Mythos アクセス権取得</strong>(ITmedia)+ <strong>時事「世界がざわつくクロード・ミュトス」異次元の弱点探知能力</strong>(やさしく解説)、<strong>Alphabet が記録的 $85B 資金調達 — Google AI ビジネスの強烈なシグナル</strong>(TechCrunch)、<strong>Nvidia が Kumo を $400M+ で買収 — エンタープライズ AI 領域</strong>(Investing.com)、<strong>Microsoft「Solara」AI 端末構想 + エージェント軸事業再設計</strong>(日経xtech)+ <strong>Windows Development Skills 一般提供 — エージェントに Windows アプリ開発知識</strong>(Publickey)、<strong>Google「Gemma 4 12B」 — 16GB ノート PC でも動作するマルチモーダルモデル</strong>(ITmedia)、<strong>OpenAI「Dreaming」 — ChatGPT により良いメモリ機能</strong>(OpenAI 公式)、<strong>Anthropic「Claude Opus 4.8 は忖度しない」 — 正直すぎる</strong>(ITmedia)、<strong>Claude Code「サブエージェント 5 つの使い所と止め所」</strong>(@IT、トークン浪費対策)、<strong>ServiceNow × アクセンチュア「FDE」 — エージェント AI 全社展開</strong>(ITmedia)、<strong>Amazon 倉庫ロボットに作業員が話しかけられる</strong>(TechCrunch)、<strong>VoidZero(JS バンドラ)が Cloudflare 参加</strong>(Cloudflare)、<strong>Endava が AI エージェント中心にソフトウェア配信再設計</strong>(OpenAI 公式)、<strong>Lovable × Google Cloud 複数年契約 — 利用 5 倍</strong>、<strong>オートデスク主要製品に AI アシスタント + Fusion MCP</strong>、<strong>アドバンテック WEDA — エッジ AI モデル開発期間 86% 削減</strong>、<strong>Windsurf がリニューアル「Devin Desktop」 — Claude + Codex 一元管理</strong>(ITmedia)、<strong>Cisco Cloud Control 続報「インフラ運用は人 + AI エージェント共同」</strong>(ITmedia)、<strong>AI 生成画像も「児童ポルノ」 — 名古屋地裁初判断</strong>(時事 / 毎日)、<strong>AI リーダー 5 名がバイオ兵器に対する厳格な保護を呼びかけ</strong>(TechCrunch)、<strong>ICE(米国移民税関)が Anthropic サイバーセキュリティイニシアチブに参加</strong>、<strong>AI 創薬は幻想か?</strong> AI 企業トップの見解(ITmedia)、<strong>TSMC が AI 需要に追いつけず「We can only support so much」</strong>(TechCrunch / ITmedia)、<strong>Apple App Store 90% コミッションなし $1.4 兆ドル</strong>、<strong>Elon Musk が Wall Street を steamroll してトリリオネアへ</strong>、<strong>Amazon 検索バーが AI 生成プロダクト表示</strong>(The Verge)、<strong>NTT 西日本データ基盤刷新 — 数十億円コスト削減</strong>、<strong>日立メインフレーム OS 開発終了 2027</strong>、<strong>Google Dreambeans — 人生をカートゥーン化</strong>、<strong>Honda「人型ロボブームを先駆者として」見解</strong>、<strong>Snowflake Summit 2026 Capital One 10 年変革レポート</strong>(グッドウェイ)。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>東大松尾研 × Anthropic × PKSHA、「Japan AI Index」構築 — AI 影響を雇用 / 産業 / 経済 / 教育で可視化</h3>
+<ul>
+<li><strong>要約</strong>: EnterpriseZine + PR TIMES + ITmedia + IT Leaders + トレーダーズ・ウェブ <strong>5 媒体集中報道</strong>。<strong>東京大学松尾研究室 × Anthropic × PKSHA Technology が「Japan AI Index」を構築</strong>、<strong>AI が日本の雇用・産業・経済・教育に与える影響を可視化する公的指標</strong>。Anthropic Partner Network(2026-06-03)、KPMG / 日立(2026-05-19)、三菱重工 × PFN(2026-06-02-03)、自民 AI 政策骨太(2026-05-21)、Mythos 150 組織(2026-06-03)、Trump 大統領令(同)、Anthropic IPO 1 兆ドル(2026-06-02)に並ぶ<strong>Anthropic の国家戦略レイヤ参入</strong>、<strong>国産 AI 大学発研究 × Anthropic 大型連携</strong>で、<strong>「Japan AI = Anthropic 軸」の制度化</strong>を実現。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>consulting-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">EnterpriseZine</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">PR TIMES</a> / <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">IT Leaders</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">トレーダーズ・ウェブ</a> / 2026-06-04</li>
+</ul>
+
+<h3>日本政府、AI「Mythos」アクセス権を取得 — サイバー防衛強化</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia + 時事ドットコム「世界がざわつくクロード・ミュトス、やさしく解説:異次元の弱点探知能力、日本もアクセス権」。<strong>日本政府が Mythos のアクセス権を取得、サイバー防衛強化に活用</strong>。Anthropic Mythos 150 組織(2026-06-03)、Trump 大統領令(同)、Anthropic Partner Network(同)、OpenAI GPT-5.5-Cyber 日本政府 / 金融(2026-05-29)、自民 AI 政策骨太(2026-05-21)、AI ミュトス政府対応案(2026-05-19)、Mythos 一般公開(2026-05-29)、Japan AI Index(同日)に並走する<strong>日本政府の AI セキュリティ実装本格化</strong>、<strong>日本市場 = AI セキュリティ世界主戦場</strong>論の決定的根拠。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / <a href="https://www.jiji.com/" target="_blank" rel="noopener">時事ドットコム解説</a> / 2026-06-04</li>
+</ul>
+
+<h3>Alphabet、記録的 $85B 資金調達 — Google AI ビジネスの &quot;helluva&quot; シグナル</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Alphabet が過去最大規模 $85B(約 12.7 兆円)を Google の AI ビジネス向けに調達</strong>、<strong>「helluva good signal」</strong>と評。Anthropic IPO 1 兆ドル(2026-06-02)、Mach Industries $1.8B(同)、Cyera $12B(2026-06-03)、Coralogix $200M(同)、Hark $700M(2026-05-21)、半導体売上 8 割増(2026-05-18)、AI 投資世界貿易救済(同)に並ぶ<strong>AI 投資マクロの臨界</strong>、Google I/O 2026(2026-05-20)、Gemini 3.5 / Spark / Antigravity 2.0 / AI Glasses への<strong>巨額再投資</strong>フェーズ確定。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>finance-ai</code>, <code>enterprise-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/03/alphabets-85b-raise/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>Nvidia、Kumo を $400M+ で買収 — エンタープライズ AI</h3>
+<ul>
+<li><strong>要約</strong>: Investing.com。<strong>Nvidia がエンタープライズ AI 企業 Kumo を $400M 超で買収</strong>。Jensen Huang $200B 新市場(2026-05-21)、半導体売上 8 割増(2026-05-18)、Cerebras IPO(2026-05-14)、AMD × IBM(2026-05-16)、Google AI 半導体設計転換(2026-05-18)、Anthropic × Colossus $15B(2026-05-21)、Palantir × NVIDIA(2026-06-03)、Microsoft × NVIDIA 1 ペタフロップス PC(同)に並ぶ<strong>Nvidia のエンタープライズ AI スタック垂直統合</strong>、<strong>「半導体 → ソフトウェア」</strong>戦線拡大。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Investing.com</a> / 2026-06-04</li>
+</ul>
+
+<h3>Microsoft「Solara」AI 端末構想 + Windows Development Skills 一般提供</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック「Microsoft がエージェント軸に事業再設計、AI 端末構想 &quot;Solara&quot; も披露」+ Publickey「Microsoft が AI エージェントに Windows アプリ開発知識を与える Windows Development Skills を一般提供」。<strong>Microsoft Build 級リリース 6/3 (2026-06-03) からの 24 時間後継続報道</strong>、<strong>「Solara」</strong>は Surface 次世代 + AI ハードウェアか、<strong>「Windows Development Skills」</strong>は AI エージェントが Windows アプリ開発できる SDK レイヤ。Microsoft × OpenAI 破局(2026-06-03)、Microsoft 7 AI モデル + MXC + WSL containers(同)、Microsoft 365 Copilot 33%(2026-06-02)に並ぶ<strong>Microsoft の &quot;全 AI 独立&quot; 戦略の継続展開</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>agentic-ai</code>, <code>ai-coding</code>, <code>physical-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/" target="_blank" rel="noopener">日経クロステック</a> / <a href="https://www.publickey1.jp/" target="_blank" rel="noopener">Publickey</a> / 2026-06-04</li>
+</ul>
+
+<h3>Google「Gemma 4 12B」 — 16GB ノート PC でも動作するマルチモーダルモデル</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Google が「Gemma 4 12B」を発表</strong>、<strong>16GB ノート PC でも動作するマルチモーダル LLM</strong>。Gemini 3.5 / 3.5 Flash(2026-05-20)、Nano Banana 2 / Pro(2026-05-29)、Genie World Model(2026-05-20)、Dreambeans(同日)、SANA-WM(2026-05-16)、リコー LMM(2026-05-15)、Forge 8B + Guardrails(2026-05-19)、xCena memory(2026-05-29)、Gemma4-31B(2026-05-29)に並走する<strong>小型・ローカル動作マルチモーダルモデル</strong>、<strong>Microsoft 7 AI モデル(2026-06-03)に対する Google の応戦カード</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-models</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>Anthropic Claude Code「サブエージェントの 5 つの使い所と止め所」 — トークン浪費対策</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>Anthropic が「Claude Code でトークン浪費の原因 = サブエージェントの過剰使用」を明かす</strong>、<strong>5 つの使い所 + 止め所</strong>を体系化。$500M Claude 燃やし(2026-05-29)、Uber 4 ヶ月予算オーバー(2026-06-03)、Glean ARR $300M「AI 予算削減」(2026-05-29)、Cursor 3 Agents Window(同日)、Code with Claude(2026-05-21)、Claude Code 急伸(同)、Microsoft 365 Copilot 33%(2026-06-02)に並走する<strong>「AI コーディングのコスト最適化」</strong>主戦場化、<strong>Anthropic 自身がコスト最適化のガイドラインを発信</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>agentic-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-04</li>
+</ul>
+
+<h3>Anthropic「Claude Opus 4.8 は忖度しない」 — 正直すぎる</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Anthropic Claude Opus 4.8 が忖度せず &quot;正直すぎる&quot;</strong> と評価、ユーザー側に違和感を与えるケースも。Opus 4.8 リリース(2026-05-29)、Mythos 150 組織(2026-06-03)、Anthropic IPO(2026-06-02)、Anthropic Glasswing(同)、セキュリティフレームワーク(同)、Code with Claude(2026-05-21)に並走する<strong>Claude Opus 4.8 実用評価フェーズ</strong>、<strong>「正直なモデル vs ユーザー満足度」</strong>のトレードオフ論議。</li>
+<li><strong>トピック</strong>: <code>ai-models</code>, <code>ai-companies</code>, <code>llm-evaluation</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>ServiceNow × アクセンチュア「FDE」 — エージェント AI 全社展開</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>ServiceNow × アクセンチュアが、エージェント型 AI を企業全社で展開する「FDE(Forward Deployed Engineer)」プログラムを開始</strong>。アクセンチュア × Anthropic(2026-05-12)、アクセンチュア × Google Cloud(2026-05-15)、KPMG × Anthropic(2026-05-19)、ServiceNow CEO「SaaS の敵ではない」(2026-06-02)、Salesforce オープン(2026-06-01)、Snowflake × Anthropic(2026-06-02)、Anthropic Partner Network(2026-06-03)に並ぶ<strong>SaaS 大手 × Big4 × AI ベンダー 3 軸連携</strong>の本格化、<strong>「FDE = SaaS のエージェント運用標準化」</strong>論。</li>
+<li><strong>トピック</strong>: <code>consulting-ai</code>, <code>enterprise-ai</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>TSMC、AI 需要に追いつけず — 「We can only support so much」</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch + ITmedia。<strong>TSMC が「AI 需要に追いつけない、サポートできる範囲には限界がある」と表明</strong>、株主総会で AI 活用拡大に自信を見せつつ需要側の限界に言及。半導体売上 8 割増(2026-05-18)、サーバー値上げ(2026-05-20)、Alphabet $85B(同日)、Nvidia × Kumo(同)、Anthropic × Colossus $15B(2026-05-21)、台湾 = 生成 AI 核心利益(2026-05-17)、アルミ価格 20% 上昇(2026-05-21)に並走する<strong>AI 計算リソース不足の臨界</strong>確認、<strong>「需要 &gt; 供給」</strong>が世界 No.1 ファウンドリで明示化。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>enterprise-ai</code>, <code>physical-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>OpenAI「Dreaming」 — Better Memory for a More Helpful ChatGPT</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 公式。<strong>OpenAI が「Dreaming」 — ChatGPT の改善されたメモリ機能</strong>を発表。<strong>「夢を見る」メタファーが Anthropic「AI が夢を見る」自己改善型エージェント(2026-05-17)と直接競合</strong>、ChatGPT 個人金融 + Plaid(2026-05-16)、OpenAI × Malta(同日)、Google Spark 30 億人(2026-05-20)、Gemini Spark 24/7(同)、Codex every role / tool / workflow(2026-06-02)に並ぶ<strong>OpenAI 消費者 AI の記憶機能 + パーソナル化</strong>強化、Anthropic Opus 4.8 + Mythos 150 組織 + Japan AI Index(同日)に対する<strong>OpenAI 側の B2C 深化応戦</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-models</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/dreaming-memory" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-06-04</li>
+</ul>
+
+<h3>AI リーダー 5 名、AI 支援バイオ兵器に対する厳格な保護を呼びかけ</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>AI 業界リーダー 5 名が、AI 支援によるバイオ兵器に対するより厳格な保護を呼びかけ</strong>、OpenAI Biodefense(同日)、OpenAI Rosalind Biodefense(2026-05-29)、GPT-Rosalind 新機能(2026-06-03)、Anthropic Glasswing(2026-06-02)、Trump 大統領令(2026-06-03)、Mythos 150 組織(同)に並走する<strong>バイオセキュリティ × AI</strong>の規範形成、<strong>「フロンティア AI = 生物兵器の閾値リスク」</strong>を業界が公式に認識。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/04/ai-leaders-bioweapon-protections/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>ICE(米国移民税関捜査局)、Anthropic サイバーセキュリティイニシアチブに参加</h3>
+<ul>
+<li><strong>要約</strong>: National Mortgage Professional。<strong>米国移民税関捜査局(ICE)が Anthropic のサイバーセキュリティイニシアチブに参加</strong>。Trump 大統領令(2026-06-03)、Mythos 150 組織(同)、Anthropic vs 米政府(2026-05-19)、DC Circuit off-ramp(2026-05-20)に並走する<strong>Anthropic × 米政府関係修復</strong>、<strong>「司法対立から協力モード」へ</strong>の戦略的転換。Japan AI Index(同日)、日本政府 Mythos アクセス権(同)と並ぶ<strong>Anthropic の政府公的連携拡大</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">National Mortgage Professional</a> / 2026-06-04</li>
+</ul>
+
+<h3>AI 生成画像も「児童ポルノ」と認定 — 名古屋地裁が初判断</h3>
+<ul>
+<li><strong>要約</strong>: 時事ドットコム + 毎日新聞。<strong>名古屋地裁が AI 生成画像も「児童ポルノ」と認定</strong>、画像共有元教諭に実刑判決の初判断。<strong>国内司法レベルでの AI 生成コンテンツの法的取扱いの先例</strong>、ZIP! AI アニメ反発(2026-05-29)、創作物と AI 区別 / 専門機関(2026-05-18)、AI 画像クリエーター減収(同)、朝日 × 日経 vs Perplexity 訴訟(2026-05-15)、YouTube ディープフェイク検出拡大(2026-05-16)、OpenAI SynthID(2026-05-20)、Publishers AI Search opt-out(2026-06-03)、AI Court 訴訟洪水(同日)に並ぶ<strong>AI 生成物の法的境界線</strong>主戦場化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">時事ドットコム</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">毎日新聞</a> / 2026-06-04</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>Lovable × Google Cloud 複数年契約 — 利用 5 倍</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>vibe coding スタートアップ Lovable が Google Cloud と複数年契約、利用を 5 倍に拡大</strong>。Lovable × Atech vibe coding(2026-05-14)、Google AI Studio(2026-05-20)、Google vibe coding 体験(2026-05-21)、Cursor 3(2026-05-29)、Snowflake CoCo(2026-06-03)、Wasmer × Codex(同)、Microsoft Windows Development Skills(同日)に並走する<strong>vibe coding × クラウド大手連携</strong>の本格化、Microsoft × OpenAI 破局(2026-06-03)に対する Google の AI コーディング包囲。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>Windsurf がリニューアル「Devin Desktop」 — Claude も Codex も一元管理</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Windsurf(旧 Codeium)が「Devin Desktop」</strong>としてリニューアル、<strong>Claude も Codex も一元管理できる AI コーディング統合環境</strong>。Cursor 3 Agents Window(2026-05-29)、Claude Code UI 刷新(2026-05-19)、Microsoft × OpenAI 破局(2026-06-03)、Cognition Devin 系の進化、Anthropic + OpenAI ベンダー中立 IDE の本格化、Code with Claude(2026-05-21)、Snowflake CoCo(2026-06-03)に並走する<strong>マルチエージェント AI コーディング統合プラットフォーム</strong>の主戦場確定。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>agentic-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>Amazon、倉庫ロボットに作業員が話しかけられる</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Amazon が倉庫労働者が話しかけて作業指示できるロボットを開発</strong>、<strong>Voice-Controlled Physical AI</strong>。Anthropic + Gates 財団 ヘルスケア(2026-05-15)、AI ロボット盲導犬(2026-05-17)、AI クリーニングロボ訓練(2026-05-29)、Kiwibit 鳥フィーダー(同)、エディオン MiseMise(2026-05-21)、Honda 人型ロボブーム見解(同日)、IOWN 重機 3 台遠隔(2026-05-29)に並ぶ<strong>Voice + Physical AI</strong>の主要事例、Amazon の倉庫 AI 投資の継続。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>agentic-ai</code>, <code>ai-companies</code>, <code>logistics-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>Endava、AI エージェント中心にソフトウェア配信を再設計</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 公式事例。<strong>Endava(SI 大手)が AI エージェント中心にソフトウェア配信プロセスを再設計</strong>。Endava × Codex(5/28 期間)、Travelers × OpenAI(2026-06-02)、AdventHealth × OpenAI(2026-05-21)、Boston Children&#x27;s × OpenAI(2026-05-29)、Codex for every role / tool / workflow(2026-06-02)に並ぶ<strong>OpenAI の SI / コンサル × Codex 主導モデル</strong>の継続事例。</li>
+<li><strong>トピック</strong>: <code>consulting-ai</code>, <code>ai-coding</code>, <code>agentic-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/endava-redesign" target="_blank" rel="noopener">OpenAI Blog</a> / 2026-06-04</li>
+</ul>
+
+<h3>Cisco Cloud Control 続報 — インフラ運用は「人 + AI エージェント共同」へ</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia 詳報。<strong>Cisco Cloud Control(2026-06-02)の本格運用論</strong>、<strong>「インフラ運用は人 + AI エージェントの共同」</strong>へ。PwC「組織構成員」(2026-06-03)、企業 77% 本番投入(同)、「使うなら教えて」(同)、Anthropic セキュリティフレームワーク(2026-06-02)、Coralogix $200M(同)、Datadog × Sakana(同)、Microsoft MXC(2026-06-03)に並ぶ<strong>「AI エージェント = チームメイト」</strong>の運用論統合。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>agentic-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>オートデスク、主要製品に AI アシスタント + Fusion 向け MCP</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>オートデスクが主要製品に AI アシスタント機能を展開、Fusion 向け MCP(Model Context Protocol)も提供</strong>。AGNTCon + MCPCon 東京渋谷(2026-05-20)、Linux Foundation MCP の主流化、Microsoft Windows Development Skills(同日)、Claude Managed Agents(2026-05-19)、Cisco Cloud Control(2026-06-02)、Snowflake CoCo(2026-06-03)に並ぶ<strong>MCP プロトコル × 業界 SaaS 統合</strong>事例、製造設計 × AI の主流化。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>physical-ai</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>アドバンテック「WEDA」 — エッジ AI モデルの開発期間 86% 削減</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>台湾アドバンテックが「WEDA」を前面に押し出し、エッジ AI モデルの開発期間を 86% 削減</strong>。Dell Deskside Agentic AI(2026-05-19)、Foundry Local(2026-05-29)、Cloudflare Workers AI / Claude Managed Agents(2026-05-19)、Edge × AI、TSMC「需要に追いつけない」(同日)に並ぶ<strong>エッジ × Physical AI 領域の効率化</strong>、台湾系 IPC(産業 PC)大手のエッジ AI 戦略。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>ai-infra</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>VoidZero(JS バンドラスタートアップ)が Cloudflare 参加</h3>
+<ul>
+<li><strong>要約</strong>: Cloudflare 公式。<strong>VoidZero(Vite + Rolldown チーム、JavaScript ツールスタートアップ)が Cloudflare に参加</strong>。Rolldown 1.0 + Vite 8.0 採用(2026-06-02)、Cloudflare Claude Managed Agents(2026-05-19)、Mythos Preview(2026-05-20)、AI エージェント対応度評価(2026-06-03)、Workers AI 連携と並ぶ<strong>Cloudflare の &quot;AI 時代インターネット標準化&quot;</strong>戦略、<strong>ビルドツール × エッジ × AI 統合</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>ai-companies</code>, <code>ai-infra</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://blog.cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a> / 2026-06-04</li>
+</ul>
+
+<h3>Honda、人型ロボブームを &quot;先駆者&quot; として見る — 次の一手</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Honda が「人型ロボットブームを先駆者として」見つめ、「悔しさもあるが」次の一手を語る</strong>。三菱重工 × PFN ミッションクリティカル国産 AI(2026-06-02)、エディオン MiseMise(2026-05-21)、AI ロボット盲導犬(2026-05-17)、Amazon Voice 倉庫ロボ(同日)、Mach Industries(2026-06-02)に並ぶ<strong>日本 Physical AI / 人型ロボット</strong>事例、Tesla Optimus / Figure AI / Unitree への国産老舗側の応戦準備。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>NTT 西日本データ基盤刷新 — 数十億円コスト削減 + 東西共同利用化</h3>
+<ul>
+<li><strong>要約</strong>: EnterpriseZine。<strong>NTT 西日本が東西共同利用化を実現するデータ基盤刷新で数十億円のコスト削減</strong>、<strong>3 大クラウド資格全冠</strong>を活用。日立 × Anthropic(2026-05-19)、SBI 新生銀(2026-05-18)、KDDI 中計 2 兆円(2026-05-20)、SMBC + 富士通 + SoftBank(2026-05-19)、JR 西日本(2026-05-29)に並ぶ<strong>国内大手 AI 基盤刷新事例</strong>の継続。</li>
+<li><strong>トピック</strong>: <code>ai-data-structuring</code>, <code>ai-infra</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">EnterpriseZine</a> / 2026-06-04</li>
+</ul>
+
+<h3>日立、メインフレーム向け OS 開発を終了 2027 年</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>日立がメインフレーム向け OS 開発を終了、システム販売は 2027 年まで</strong>。日立 × Anthropic 29 万人 Claude 導入(2026-05-19)、日立 17 万台 PC サブスク(2026-05-29)、AI で COBOL/Java レガシー数日刷新(2026-06-03)、JR 西日本 AI(2026-05-29)に並ぶ<strong>国内大手 IT 主軸の世代交代</strong> — <strong>「メインフレーム → クラウド + AI」シフト</strong>の象徴的事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>「AI 創薬は幻想か」 — AI 企業トップの見解</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>「AI 創薬は幻想なのか?」 — 数年間の期待にもかかわらず劇的変化が見られない理由を AI 企業トップが解説</strong>。Imperagen 量子 + AI 酵素(2026-05-21)、BMS × Anthropic(同)、AdventHealth × OpenAI(同)、SMBC ヘルスケア基盤(2026-05-19)、Rosalind Biodefense(2026-05-29)、Boston Children&#x27;s(同)、Rehumanizing healthcare(2026-06-02)、AI バイオ兵器保護(同日)に並走する<strong>AI × バイオ / 創薬の現実評価</strong>、<strong>「期待 vs 現実」議論の医療版</strong>。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-04</li>
+</ul>
+
+<h3>Amazon 検索バー — AI 生成プロダクトを表示 + 倉庫ロボ</h3>
+<ul>
+<li><strong>要約</strong>: The Verge + TechCrunch 2 連発。<strong>Amazon の検索バーが、購入できない AI 生成プロダクトを表示する</strong>(検索体験のバグ)。<strong>Google Universal Cart(2026-05-20)、Adobe AI に無視されるブランド(2026-05-15)、Publishers AI Search opt-out(2026-06-03)に並走するコマース × AI 検索</strong>の歪み事例。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.theverge.com/" target="_blank" rel="noopener">The Verge</a> / <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>裁判所、AI 生成訴訟の洪水にどう対処するか</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>裁判所が AI 生成訴訟の洪水にどう対処するか</strong>を分析。HackerOne 受付停止(2026-05-11)、arXiv AI slop BAN(2026-05-16-17)、Google スパム規約(2026-05-16)、GitHub バグ報奨厳格化(2026-05-21)、AI 生成画像 児童ポルノ認定(同日)に並走する<strong>司法システム × AI slop の臨界</strong>、<strong>Let us filter AI slop, you cowards</strong>(同日 TechCrunch)とも並走、<strong>「AI 生成物の社会的フィルタリング欲求」</strong>の高まり。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>Elon Musk、Wall Street を steamroll してトリリオネアへ</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 評論。<strong>Elon Musk が Wall Street を steamroll(蹴散らかして)トリリオネア(1 兆ドル富豪)になる方向</strong>、xAI / SpaceX / Tesla 統合戦略。Anthropic × Colossus $15B(2026-05-21)、xAI スタッフ流出(2026-05-15)、Musk × OpenAI 訴訟敗訴(2026-05-19)、Mach Industries(2026-06-02)、Cyera $12B(2026-06-03)、Alphabet $85B(同日)に並ぶ<strong>AI 時代の超富豪 / 巨額バリュエーション</strong>現象。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>finance-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/04/elon-musk-trillionaire/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>Apple App Store — $1.4 兆ドル billings、90% コミッションなし</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Apple が App Store の取引総額 $1.4 兆ドル(約 210 兆円)、90% はコミッションなし</strong>と発表。Apple Business 200 か国(2026-05-15)、Apple Siri 自動削除(2026-05-18)、Apple アクセシビリティ(2026-05-19)、Apple Intelligence 訴訟和解(2026-05-08)、Apple Mac Mythos 5 日突破(2026-05-20)に並走する<strong>Apple のエコシステム財務 + AI 取扱い</strong>周辺、Microsoft × OpenAI 破局(2026-06-03)、Anthropic IPO(2026-06-02)、Alphabet $85B(同日)と並ぶ<strong>AI Big Tech 4 強の財務地殻変動</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>finance-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>Snowflake Summit 2026 — Capital One 10 年の変革レポート(金融 × データ基盤)</h3>
+<ul>
+<li><strong>要約</strong>: グッドウェイ「Snowflake Summit 2026 現地レポート③」。<strong>Capital One が 10 年の AI / データ基盤変革を語る</strong>、<strong>「AI 時代の金融機関に求められるデータ基盤」</strong>を提示。Snowflake × Anthropic(2026-06-02)、Snowflake CoCo(2026-06-03)、Snowflake 上原 金融 AI PoC 終了(2026-06-02)、SMBC ヘルスケア基盤(2026-05-19)、みずほ AI エージェント工場(同)に並ぶ<strong>金融 × データ基盤 × Snowflake</strong>の主戦場集中。</li>
+<li><strong>トピック</strong>: <code>finance-ai</code>, <code>ai-data-structuring</code>, <code>enterprise-ai</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://goodway.co.jp/" target="_blank" rel="noopener">グッドウェイ</a> / 2026-06-04</li>
+</ul>
+
+<h3>Quick-commerce FirstClub、9 ヶ月で評価倍化 $255M</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Quick-commerce FirstClub が 9 ヶ月で評価を倍化 $255M</strong>。Universal Cart(2026-05-20)、Amazon 検索 AI 生成プロダクト(同日)、Lovable × Google Cloud 5 倍(同日)、Cyera $12B(2026-06-03)、Mach Industries(2026-06-02)、Alphabet $85B(同日)に並ぶ<strong>AI 関連スタートアップ評価急膨張</strong>事例。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>finance-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-04</li>
+</ul>
+
+<h3>OpenAI「Biodefense in the Intelligence Age」 + Google Dreambeans</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 公式 + TechCrunch。<strong>OpenAI「Biodefense in the Intelligence Age」</strong>(Rosalind Biodefense 2026-05-29 続報)、<strong>Google が「Dreambeans」 — 人生をカートゥーン化する AI ツール</strong>を発表(TechCrunch)。AI バイオ兵器保護(同日)、AI 生成画像児童ポルノ判決(同)、Gemini Omni(2026-05-20)、Nano Banana 2(2026-05-29)、Disney erased FiveThirtyEight(2026-05-20)、ZIP! AI アニメ反発(同日)、Adobe AI に無視されるブランド(2026-05-15)に並走する<strong>AI コンテンツ生成 + 規範</strong>の同日二極化。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-models</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/biodefense-intelligence-age" target="_blank" rel="noopener">OpenAI</a> / <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch Dreambeans</a> / 2026-06-04</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">NTT IOWN でラグビービデオ判定遠隔化(ITmedia)</a> — スポーツ × ネットワーク AI</li>
+<li><a href="https://www.publickey1.jp/" target="_blank" rel="noopener">Microsoft Build 級続報まとめ</a> — Coreutils、WSL containers 詳細</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">人型ロボブームを Honda が見つめる(ITmedia)</a> — Physical AI 続報</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">日本発スマートグラスが 1 億円超ヒット(ITmedia)</a> — Physical AI 国内</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ドモホルンリンクル 20 万会員 沈黙ファン(ITmedia)</a> — マーケティング</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ソニー経理 2 年間で 1 万時間削減(ITmedia)</a> — 国内大手 DX 事例</li>
+<li><a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">Excel パワーピボット入門(@IT)</a> — 業務効率化</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">H&amp;M / Ray-Ban 自律型エンタープライズ事例(ITmedia)</a> — リテール × AI 国際</li>
+<li><a href="https://news.google.com/" target="_blank" rel="noopener">株式会社DataMarket データ基盤強化(PR TIMES)</a></li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">中小企業 7 割セキュリティ「自信」 vs 基本対策盲点(ITmedia)</a></li>
+<li><a href="https://news.google.com/" target="_blank" rel="noopener">「電子部品」有望株(株探)</a> — AI ラリー</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Let us filter AI slop, you cowards(TechCrunch)</a></li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">As AI gets better, it reveals an empty promise(TechCrunch)</a></li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Voice AI for Goldman/Meta alumni(TechCrunch)</a></li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">大井町トラックス(ITmedia)</a> — 街づくり</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>Japan AI Index(松尾研 × Anthropic × PKSHA)</strong> + <strong>日本政府 Mythos アクセス権</strong>: <strong>国産 AI 政策の中心軸が Anthropic 直接連携で確立</strong>、<strong>「Japan AI = Anthropic 連合」</strong>化が同日に制度・実装両面で具体化、自民 AI 政策骨太(2026-05-21)から続く<strong>国内 AI 戦略の大型集合</strong></p>
+<p>2. <strong>Anthropic Mythos の国家展開飽和</strong>: 6/3 150 組織 + Trump 大統領令 → 6/4 日本政府アクセス権 + ICE 参加 — <strong>Anthropic Mythos が「世界の AI セキュリティ国際標準」</strong>として確立、6/2 IPO → 6/3 Partner Network → 6/4 国家連携 と<strong>Anthropic 3 日連続超攻勢</strong></p>
+<p>3. <strong>Microsoft の &quot;Solara 構想&quot; + Windows Development Skills</strong>: Microsoft Build 級リリース(2026-06-03)の翌日にも継続展開、<strong>Microsoft × OpenAI 破局(同日)</strong>を踏まえた<strong>自社 AI 全方位戦略</strong>の決定性</p>
+<p>4. <strong>Alphabet $85B + Nvidia × Kumo + TSMC「需要に追いつけない」</strong>: <strong>「Google AI 巨額再投資 + Nvidia 垂直統合 + TSMC 供給律速」</strong>の三重構造が同日に出現、<strong>AI インフラの &quot;需要過剰&quot; 局面</strong>確定</p>
+<p>5. <strong>エージェント AI = 組織構成員 / 全社展開 / Cisco Cloud Control 続 / ServiceNow × Accenture FDE / Cursor 3 続</strong>: <strong>「エージェント AI = 標準業務単位」</strong>への完全シフト、<strong>Microsoft / Cisco / Anthropic / Cursor / Windsurf(Devin Desktop)/ Snowflake CoCo 6 軸</strong>でマルチエージェント主流化</p>
+<p>6. <strong>AI 生成画像 = 児童ポルノ判決 + AI 訴訟洪水 + バイオ兵器保護要請</strong>: <strong>AI 規範形成の最深層レイヤ(司法 / 生物兵器 / 社会価値)</strong>が同日に確立、Anthropic Glasswing + OpenAI Democratic Governance + Trump 大統領令 が<strong>政府 / ベンダー / 司法の規範三層構造</strong>を完成</p>
+<p>7. <strong>Voice + Physical AI 主流化</strong>: Amazon 倉庫ロボ Voice + Honda 人型ロボ見解 + アドバンテック WEDA + オートデスク Fusion MCP + 国産スマートグラス 1 億円 — <strong>Physical / Voice AI の消費者・産業両面で同日臨界</strong></p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>ai-companies</code> 蓄積推奨</strong>: Japan AI Index(松尾研 × Anthropic × PKSHA)、日本政府 Mythos アクセス権、Alphabet $85B、Nvidia × Kumo $400M、Microsoft Solara + Windows Development Skills、Anthropic Opus 4.8 忖度しない、Lovable × Google Cloud 5 倍、Windsurf → Devin Desktop、Honda 人型ロボ、Apple App Store $1.4T、Elon Musk トリリオネア、ICE × Anthropic、Endava Codex 再設計、Gemma 4 12B、FirstClub $255M</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: Japan AI Index、日本政府 Mythos アクセス権、AI 生成画像 児童ポルノ判決、AI バイオ兵器保護要請、ICE × Anthropic、AI 訴訟洪水裁判所、AI slop フィルタリング、Biodefense Intelligence Age、Trump 大統領令(続)</li>
+<li><strong><code>agentic-ai</code> 蓄積推奨</strong>: Cisco Cloud Control 続、ServiceNow × Accenture FDE、Cursor 3 続、Devin Desktop、Microsoft MXC 続、Amazon 倉庫ロボ Voice、オートデスク Fusion MCP、Anthropic サブエージェント 5 使い所、Snowflake CoCo 続、Endava AI 配信再設計</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: Japan AI Index、ServiceNow × Accenture FDE、Cisco Cloud Control 続、PwC 組織構成員(続)、企業 77% 本番投入(続)、TSMC 限界、AI 創薬幻想論、NTT 西日本データ基盤、日立メインフレーム終了</li>
+<li><strong><code>consulting-ai</code> 蓄積推奨</strong>: Japan AI Index(東大松尾研)、ServiceNow × Accenture FDE、Endava AI 配信再設計、AI 創薬幻想論、AI バイオ兵器保護(規範形成)、Cisco Cloud Control 共同</li>
+<li><strong><code>ai-coding</code> 蓄積推奨</strong>: Microsoft Windows Development Skills、Lovable × Google Cloud 5 倍、Devin Desktop、Endava × Codex、Claude Code サブエージェント、Snowflake CoCo(続)、AI で COBOL/Java(2026-06-03)、JavaScript ブーム(同)</li>
+<li><strong><code>ai-models</code> 蓄積推奨</strong>: Gemma 4 12B、Opus 4.8 忖度しない、OpenAI Dreaming メモリ、Microsoft 7 AI モデル(続)、Anthropic サブエージェント</li>
+<li><strong><code>ai-infra</code> 蓄積推奨</strong>: Alphabet $85B、Nvidia × Kumo、TSMC AI 需要追いつけない、Microsoft 1 ペタフロップス PC(続)、NTT 西日本データ基盤、日立メインフレーム終了、VoidZero × Cloudflare、Microsoft Solara、アドバンテック WEDA エッジ AI</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: Japan AI Index、NTT 西日本データ基盤、Snowflake Summit 2026 Capital One、DataMarket、Forbes ユタ州クリーンエネルギー</li>
+<li><strong><code>physical-ai</code> 蓄積推奨</strong>: Amazon Voice 倉庫ロボ、Honda 人型ロボブーム、Microsoft Solara、アドバンテック WEDA エッジ、オートデスク Fusion MCP、スマートグラス 1 億円、NTT IOWN ラグビー</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: Alphabet $85B、Apple App Store $1.4T、Elon Musk トリリオネア、Snowflake Summit Capital One、PKSHA 続落 + DZH 中立、AI ラリー電子部品株、FirstClub $255M</li>
+<li><strong><code>llm-evaluation</code> 蓄積推奨</strong>: Claude Opus 4.8 忖度しない、Anthropic Claude Code サブエージェント評価、AI 創薬幻想論、Microsoft AI 行動テストツール</li>
+<li><strong><code>logistics-ai</code> 蓄積推奨</strong>: Amazon Voice 倉庫ロボ、NTT IOWN ラグビー</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>

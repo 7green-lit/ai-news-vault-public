@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-05-29 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-05-29 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>Anthropic「Claude Opus 4.8」リリース — Mythos クラスモデルを数週間以内に一般提供</strong>(Anthropic / ITmedia / 日経xtech「来るべきものが来た」)、<strong>OpenAI、日本政府 + 主要金融機関に「GPT-5.5-Cyber」提供 — Mythos 匹敵性能で開放、Anthropic と技術標準競う</strong>(ITmedia AI+ / 日経)、<strong>Mystery company が単月 $500M を Claude API に「燃やす」 — 従業員ライセンスの利用上限設定し損ね</strong>(Tom&#x27;s Hardware / Crypto Briefing — Anthropic の収益爆発と運用ガバナンスのリアル)、<strong>Google Nano Banana 2 / Nano Banana Pro 一般提供開始 — 動画からの画像生成サポート</strong>(ITmedia)、<strong>xCena $135M / $570M 評価 — AI の真のボトルネックは compute ではなく memory</strong>(TechCrunch、メモリ狂騒 続報)、<strong>Sakana AI × 一般社団法人 DEEP DIVE 情報分析パートナーシップ</strong>、<strong>Cursor 3 公開 — エージェント共同開発 UI「Agents Window」</strong>(@IT)、<strong>Microsoft「Foundry Local」 — クラウド依存解消のローカル AI 基盤</strong>(@IT)、<strong>Aaron Levie:「ほとんどの CEO は AI psychosis に陥っている」</strong>(TechCrunch podcast)、<strong>経営陣の AI リスク認識のギャップ — 8 割「AI 利用可視化」と回答する一方で未承認 AI が拡大</strong>(@IT)、<strong>JR 西日本「熟練者が手書きするしかなかった車両作業計画」を AI で自動化</strong>(@IT)、<strong>大林組 × RICOS の AI-CAE 風荷重評価ソリューション</strong>(MONOist)、<strong>日立、17 万台 PC を「脱・購入」でサブスク調達</strong>(@IT)、<strong>Glean、ARR $300M 突破 — AI 予算削減が主要 selling point</strong>(TechCrunch)、<strong>OpenAI Boston Children&#x27;s Hospital で新診断 / Braintrust × Codex / Rosalind Biodefense / Trustworthy 3rd party evaluations</strong>(OpenAI 公式 4 連発)、<strong>「AI クリーニングロボ訓練」のため家を無料掃除するスタートアップ</strong>(The Verge)、<strong>Pope Magnifica Humanitas — AI 時代の個人テンプレート</strong>(MIT Technology Review)、<strong>Adobe 対話 AI エージェント「mediocre design intern」</strong>(The Verge)、<strong>スカパー JSAT、Amazon Leo を 2026 年度内に提供開始</strong>(日経xtech)、<strong>就活生 IT 人気企業1位 — 「AI を社内で使えない会社は不安」</strong>(ITmedia)、<strong>ZIP! 生成 AI アニメに視聴者抗議</strong>(Yahoo)、<strong>フォックスコン Research CEO 「COMPUTEX で語ったエンタープライズ AI の危機意識」</strong>(Business Insider)、<strong>「IOWN + ローカル5G + WiGig」で 1 人が重機3台遠隔操作</strong>(@IT)、<strong>総務省お墨付きの危ないプロンプト防衛策</strong>(@IT)、<strong>国内金融機関フィッシングテンプレート の脅威トレンド</strong>(@IT)、<strong>ダイレクトクラウド Interop Tokyo 2026 出展</strong>(時事)。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>Anthropic、「Claude Opus 4.8」リリース — Mythos クラス AI モデルを数週間以内に一般公開</h3>
+<ul>
+<li><strong>要約</strong>: Anthropic 公式 + ITmedia + 日経クロステック「来るべきものが来た」評論。<strong>Anthropic が Claude Opus 4.8 をリリース</strong>、<strong>Mythos クラスの AI モデルを数週間以内に一般公開</strong>することを発表。Mythos × Apple 5 日突破(2026-05-20)、東京新聞「世界が恐れる」(同)、Anthropic Mythos 情報共有容認(同)、Cloudflare Mythos Preview(同)、米国「全部守るのは無理」(2026-05-18)、AI ミュトス政府対応案(2026-05-19)からの<strong>Mythos の &quot;一般兵器化&quot;</strong> という最終局面。<strong>Anthropic 黒字 + Q2 $10.9B(2026-05-21)</strong> の財務裏付けがあり、<strong>「Mythos を全世界に開放する技術的・経済的準備が整った」</strong>と日経xtech評。</li>
+<li><strong>トピック</strong>: <code>ai-models</code>, <code>ai-companies</code>, <code>agentic-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBVeFZoaVpfX1hnTlJPS05nQWZYRnB6bUdOc3pzSmlyX3dpN3BleUlVQm53Z3Bxd29JOUw1MENDMWk5VF9CX1VSU0Q2eV9zMXZWNUVOb2V4N2VaUQ?oc=5" target="_blank" rel="noopener">Anthropic 公式</a> / <a href="https://www.itmedia.co.jp/news/articles/2605/29/news084.html" target="_blank" rel="noopener">ITmedia</a> / <a href="https://xtech.nikkei.com/atcl/nxt/column/18/03623/052900006/" target="_blank" rel="noopener">日経クロステック(評論)</a> / 2026-05-29</li>
+</ul>
+
+<h3>OpenAI、日本政府 + 主要金融機関に「GPT-5.5-Cyber」提供 — Anthropic と Mythos 標準争い</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia AI+ + 日経。<strong>OpenAI が日本政府 + 主要金融機関と GPT-5.5-Cyber(Mythos 匹敵 / Aardvark 系)を協力提供</strong>、サイバー対策強化を狙う。同日 Anthropic Opus 4.8 + Mythos 一般公開と並走、<strong>OpenAI vs Anthropic が日本市場を主戦場に Mythos クラス AI セキュリティ標準争い</strong>を本格化。OpenAI 対サイバー攻撃 AI 日本展開(2026-05-21)、Google vs Anthropic Mythos(2026-05-20)、Verizon DBIR(同)、KDDI 2兆円(同)、自民 AI 政策骨太(2026-05-21)、KT 個人情報委員会(同)に並ぶ<strong>東アジア × AI セキュリティの主戦場化</strong>最終フェーズ。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-regulation</code>, <code>ai-models</code>, <code>finance-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/aiplus/article/2605/29/2000000037/" target="_blank" rel="noopener">ITmedia AI+</a> / <a href="https://www.itmedia.co.jp/news/articles/2605/29/news144.html" target="_blank" rel="noopener">ITmedia(政府金融)</a> / <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTFBtTVJWSXZZNHFINkRueFpGNkRmYVZPZWwyUzU4Nm92bW8tcWdSRFVoTFZ1cUNVaF9UWVJMU2NCWWdfNERCR2NQTWp2cFdOdlNnUUpYTS1VVmozbHIxOG83N05BVXNlQ19YM25UMA?oc=5" target="_blank" rel="noopener">日経新聞</a> / 2026-05-29</li>
+</ul>
+
+<h3>単月 $500M を Claude AI に「燃やした」謎企業 — 従業員ライセンス上限未設定</h3>
+<ul>
+<li><strong>要約</strong>: Tom&#x27;s Hardware + Crypto Briefing スクープ。<strong>ある企業が 1 ヶ月で $500M(約 750 億円)を Claude API に投入してしまった</strong>、<strong>従業員ライセンスの利用上限を設定しなかったため</strong>。Anthropic Q2 $10.9B(2026-05-21)、Anthropic 4Q 黒字目前(同)の財務裏付けと同時に、<strong>「AI 経費の制御不能リスク」</strong>が現実化。エージェント運用ガバナンス(2026-05-17)、Veeam AI 暴走防止(2026-05-16)、デジタルフリクション(2026-05-20)、AI psychosis 経営者(同日 Aaron Levie)と並走する<strong>「AI 運用統制」の極端事例</strong>、Anthropic の収益爆発の影として記録。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code>, <code>agentic-ai</code>, <code>finance-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMioAJBVV95cUxQV0hVVlFtTXYwNEY2RzkxeXhzYmppWGRUX2MxRVpSSENkTWdqT0dPdkw2bGJpTExyb2hmc2NpekMycF91SnBiaGYzb256dm11QkxSeExqS3E3YkpBUERxMElsbGU1WjRRM3V2QWNwQmpDYW1LeGtha21VU2Y3RHlNeGliSmdJZ2dabUpXdjliSmd0WklfLUlwMmpyTTVBeDJicWs1Nl9kZFZ5Zmp5WnVkZlkwQ3o2bkVXbTAyclNyVTlqX2VrU2hjRWxSY1JRdzROQWNYQ2Y1alEyZzItVEppLWJGVlhPejZjeE1Vc0hMa216QjNtUkFLR01NOWpYdkZucjAydlVWWVZkVWxkVG5rdFI3bWgtdElZcU42QnRIZDA?oc=5" target="_blank" rel="noopener">Tom&#x27;s Hardware</a> / <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTFBENHVoU09HSmFGOGZSYkpkSkx2UDhTR3BYVEZidm4wa18zRS1DSGJ4TzZFLXp6eEw5Y1ZUbUR2VWVmbjNsTU5xZTcxOE9aRUhnT0oyMDJpekptUWtJOWpNcFZZMnVzakNmWTEyQ3hTcDcydktCWHFoelFR?oc=5" target="_blank" rel="noopener">Crypto Briefing</a> / 2026-05-29</li>
+</ul>
+
+<h3>Google「Nano Banana 2」「Nano Banana Pro」一般提供開始 — 動画からの画像生成サポート</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Google が Nano Banana 2 + Nano Banana Pro を一般提供開始</strong>、<strong>「2」は動画からの画像生成もサポート</strong>。Gemini Omni 動画版 Nano Banana(2026-05-20)、Genie World Model Street View 統合(同)、Sora/Veo 3、中国 AI ドラマ工場(2026-05-18)、SANA-WM OSS(2026-05-16)、タイタン 200 言語吹替(同)に並ぶ<strong>動画 × 画像生成 AI</strong>の主流化、Google が<strong>画像生成 AI 一般ユーザー層まで侵食</strong>する商用化フェーズ。</li>
+<li><strong>トピック</strong>: <code>ai-models</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/news/articles/2605/29/news146.html" target="_blank" rel="noopener">ITmedia</a> / 2026-05-29</li>
+</ul>
+
+<h3>xCena 半導体スタートアップ $135M(評価 $570M) — AI の真のボトルネックはメモリ</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>xCena が $135M(評価 $570M)で調達</strong>、<strong>「AI の真のボトルネックは compute ではなく memory」</strong>という主張で投資家を引き寄せる。同日 ITmedia「メモリ不足はいつまで続くの? 狂騒のウラ側」と直結、メモリ消費抑制 LLM 量子化(2026-05-20)、Forge 8B + Guardrails 53→99%(2026-05-19)、Cerebras 振り返り(2026-05-17)、半導体 8 割増(2026-05-18)に並ぶ<strong>「memory wall」</strong>主戦場化、NVIDIA $200B 新市場(2026-05-21)、Anthropic × Colossus $15B(同)とも接続する<strong>AI インフラ次世代戦線</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-29</li>
+</ul>
+
+<h3>Aaron Levie「ほとんどの CEO は AI psychosis に陥っている」 — TechCrunch ポッドキャスト</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch ポッドキャスト。<strong>Box CEO Aaron Levie が「ほとんどの CEO は AI psychosis に陥っている」と発言</strong>、Mitchell Hashimoto「AI psychosis 企業」(2026-05-16)を経営者層に拡張。<strong>「AI で全てが解ける」と妄信し、Mythos 級攻撃や $500M 燃やすリスク(同日)を軽視する経営判断病理</strong>を指摘。AI 導入 7 割格差(2026-05-16)、デジタルフリクション(2026-05-20)、Schmidt 学生ブーイング(2026-05-18)、若手 AI 代替リスク(2026-05-17)に続く<strong>「AI を使う側」議論の経営者層拡大</strong>。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/podcast/does-your-ceo-have-ai-psychosis-aaron-levie-thinks-most-of-them-do/" target="_blank" rel="noopener">TechCrunch Podcast</a> / 2026-05-29</li>
+</ul>
+
+<h3>経営陣の AI リスク認識ギャップ — 8 割「AI 利用可視化」回答 vs 未承認 AI 拡大</h3>
+<ul>
+<li><strong>要約</strong>: @IT 詳報。<strong>経営陣の 8 割が「AI 利用を可視化している」と回答する一方で、社内で未承認 AI(シャドー AI)が拡大</strong>、<strong>「甘過ぎたリスク認識」</strong>を指摘。$500M Claude AI 単月支出(同日)、AI psychosis CEO(同)、AI 導入 7 割格差(2026-05-16)、エージェント運用「侵入経路」(2026-05-17)に並走する<strong>社内 AI ガバナンスの空洞化</strong>、<strong>「AI 経営の表層 = 把握、深層 = 暴走」の二極化</strong>を統計で確認。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-regulation</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news143.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>Cursor 3 公開 — エージェント共同開発 UI「Agents Window」</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>AI コーディングツール Cursor 3 が公開</strong>、<strong>エージェント共同開発用 UI「Agents Window」</strong>を新規搭載。Claude Code UI 刷新(2026-05-19)、Claude Code 急伸(2026-05-21)、Code with Claude(同)、VS Code Agent Window(2026-05-14)、Microsoft Claude Code 取消(同)に並走する<strong>AI コーディング覇権争い</strong>の新エントリ、<strong>「複数エージェント同時開発」</strong>が標準 UI パターンへ。Anthropic + Google + Microsoft + Cursor 4 社競争が顕在化。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>agentic-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news076.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>Microsoft「Foundry Local」 — クラウド依存解消のローカル AI 基盤</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>Microsoft が「Foundry Local」を発表</strong>、<strong>クラウド依存とコストの課題を解消するローカル AI 基盤</strong>を提供。Dell Deskside Agentic AI(2026-05-19)、OpenAI × Dell オンプレ(同)、金融機関オフライン RAG(2026-05-20)、Cloudflare Claude Managed Agents(2026-05-19)、Anthropic × Colossus(2026-05-21)に続く<strong>「ローカル/オンプレ × クラウド × エッジ」の三層 AI 基盤</strong>主戦場、Microsoft が<strong>Claude 依存からの独立</strong>戦略を継続。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news075.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>JR 西日本、AI で熟練者の車両作業計画を自動化</h3>
+<ul>
+<li><strong>要約</strong>: @IT 事例。<strong>JR 西日本が、これまで熟練者が手書きするしかなかった車両作業計画を AI で自動化</strong>。アクセンチュアエージェント工場(2026-05-20)、デンソー SCM(2026-05-15)、荏原 / NGK(2026-05-18)、KDDI 2 兆円(2026-05-20)、SBI 新生銀(2026-05-18)、トラスコ × 富士通 HR(2026-05-20)、エディオン MiseMise(2026-05-21)に並ぶ<strong>国内大手 AI 内製事例</strong>の鉄道分野、<strong>「人手作業の AI 自動化」が交通機関にも到達</strong>した象徴的事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>agentic-ai</code>, <code>logistics-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news103.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>OpenAI、医療 / 開発 / バイオ防衛 / 評価信頼性で 4 連発</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 公式 4 記事。</li>
+</ul>
+<p>  - <strong>Boston Children&#x27;s Hospital が AI で新診断を解錠</strong>(OpenAI 公式) — 小児医療診断</p>
+<p>  - <strong>Braintrust が顧客リクエストを Codex でコード化</strong>(OpenAI 公式) — 製品開発</p>
+<p>  - <strong>Rosalind Biodefense × OpenAI — 社会レジリエンス強化</strong>(OpenAI 公式) — バイオテロ対策</p>
+<p>  - <strong>第三者評価の信頼性向上プレイブック</strong>(OpenAI 公式) — 評価信頼性規範</p>
+<ul>
+<li><strong>位置付け</strong>: AdventHealth × OpenAI(2026-05-21)、BMS × Anthropic(同日)、SMBC + 富士通 + SB ヘルスケア基盤(2026-05-19)、KPMG × Anthropic(同)、CAIS × Anthropic(2026-05-20)に並走する<strong>OpenAI の医療 / 開発 / バイオ / 規範 4 軸同時拡張</strong>、Anthropic Opus 4.8(同日)+ Mythos に対する<strong>OpenAI 側の応戦展開</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-regulation</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/boston-childrens-hospital" target="_blank" rel="noopener">Boston Children&#x27;s</a> / <a href="https://openai.com/index/braintrust" target="_blank" rel="noopener">Braintrust × Codex</a> / <a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense" target="_blank" rel="noopener">Rosalind Biodefense</a> / <a href="https://openai.com/index/trustworthy-third-party-evaluations-foundations" target="_blank" rel="noopener">Trustworthy 3rd party evaluations</a> / 2026-05-29</li>
+</ul>
+
+<h3>日立、17 万台 PC を「脱・購入」でサブスク調達</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>日立がグループ 17 万台 PC を、購入からサブスクリプション調達に転換</strong>。日立 × Anthropic 29 万人 Claude 導入(2026-05-19)、Dell Deskside Agentic AI(同)、Microsoft Foundry Local(同日)、Anthropic × Colossus(2026-05-21)に並ぶ<strong>日立 IT 基盤の「所有 → 利用」モデルシフト</strong>、<strong>AI 時代の IT 調達モデル再構築</strong>事例、Apple Business 200 か国(2026-05-15)、Excel VBA × 生成 AI(2026-05-20)とも接続。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-infra</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news116.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>Glean、ARR $300M 突破 — AI 予算削減が主要 selling point</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>エンタープライズ AI 検索 Glean が ARR $300M を突破</strong>、<strong>「AI 予算削減」が主要 selling point</strong> に。Meta レイオフ AI 投資相殺(2026-05-21)、$500M Claude 燃やし(同日)、Anthropic Q2 $10.9B(2026-05-21)、デジタルフリクション(2026-05-20)に並走する<strong>「AI コスト最適化」</strong>が次の主戦場に。Glean は社内 AI 検索 + RAG + コスト管理で差別化、<strong>「AI 支出の合理化」</strong>が市場ニーズ化。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code>, <code>finance-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/28/gleans-top-line-crosses-300m-as-ai-budget-cutting-becomes-its-major-selling-point/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-29</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>大林組 × RICOS の AI-CAE 風荷重評価ソリューション</h3>
+<ul>
+<li><strong>要約</strong>: MONOist。<strong>大林組が RICOS 製ソリューションで AI-CAE による風荷重評価を効率化</strong>。NGK 結晶探索 × 生成 AI(2026-05-18)、荏原 AI 内製(同)、Imperagen 量子 AI 酵素(2026-05-21)、NIMS データ基盤(2026-05-20)、SBI 新生銀(2026-05-18)に並ぶ<strong>国内マテリアル / 建設 × AI シミュレーション</strong>の最新事例、Physical AI / 建築 × AI の交差点。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>enterprise-ai</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://monoist.itmedia.co.jp/mn/articles/2605/29/news025.html" target="_blank" rel="noopener">MONOist</a> / 2026-05-29</li>
+</ul>
+
+<h3>Sakana AI × DEEP DIVE 情報分析パートナーシップ締結</h3>
+<ul>
+<li><strong>要約</strong>: Sakana AI 公式。<strong>Sakana AI が一般社団法人 DEEP DIVE と情報分析パートナーシップを締結</strong>。Sakana AI DGM 自己改変エージェント(2026-05-19)、リコー LMM GENIAC(2026-05-15)、Sakana × NVIDIA TwELL(同)に並ぶ<strong>Sakana AI の国内パートナーシップ拡大</strong>、情報分析 / インテリジェンスドメインへの参入。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>consulting-ai</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE04ZGhfRDFPYWh2a0ZmVkFUaW9BUGhLTkIzblN0UHVWdVJJM0huT09fV3M4U193R09GeTlDNFE0VVF2YmpLSTVoUjZVTGJBUkFfM1E?oc=5" target="_blank" rel="noopener">Sakana AI</a> / 2026-05-29</li>
+</ul>
+
+<h3>スカパー JSAT、Amazon Leo を 2026 年度内に提供開始</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック。<strong>スカパー JSAT が Amazon Leo(衛星インターネット)を 2026 年度内に提供開始</strong>、Starlink 競合の本格化。Google × SpaceX 軌道上 DC(2026-05-12)、Anthropic × Colossus(2026-05-21)、KDDI 2 兆円(2026-05-20)、自民 AI 政策骨太(2026-05-21)と並ぶ<strong>通信 × AI 基盤の宇宙拡張</strong>事例、国内通信 × 衛星 × AI の主戦場化。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/atcl/nxt/news/24/03247/" target="_blank" rel="noopener">日経クロステック</a> / 2026-05-29</li>
+</ul>
+
+<h3>「AI でクリーニング無料」 — ロボット訓練データ収集のスタートアップ</h3>
+<ul>
+<li><strong>要約</strong>: The Verge。<strong>「未来のロボット訓練のため、あなたの家を無料で AI クリーニング」</strong>スタートアップが登場。AI ロボット盲導犬(2026-05-17)、フィジカル AI 第104回(2026-05-18)、エディオン MiseMise(2026-05-21)、Jensen Huang $200B(同)、Genie World Model(2026-05-20)に並ぶ<strong>Physical AI / Robotics 訓練データ取得モデル</strong>の新パターン、<strong>消費者労働 = 訓練データ</strong>という新ビジネスモデル。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.theverge.com/ai-artificial-intelligence/939765/ai-training-data-startup-shift-free-cleaning" target="_blank" rel="noopener">The Verge</a> / 2026-05-29</li>
+</ul>
+
+<h3>「IOWN + ローカル 5G + WiGig」で 1 人が重機 3 台遠隔操作</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>NTT IOWN + ローカル 5G + WiGig 連携で、1 人のオペレーターが重機 3 台を同時遠隔操作</strong>。<strong>距離の壁 + 人手不足の壁を同時に突破</strong>、建設 × ロボティクス × 通信の融合事例。NTT データセンター譲渡(2026-05-08)、KDDI 基地局強化学習(2026-05-14)、自治体 DX(2026-05-20)、アスカ × 東北大 AI ロボシステム(2026-05-18)に並ぶ<strong>国内 Physical AI / 遠隔操作</strong>最前線。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>enterprise-ai</code>, <code>ai-infra</code>, <code>logistics-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news077.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>総務省お墨付きの危険プロンプト防衛策 — LLM ガードレール公式提示</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>総務省が LLM を「危ないプロンプト」から守る具体策</strong>を公式提示、<strong>国内 LLM ガードレール標準</strong>として浸透段階へ。Forge Guardrails 8B 53→99%(2026-05-19)、Anthropic 不適切目標抑制(2026-05-17)、OpenAI バグ報奨「3つの急所」(同日)、GitHub バグ報奨厳格化(2026-05-21)、AI ミュトス政府対応案(2026-05-19)に並ぶ<strong>国内政府 × LLM 防衛規範</strong>確立。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-models</code>, <code>llm-evaluation</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news066.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>Adobe 対話 AI エージェント — 「mediocre design intern」評価</h3>
+<ul>
+<li><strong>要約</strong>: The Verge。<strong>Adobe の対話 AI エージェントは「平凡なデザインインターン」程度</strong>と評価、<strong>期待値に届かず</strong>との辛口レビュー。Adobe「AI に無視されるブランドは消滅」(2026-05-15)に発した戦略宣言と対照的、Antigravity bait-and-switch 批判(2026-05-21)、Sony AI Camera Assistant 釈明(2026-05-17)、AI ラジオホスト実証(2026-05-16)、Forge 8B Guardrails(2026-05-19)に並走する<strong>AI エージェント実装の実用性ギャップ</strong>論議。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>enterprise-ai</code>, <code>llm-evaluation</code></li>
+<li><strong>ソース</strong>: <a href="https://www.theverge.com/tech/939686/adobes-conversational-ai-agent-is-a-mediocre-design-intern" target="_blank" rel="noopener">The Verge</a> / 2026-05-29</li>
+</ul>
+
+<h3>フォックスコン Research CEO「エンタープライズ AI の危機意識」 — COMPUTEX</h3>
+<ul>
+<li><strong>要約</strong>: Business Insider Japan(COMPUTEX 取材)。<strong>Foxconn Research CEO がエンタープライズ AI に対する強い危機意識を表明</strong>、<strong>「本当のリスクはこの先にある」</strong>。AI psychosis 経営者(同日)、デジタルフリクション(2026-05-20)、Meta レイオフ(2026-05-21)、$500M Claude(同日)、Mythos × Apple 5 日突破(2026-05-20)に並ぶ<strong>「AI 経営 + AI 攻撃」の重層リスク</strong>を製造業大手が警鐘。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-regulation</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQNWlhM0dCdGMtTk9YbVVTZUdzRXFydVZBZFNKTVpmS1cxZlBGdkFGMzUzbE5yTW03VU53NGhFbUZQOEtiZm5wcEQ0Wm0yb2Zkc3JhaVMwSUVGM0gzYjdTVmxONFBmTVlFbU9vbU5YczYyUGRHU254a2tZd2lUOTVsbDFvcw?oc=5" target="_blank" rel="noopener">Business Insider Japan</a> / 2026-05-29</li>
+</ul>
+
+<h3>Pope の Magnifica Humanitas — AI モーメントに対する個人テンプレート</h3>
+<ul>
+<li><strong>要約</strong>: MIT Technology Review。<strong>ローマ教皇 (Pope) の「Magnifica Humanitas」が、個人が AI モーメント(臨界期)を生き抜くためのテンプレートを提示</strong>。安野党首 AI 民主主義(2026-05-18)、米中 AI 対話協調(2026-05-17)、AI ガバナンス 4 連発(同日)、自民 AI 政策骨太(2026-05-21)に並ぶ<strong>AI 哲学・倫理・規範レイヤ</strong>、<strong>宗教機関による AI 時代の人間性指針</strong>の歴史的事例。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.technologyreview.com/2026/05/29/1138107/how-the-popes-magnifica-humanitas-offers-a-template-for-individuals-to-meet-the-ai-moment/" target="_blank" rel="noopener">MIT Technology Review</a> / 2026-05-29</li>
+</ul>
+
+<h3>就活生 IT 人気企業1位 — 「AI を社内で使えない会社は不安」</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>就活生の IT 人気企業ランキングで「AI を社内で使えない会社は不安」が主要選択基準</strong>として浮上、1 位企業が発表。AI 導入 7 割格差(2026-05-16)、若手 AI 代替リスク(2026-05-17)、AI 導入失敗デジタルワーカー教育軽視(同日)、デジタルフリクション(2026-05-20)、AI psychosis 経営者(同日)、生成 AI 業務効率化 8 選(2026-05-16)に並ぶ<strong>「AI を使える / 使えない」が雇用市場で意思決定要因化</strong>。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/business/articles/2605/29/news035.html" target="_blank" rel="noopener">ITmedia</a> / 2026-05-29</li>
+</ul>
+
+<h3>ZIP! 生成 AI アニメに視聴者抗議「朝から吐きそう」</h3>
+<ul>
+<li><strong>要約</strong>: SmartFLASH / Yahoo。<strong>日本テレビ「ZIP!」が放送した生成 AI アニメに、一部視聴者から「朝から吐きそう」などの猛抗議</strong>、<strong>AI 独特の質感に対する強い拒否反応</strong>。AI 画像クリエーター減収(2026-05-18)、創作物と AI 区別 / 専門機関(同日)、Schmidt 学生ブーイング(同)、ZIP! 案件と並ぶ<strong>AI コンテンツの消費者受容性検証</strong>の事例、<strong>「技術ができる ≠ 受け入れられる」</strong>を象徴。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE50dDI3Mkc3MHNkS3RlVTc4ZmFwQkhJWi0xQ245ZHBQQlp6azVjUXk0dW50U1JxbVhEaXdVM2hXbjdSMjVLVEhvNjdaN01jXzhPa3NuQ0lmcE5jMURqVkwtTHpxUmJMNk51aG1SVU5LZzlsYmlJRmVNZzdiblp0R28?oc=5" target="_blank" rel="noopener">Yahoo / SmartFLASH</a> / 2026-05-29</li>
+</ul>
+
+<h3>国内金融機関フィッシングテンプレート — 脅威トレンド</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>国内金融機関を狙ったフィッシングテンプレートを含む、日本の企業 / 個人が知るべきサイバー脅威のトレンド</strong>を解説。OpenAI GPT-5.5-Cyber 金融機関(同日)、Verizon DBIR(2026-05-20)、Mythos 一般公開(同日)、Iron Dome AI フィッシング $28M(2026-05-20)、CISA リーク(2026-05-19)に並ぶ<strong>金融 × AI セキュリティ攻防</strong>の国内具体事例。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>finance-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/29/news095.html" target="_blank" rel="noopener">@IT</a> / 2026-05-29</li>
+</ul>
+
+<h3>Kiwibit AI 鳥フィーダー — 個人 Physical AI 事例</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Kiwibit の AI 駆動鳥フィーダーが個人向け Physical AI 体験</strong>として注目。AI ロボット盲導犬(2026-05-17)、AI クリーニングロボ無料(同日)、フィジカル AI 第 104 回(2026-05-18)に並ぶ<strong>個人 Physical AI 製品</strong>の拡大事例、消費者レイヤへの AI ハードウェア浸透。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/05/29/kiwibits-ai-powered-bird-feeder-is-my-new-backyard-buddy/" target="_blank" rel="noopener">TechCrunch</a> / 2026-05-29</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><a href="https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/" target="_blank" rel="noopener">Is AI causing a repeat of frontend&#x27;s lost decade?(mastrojs.github.io)</a> — AI コーディングのリスク評論</li>
+<li><a href="https://www.jeffgeerling.com/blog/2026/its-hard-to-justify-framework-12/" target="_blank" rel="noopener">It&#x27;s hard to justify buying a Framework 12(jeffgeerling.com)</a> — ハードウェア批評</li>
+<li><a href="https://www.theverge.com/podcast/939589/ferrari-luce-jony-ive-vergecast" target="_blank" rel="noopener">Jony Ive&#x27;s funky Ferrari(Verge ポッドキャスト)</a> — io デザインリーダーの新車</li>
+<li><a href="https://www.itmedia.co.jp/news/articles/2605/29/news041.html" target="_blank" rel="noopener">メモリ不足はいつまで続くの?(ITmedia)</a> — xCena $135M と直接接続</li>
+<li><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE44S0JZU3J0QllIOU1KOXlrY1QyYWlCQ1pOejduMVlZV2RpaVo1bVR0YlF4STgzbXBGSGl6T29RWmd1TUNGVF9HLTJpTFpQRnBNbl90NnNVZHNCN2dzYzd6R3pGM0k4SzVNVTln?oc=5" target="_blank" rel="noopener">ダイレクトクラウド、Interop Tokyo 2026 出展(時事)</a> — AI × データ基盤展示</li>
+<li><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9WRkprTXR6UC01WWNqRHBXZTQ0S25vNlhiNTRLRjlab0tITVZYbjVaUWE1aGlxLW53VGV0dkNxM3hxbGFjZXE5NmwtajloNG9HSXMw?oc=5" target="_blank" rel="noopener">データ基盤が組織の進化を促す(IT Leaders 第 4 回)</a> — DI 連載</li>
+<li><a href="https://www.itmedia.co.jp/business/articles/2605/29/news113.html" target="_blank" rel="noopener">ブシロード「新日本プロレス」 36 億円で売却(ITmedia)</a> — ビジネス(AI 関連薄)</li>
+<li><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFAyRGNqbW83bmxmMGwweThjb2pmUFFkRVZ0M2FXMXhoYmY4bDNIQlhnZHBUY09QMmg0U0VWLWUxRGR2SnZDMHptaFpnbGxlUlc4VVJ3?oc=5" target="_blank" rel="noopener">エディオン × Preferred Networks MiseMise(ダイヤモンド・チェーンストア)</a> — 2026-05-21 続報</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>Mythos 級 AI モデルの &quot;兵器化 + 開放&quot; 同時起動</strong>: Anthropic Opus 4.8(Mythos 級一般公開) + OpenAI GPT-5.5-Cyber(日本政府/金融に開放) + Google Mythos 競合 — <strong>AI 大手 3 社が同日に最強防衛 AI を商用化</strong>、<strong>日本市場が世界の AI セキュリティ標準争いの主戦場</strong>へ。Mythos × Apple 5 日突破(2026-05-20)からわずか 9 日で<strong>「兵器」→「商品」</strong>変化</p>
+<p>2. <strong>$500M 単月燃やし + AI psychosis 経営者 + 8 割可視化 vs 未承認 AI 拡大 + デジタルフリクション + AI 飽和反発</strong>: <strong>「AI 経営の表層 vs 深層ギャップ」が一日に集中可視化</strong>、Anthropic Q2 $10.9B の収益爆発 ↔ Glean ARR $300M「AI 予算削減」セリングポイントの並列が<strong>新しい主戦場(コスト最適化 + ガバナンス)</strong>を確立</p>
+<p>3. <strong>OpenAI 公式 4 連発(医療 + 開発 + バイオ + 評価信頼性)</strong>: Anthropic Opus 4.8 + Mythos 一般公開に対する<strong>OpenAI の「専門業務 + 規範レイヤ」での応戦</strong>、AdventHealth(2026-05-21)、BMS Anthropic(同日)、SMBC ヘルスケア(2026-05-19)、KPMG(同)、CAIS(2026-05-20)と統合した<strong>3 巨頭 × 専門業務の主戦場固め</strong>完成</p>
+<p>4. <strong>memory が AI の真のボトルネック</strong>: xCena $135M + Jensen Huang $200B 新市場(2026-05-21) + Anthropic × Colossus $15B(同) + メモリ狂騒 + Microsoft Foundry Local + Dell Deskside Agentic AI(2026-05-19) — <strong>AI インフラの次世代主戦場が memory × ローカル × 衛星</strong>へ多軸展開</p>
+<p>5. <strong>国内 Physical AI 集中事例</strong>: JR 西日本 + 大林組 × RICOS + IOWN 重機 3 台遠隔 + エディオン MiseMise(2026-05-21) + Kiwibit AI 鳥フィーダー + AI クリーニング無料 — <strong>物理世界 × AI が日米同時に消費者・産業両軸で拡大</strong></p>
+<p>6. <strong>規範形成 6 連発</strong>: Anthropic Mythos 一般公開 + OpenAI Trustworthy 3rd party evaluations + 総務省 LLM プロンプト防衛策 + Pope Magnifica Humanitas + 自民 AI 政策骨太(2026-05-21) + ZIP! AI アニメ反発 — <strong>政府 × 宗教 × 業界 × 消費者が同時に AI 規範を形成</strong>、AI 規制レイヤが<strong>主戦場の中心</strong>へ完全移行</p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>ai-models</code> 蓄積推奨</strong>: Claude Opus 4.8(Mythos クラス一般公開)、GPT-5.5-Cyber、Nano Banana 2 / Pro、xCena memory ボトルネック、総務省 LLM 防衛策、Imperagen 量子 AI 酵素</li>
+<li><strong><code>ai-companies</code> 蓄積推奨</strong>: Anthropic Opus 4.8 + Mythos、OpenAI GPT-5.5-Cyber 日本展開、$500M Claude 燃やし企業、Glean $300M、OpenAI 4 連発(Boston / Braintrust / Rosalind / Trustworthy)、Sakana AI × DEEP DIVE、Adobe AI エージェント評価、Foxconn Research CEO 危機意識</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: Anthropic Mythos 一般公開、OpenAI Trustworthy 3rd party、総務省 LLM プロンプト防衛策、Pope Magnifica Humanitas、ZIP! AI アニメ反発、国内金融機関フィッシング、$500M 燃やし運用統制、未承認 AI 拡大</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: $500M Claude 燃やし、8 割可視化 vs 未承認、JR 西日本 AI 車両計画、日立 PC サブスク 17 万台、Glean $300M、Foxconn CEO 危機意識、就活生 1 位、Foundry Local</li>
+<li><strong><code>agentic-ai</code> 蓄積推奨</strong>: Opus 4.8、Mythos 一般公開、Cursor 3 Agents Window、Aaron Levie CEO AI psychosis、Adobe AI エージェント評価、AI クリーニングロボ訓練、Kiwibit、Sakana AI × DEEP DIVE</li>
+<li><strong><code>consulting-ai</code> 蓄積推奨</strong>: AI psychosis 経営者(Aaron Levie)、Foxconn CEO、就活生 1 位、Sakana AI × DEEP DIVE、AdventHealth、Trustworthy 3rd party、JR 西日本</li>
+<li><strong><code>ai-coding</code> 蓄積推奨</strong>: Cursor 3 Agents Window、Braintrust × Codex、Lost decade frontend AI 評論</li>
+<li><strong><code>ai-infra</code> 蓄積推奨</strong>: Anthropic × Colossus、Foundry Local ローカル基盤、Dell Deskside、Amazon Leo スカパー、xCena memory ボトルネック、メモリ狂騒、IOWN 重機 3 台</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: GPT-5.5-Cyber 金融機関、$500M Claude 燃やし、Anthropic Q2 $10.9B(2026-05-21 続報)、Glean $300M AI 予算削減、国内金融機関フィッシング</li>
+<li><strong><code>physical-ai</code> 蓄積推奨</strong>: JR 西日本 AI 車両計画、大林組 × RICOS 風荷重 AI-CAE、IOWN 重機 3 台、AI クリーニングロボ訓練、Kiwibit、エディオン MiseMise</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: OpenAI Boston Children&#x27;s 診断、Braintrust × Codex、データ基盤組織進化(IT Leaders)</li>
+<li><strong><code>llm-evaluation</code> 蓄積推奨</strong>: Adobe AI エージェント評価、OpenAI Trustworthy 3rd party 規範、総務省 LLM プロンプト防衛、xCena memory ボトルネック</li>
+<li><strong><code>logistics-ai</code> 蓄積推奨</strong>: JR 西日本 AI 車両計画、IOWN 重機 3 台、スカパー JSAT Amazon Leo</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>

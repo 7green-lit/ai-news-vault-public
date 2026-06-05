@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-06-03 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-06-03 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>Microsoft Build 級メガリリース集中 — 「Microsoft AI Models(自社開発 7 つ)」/ Microsoft Execution Containers(MXC、OpenClaw も動作する AI エージェント分離環境)/ WSL containers / Coreutils for Windows / Microsoft × NVIDIA「1 ペタフロップス Windows PC」</strong>(Publickey / ITmedia 7 件同日報道)、<strong>Microsoft × OpenAI が破局 — 「ついに戦う構え」</strong>(The Verge — Microsoft 自社モデル + Claude 取消(6/02)継続)、<strong>Trump 大統領、AI 安全保障に関する大統領令署名 — 最先端モデルを公開 30 日前に政府が検査可能</strong>(ITmedia — 米国 AI 規制 主戦場本格化)、<strong>Anthropic、Mythos を「150 組織 + 重要インフラ事業者」に拡大共有</strong>(Cybersecurity Dive — 6/2 15 ヶ国 → 150 組織へ加速)、<strong>Anthropic「Claude Partner Network」サービストラック + パートナーハブ開始</strong>(Anthropic / WSJ「IPO 計画下のエンタープライズパートナー強化」)、<strong>Snowflake「CoCo」 — エンタープライズ AI 開発加速のコーディングエージェント</strong>(6/02 Snowflake × Anthropic 提携の即時実装)、<strong>Coralogix $200M — 「誰かが AI エージェントを見張る必要」</strong>(TechCrunch、Datadog × Sakana に並ぶ運用可観測ベンダー)、<strong>OpenAI 公式 4 連発 — GPT-Rosalind 新機能 / Democratic Governance of Frontier AI ブループリント / Public Policy Agenda / ZoomInfo 統合</strong>(政策・規範・営業全方位)、<strong>Meta、WhatsApp Business 用 AI エージェントをグローバル展開</strong>、<strong>三菱重工 × Preferred Networks 続報 4 媒体集中(社会インフラ × 国産 AI)</strong>、<strong>Palantir × NVIDIA エンタープライズ AI エージェント成長余地</strong>(simplywall.st)、<strong>Cyera $12B 評価 — 80x ARR(損失中)</strong>、<strong>Cloudflare、Web サイト「AI エージェント対応度」評価無料ツール</strong>、<strong>Uber、4 ヶ月で予算オーバー — 従業員 AI 使用に上限設定</strong>(TechCrunch、5/29 $500M 燃やし続報)、<strong>シャドー AI にログイン情報を渡す割合 — Okta 実態調査</strong>(@IT)、<strong>PwC Japan「AI エージェントは &quot;道具&quot; から &quot;組織の構成員&quot; へ」次世代 AI リスクガバナンス</strong>、<strong>企業の 77% がエージェント AI を本番投入 — 「どう選ぶか」の時代</strong>(@IT)、<strong>「AI 使うな」より「使うなら教えて」エージェント時代のガバナンス再設計</strong>(@IT)、<strong>AI を制御し COBOL / 古い Java レガシー刷新を「数年 → 数日」</strong>(@IT)、<strong>Publishers will be able to opt out of AI Search</strong>(TechCrunch、規制で AI 検索 opt-out)、<strong>Google「AI には水問題 — Google が解決策」</strong>(TechCrunch)、<strong>Focused Energy $240M — レーザー核融合</strong>、<strong>Wasmer × Codex — Edge 用 Node.js runtime 構築</strong>、<strong>OutSystems Open Agentic Systems Platform</strong>、<strong>異種 QPU をつなぐネットワーク新スイッチ</strong>(@IT)。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>Microsoft メガリリース集中 — 自社 7 つの AI モデル + MXC + 1 ペタフロップス Windows PC</h3>
+<ul>
+<li><strong>要約</strong>: Publickey + ITmedia 同日 7 件報道。Microsoft Build 級の発表が一気に出た日。</li>
+</ul>
+<p>  - <strong>「Microsoft AI Models」 — 自社開発 7 つの AI モデル</strong>(画像編集 / 音声認識など)を発表(Publickey)</p>
+<p>  - <strong>「Microsoft Execution Containers(MXC)」</strong> — AI エージェント用のカスタマイズ可能な分離環境、<strong>OpenClaw も動作</strong>する agentic sandbox(Publickey)</p>
+<p>  - <strong>「1 ペタフロップス級 Windows PC」</strong> — Microsoft × NVIDIA 次世代 PC(ITmedia)</p>
+<p>  - <strong>「WSL containers」</strong> — Windows 上で Linux コンテナを直接(Publickey)</p>
+<p>  - <strong>「Coreutils for Windows」</strong> — UNIX 系コマンドを Windows に一般公開(Publickey)</p>
+<p>  - <strong>Microsoft 新ツール — テキスト記述で AI 行動テスト立ち上げ</strong>(TechCrunch)</p>
+<ul>
+<li><strong>位置付け</strong>: Microsoft が Claude Code 取消継続(2026-06-02)、Microsoft 365 Copilot 33% 増(同日)、Foundry Local(2026-05-29)、Cisco Cloud Control(2026-06-02)に並ぶ<strong>「Microsoft が自社モデル + 自社エージェント基盤で OpenAI と Anthropic から完全独立」</strong>戦略の完成期、<strong>「Anthropic Claude を切って自社モデル + Microsoft 365 Copilot」</strong>で勝負する明確な宣言。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-models</code>, <code>ai-coding</code>, <code>ai-infra</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.publickey1.jp/" target="_blank" rel="noopener">Publickey(7 AI モデル)</a> / <a href="https://www.publickey1.jp/" target="_blank" rel="noopener">Publickey(MXC)</a> / <a href="https://www.publickey1.jp/" target="_blank" rel="noopener">Publickey(WSL containers)</a> / <a href="https://www.publickey1.jp/" target="_blank" rel="noopener">Publickey(Coreutils)</a> / <a href="https://www.itmedia.co.jp/enterprise/" target="_blank" rel="noopener">ITmedia(1 ペタフロップス PC)</a> / <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch(行動テスト)</a> / 2026-06-03</li>
+</ul>
+
+<h3>Microsoft × OpenAI 関係崩壊 — 「Now they&#x27;re ready to fight」</h3>
+<ul>
+<li><strong>要約</strong>: The Verge スクープ。<strong>「Microsoft と OpenAI が破局、ついに戦う構え」</strong>を報道。Microsoft AI モデル(同日)、Microsoft 365 Copilot 33%(2026-06-02)、Foundry Local(2026-05-29)、Cisco Cloud Control(同日)、Microsoft Claude Code 取消(2026-05-14, 2026-06-02)に並ぶ<strong>Microsoft の &quot;全 AI ベンダー独立&quot;</strong> 戦略、<strong>「OpenAI ↔ Microsoft 連合の終焉」</strong>は AI 業界構造再編の最大シグナル、Anthropic IPO 1 兆ドル(2026-06-02)、Karpathy → Anthropic(2026-05-19)、OpenAI on AWS(2026-06-01)に並走する<strong>3 巨頭分裂期</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-coding</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://www.theverge.com/" target="_blank" rel="noopener">The Verge</a> / 2026-06-03</li>
+</ul>
+
+<h3>Trump 大統領、AI 安全保障に関する大統領令署名 — 最先端モデル公開 30 日前に政府が検査可能</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Trump 米大統領が AI 安全保障に関する大統領令に署名</strong>、<strong>最先端モデルを公開 30 日前に政府が検査できる権限</strong>を米政府に付与。Anthropic vs 米政府 法廷対決(2026-05-19)、DC Circuit off-ramp(2026-05-20)、米中 AI 対話協調(2026-05-17)、自民 AI 政策骨太(2026-05-21)、安野党首 AI 民主主義(2026-05-18)、Pope Magnifica Humanitas(2026-05-29)、OpenAI Public Policy Agenda(同日)、Democratic Governance Blueprint(同)に並走する<strong>米国主導の AI 規制枠組み完成</strong>、Mythos × Apple 5 日突破(2026-05-20)、Anthropic Mythos 150 組織(同日)を受けた<strong>「フロンティア AI に対する政府監査権限」</strong>確立。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-03</li>
+</ul>
+
+<h3>Anthropic、Mythos を「150 組織 + 重要インフラ事業者」へ拡大共有</h3>
+<ul>
+<li><strong>要約</strong>: Cybersecurity Dive。<strong>Anthropic が Mythos を 150 組織以上(重要インフラ事業者含む)に共有</strong>、6/2 の「15 ヶ国」から<strong>24 時間で 10 倍規模</strong>へ加速。Trump 大統領令(同日)、Anthropic IPO 1 兆ドル(2026-06-02)、Opus 4.8 / Mythos 一般公開(2026-05-29)、Anthropic Glasswing(2026-06-02)、セキュリティフレームワーク(同)に並走する<strong>Anthropic Mythos がデファクト国際標準になりつつある</strong>段階。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>agentic-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Cybersecurity Dive</a> / 2026-06-03</li>
+</ul>
+
+<h3>Anthropic「Claude Partner Network」 — サービストラック + パートナーハブ</h3>
+<ul>
+<li><strong>要約</strong>: Anthropic 公式 + WSJ。<strong>Anthropic が「Claude Partner Network」のサービストラック + パートナーハブを立ち上げ</strong>、<strong>IPO 計画下でエンタープライズパートナープログラムを強化</strong>(WSJ)。KPMG × Anthropic 27.6 万人(2026-05-19)、日立 × Anthropic 29 万人(同)、BMS × Anthropic Pharma(2026-05-21)、CAIS × Anthropic Wealth(2026-05-20)、Snowflake × Anthropic Governed AI(2026-06-02)、Datadog × Sakana(同)に並走する<strong>Anthropic のエコシステム拡大の制度化</strong>、SI / コンサル / SaaS 全方位の<strong>パートナー認定 + サービス提供基盤</strong>確立。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>consulting-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.anthropic.com/" target="_blank" rel="noopener">Anthropic 公式</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">WSJ</a> / 2026-06-03</li>
+</ul>
+
+<h3>Snowflake「CoCo」 — エンタープライズ AI 開発加速コーディングエージェント</h3>
+<ul>
+<li><strong>要約</strong>: Snowflake 公式 + PR TIMES。<strong>Snowflake が「CoCo(コーディングエージェント)」</strong>を提供開始、<strong>迅速・簡単・強力なエンタープライズ AI 開発を加速</strong>。Snowflake × Anthropic 戦略提携(2026-06-02)、Snowflake 上原 金融 AI PoC 終了(同日)、Cursor 3 Agents Window(2026-05-29)、Microsoft 365 Copilot 33%(2026-06-02)、Claude Code UI 刷新(2026-05-19)に並走する<strong>データ基盤 × コーディングエージェントの統合</strong>事例、<strong>Snowflake が AI コーディング主戦場に参入</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-data-structuring</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Snowflake / PR TIMES</a> / 2026-06-03</li>
+</ul>
+
+<h3>Coralogix $200M — 「誰かが AI エージェントを見張る必要」</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Coralogix が $200M 調達</strong>、<strong>「誰かが AI エージェントを見張る必要がある」</strong>という観測軸で投資家を引き寄せる。Datadog × Sakana AI(2026-06-02)、ZeroDrift $10M(同)、Cisco Cloud Control AgenticOps(同)、Anthropic セキュリティフレームワーク(同)、$500M Claude 燃やし(2026-05-29)、Uber 予算オーバー(同日)に並ぶ<strong>AI 運用可観測性(AgentObservability)市場</strong>の急成長、<strong>AI 大手と並ぶ「AI を見張る AI ベンダー」</strong>が新巨額カテゴリ。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>agentic-ai</code>, <code>enterprise-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/03/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-03</li>
+</ul>
+
+<h3>OpenAI 4 連発 — GPT-Rosalind 新機能 + Democratic Governance + Public Policy Agenda + ZoomInfo</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 公式 4 記事。</li>
+</ul>
+<p>  - <strong>「Introducing new capabilities to GPT-Rosalind」</strong>(バイオ防衛、2026-05-29 続報 続強化)</p>
+<p>  - <strong>「A blueprint for democratic governance of frontier AI」</strong>(フロンティア AI 民主的ガバナンス枠組み)</p>
+<p>  - <strong>「OpenAI public policy agenda」</strong>(米国政策アジェンダ)</p>
+<p>  - <strong>OpenAI × ZoomInfo GTM データ統合</strong>(セールス &amp; マーケ AI 化)</p>
+<ul>
+<li><strong>位置付け</strong>: Trump 大統領令(同日)、OpenAI Frontier Governance Framework(5/28 期間)、OpenAI AI 政策アドボカシー(2026-06-02)、Youth Safety(同)、Anthropic Mythos 150 組織(同日)、Glasswing(2026-06-02)に並走する<strong>OpenAI 規範 / 政策 4 軸同時展開</strong>、<strong>Anthropic IPO に対する OpenAI 側の規範 + 公共価値での応戦</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/new-capabilities-gpt-rosalind" target="_blank" rel="noopener">GPT-Rosalind 新機能</a> / <a href="https://openai.com/index/blueprint-democratic-governance-frontier-ai" target="_blank" rel="noopener">Democratic Governance</a> / <a href="https://openai.com/index/openai-public-policy-agenda" target="_blank" rel="noopener">Public Policy</a> / <a href="https://atpartners.co.jp/" target="_blank" rel="noopener">ZoomInfo 統合</a> / 2026-06-03</li>
+</ul>
+
+<h3>Meta、WhatsApp Business AI エージェントをグローバル展開</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Meta が WhatsApp Business 用 AI エージェントをグローバル展開開始</strong>。WhatsApp Business は新興国で支配的、<strong>Google Spark 30 億人(2026-05-20)、OpenAI × Malta(2026-05-16)、Salesforce オープン(2026-06-01)に並走</strong>する<strong>消費者 AI エージェント主戦場</strong>、<strong>Meta が AI 投資レイオフ(2026-05-21)を回収する戦略の核心プロダクト</strong>。</li>
+<li><strong>トピック</strong>: <code>agentic-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/03/meta-whatsapp-business-ai-agent-global/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-03</li>
+</ul>
+
+<h3>三菱重工 × Preferred Networks 続報 — 社会インフラ国産 AI 共同開発(4 媒体集中)</h3>
+<ul>
+<li><strong>要約</strong>: IT Leaders + ZDNET Japan + 週刊 BCN+ + ドリームニュース 同日 4 媒体報道。<strong>三菱重工 × PFN の業務提携を「社会インフラ領域」</strong>として強調報道。三菱重工 × PFN 公式(2026-06-02)からの<strong>24 時間で 4 媒体追随</strong>、<strong>国産 AI 大手アライアンスの戦略的重要性</strong>を業界が認識、Mythos × Apple(2026-05-20)、自民 AI 政策骨太(2026-05-21)、Mach Industries(2026-06-02)、Anthropic Mythos 150 組織(同日)、Trump 大統領令(同)に並走する<strong>国家 × 重工業 × 国産 AI の主戦場入り</strong>。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">IT Leaders</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">ZDNET Japan</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">週刊 BCN+</a> / 2026-06-03</li>
+</ul>
+
+<h3>Uber、4 ヶ月で AI 予算消化 — 従業員 AI 使用に上限設定</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Uber が 4 ヶ月で AI 予算を使い切り、従業員 AI 使用に上限を設定</strong>。$500M Claude 燃やし企業(2026-05-29)、8 割可視化 vs 未承認 AI 拡大(同)、AI psychosis CEO(同)、Glean ARR $300M「AI 予算削減」(2026-05-29)、デジタルフリクション(2026-05-20)に並ぶ<strong>「AI 経費制御不能」が大手企業で連続発生</strong>、<strong>Uber 規模の企業でも AI 経費は予測不能</strong> という象徴的事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code>, <code>finance-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-03</li>
+</ul>
+
+<h3>PwC Japan「AI エージェントは &quot;道具&quot; から &quot;組織の構成員&quot; へ」 — 次世代 AI リスクガバナンス</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia エンタープライズ。<strong>PwC Japan が次世代 AI リスクガバナンスの研究 + 実証実験を発表</strong>、<strong>AI エージェントを「道具」から「組織の構成員」</strong>として扱う転換を提示。Anthropic セキュリティフレームワーク(2026-06-02)、Glasswing(同)、Cisco Cloud Control(同)、Coralogix $200M(同日)、企業 77% エージェント AI 本番投入(同)、Forbes 新たな人材スタック(2026-06-02)に並走する<strong>「AI エージェント = 組織人材」</strong>論の制度化、KPMG / アクセンチュア(2026-05-19, 20)に並ぶ<strong>Big4 × AI ガバナンス</strong>領域。</li>
+<li><strong>トピック</strong>: <code>consulting-ai</code>, <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia エンタープライズ</a> / 2026-06-03</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>企業の 77% がエージェント AI を本番投入 — 「導入の可否」から「どう選ぶか」へ</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>企業の 77% がエージェント AI を本番環境に投入済み</strong>、<strong>「導入するか否か」から「どう選ぶか」の時代</strong>に移行。PwC Japan(同日)、Coralogix $200M(同)、ZeroDrift(2026-06-02)、エージェント運用ガバナンス(2026-05-17)、Datadog × Sakana(2026-06-02)、Salesforce オープン(2026-06-01)に並ぶ<strong>エージェント AI 普及率の統計的確認</strong>、<strong>「選び方 × 運用 × ガバナンス」が次の主戦場</strong>。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>「AI 使うな」より「使うなら教えて」 — エージェント時代のガバナンス再設計</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>「AI 使うな」禁止型から「使うなら教えて」透明型ガバナンスへの再設計</strong>を提示。シャドー AI ログイン情報割合(同日 Okta)、8 割可視化 vs 未承認 AI 拡大(2026-05-29)、Uber 予算オーバー(同日)、$500M 燃やし(2026-05-29)、PwC AI 組織構成員(同日)、Anthropic セキュリティフレームワーク(2026-06-02)に並走する<strong>「AI ガバナンスの設計思想転換」</strong>。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>consulting-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>シャドー AI にログイン情報を渡している割合 — Okta 実態調査</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>Okta が「シャドー AI にログイン情報を渡している従業員割合」</strong>を調査公開、8 割可視化 vs 未承認 AI 拡大(2026-05-29)、Uber 予算オーバー(同日)、「使うなら教えて」(同)、PwC 組織構成員(同)、Mythos 150 組織(同)に並ぶ<strong>個人レベルのシャドー AI</strong>実態。<strong>従業員が知らずに認証情報を AI に共有</strong> という新しいリスク。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>AI 期待 vs 導入渋り — 4 割が「1 時間 8000 万円超」インシデント損失経験</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>日本企業の 4 割が AI / IT インシデントで「1 時間に 8000 万円超」損失を経験</strong>、AI 導入には期待が高いものの実装は渋り気味。AI psychosis 経営者(2026-05-29)、デジタルフリクション(2026-05-20)、AI 導入 7 割格差(2026-05-16)、就活生 1 位(2026-05-29)、Foxconn CEO 危機意識(同)に並走する<strong>「期待 vs 現実ギャップ」</strong>統計確認。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>Cloudflare、Web サイトの「AI エージェント対応度」を無料評価ツール公開</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>Cloudflare が Web サイトの「AI エージェント対応度」を無料評価する新ツールを公開</strong>、AEO(Answer Engine Optimization)時代の標準化。Adobe AI に無視されるブランド(2026-05-15)、Google Search 革新(2026-05-20)、AI 検索 SEO 不変(2026-05-17)、Publishers opt-out AI Search(同日)、ネイバー「信頼できる出典」(同)、Cloudflare Mythos Preview(2026-05-20)、Claude Managed Agents(2026-05-19)に並ぶ<strong>Cloudflare のエージェント時代インターネット標準化</strong>戦略。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>Cyera 評価 $12B 目前 — 80x ARR 倍率(損失中)</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>データセキュリティ Cyera が $12B 評価目前、ARR の 80 倍倍率で売却中</strong>、<strong>営業損失中にもかかわらず</strong>。Anthropic IPO 1 兆ドル(2026-06-02)、Mach Industries $1.8B 4 倍(同)、Coralogix $200M(同日)、Cyera データセキュリティ + AI と並ぶ<strong>AI 関連バリュエーション急膨張</strong>事例、<strong>「ARR vs 損失」の異常乖離</strong>が AI バブル批判の論拠化。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>finance-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-03</li>
+</ul>
+
+<h3>Microsoft × OpenAI × ZoomInfo セールス AI 化</h3>
+<ul>
+<li><strong>要約</strong>: atpartners.co.jp。<strong>エンタープライズ OpenAI と ZoomInfo の GTM(Go-To-Market)データが統合</strong>、セールス・マーケティングチームの営業活動を AI 化。Nectar Social マーケ OS(2026-05-17)、Adobe AEO(2026-05-15)、Universal Cart(2026-05-20)、Google Marketing Live(2026-05-21)に並走する<strong>B2B セールス AI 化</strong>の決定的事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atpartners.co.jp/" target="_blank" rel="noopener">atpartners.co.jp</a> / 2026-06-03</li>
+</ul>
+
+<h3>Publishers will be able to opt out of AI Search — 新規制</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>新しい規制で出版社が AI Search からの opt-out を選択可能</strong>に。朝日 × 日経 vs Perplexity 訴訟(2026-05-15)、ネイバー「信頼できる出典」(2026-05-17)、AI 画像クリエーター減収 + 専門機関(2026-05-18)、AI 検索 SEO 不変(同日)、Cloudflare AI エージェント対応度(同日)、Google Search 革新(2026-05-20)に並走する<strong>コンテンツ提供側 × AI 検索の権利調整</strong>の本格化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/03/publishers-ai-search-opt-out/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-03</li>
+</ul>
+
+<h3>AI を制御し COBOL / 古い Java レガシー刷新「数年 → 数日」</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>AI を制御して COBOL や古い Java のレガシー刷新を「数年から数日」に短縮</strong>、JR 西日本 AI 車両計画(2026-05-29)、Anthropic Code with Claude(2026-05-21)、Cursor 3(2026-05-29)、Microsoft 365 Copilot(2026-06-02)に並ぶ<strong>AI コーディングのレガシー領域到達</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>Google「AI には水問題 — 解決策あり」</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Google が「AI の水資源消費問題に解決策」</strong>を発信、DC 冷却問題。米国民 AI DC 反対 70%(2026-05-15)、Silicon Valley 電力不足(2026-05-16)、xAI ガスタービン訴訟(2026-05-13)、AWS Interconnect 無料(2026-06-01)に並走する<strong>AI インフラ × 環境問題</strong>、DeepMind APAC 環境(5/22 期間)、Carbonfact × Vaayu(2026-06-02)とも接続。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-regulation</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-03</li>
+</ul>
+
+<h3>OutSystems、Open Agentic Systems Platform 発表</h3>
+<ul>
+<li><strong>要約</strong>: ドリームニュース。<strong>OutSystems がエンタープライズ AI 向け「オープンな Agentic Systems Platform」</strong>を発表、Salesforce オープン(2026-06-01)、Cisco Cloud Control(2026-06-02)、Snowflake CoCo(同日)、Nutanix エージェント基盤(5/25)、SAP Autonomous Suite(2026-05-15)に並ぶ<strong>ローコード / オープンエージェント基盤</strong>の新エントリ。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">ドリームニュース</a> / 2026-06-03</li>
+</ul>
+
+<h3>Wasmer × Codex — Edge 用 Node.js runtime 構築</h3>
+<ul>
+<li><strong>要約</strong>: OpenAI 公式事例。<strong>Wasmer が OpenAI Codex で Edge 用 Node.js runtime を構築</strong>。Cloudflare Workers AI(2026-05-19)、Dell Deskside / Foundry Local(同)、Microsoft WSL containers(同日)、Rolldown 1.0(2026-06-02)に並走する<strong>Edge × WASM × AI コーディング</strong>の最新事例。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>ai-infra</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://openai.com/index/wasmer" target="_blank" rel="noopener">OpenAI 公式</a> / 2026-06-03</li>
+</ul>
+
+<h3>Palantir × NVIDIA エンタープライズ AI エージェント成長余地 — simplywall.st</h3>
+<ul>
+<li><strong>要約</strong>: simplywall.st。<strong>Palantir × NVIDIA 連携でエンタープライズ AI エージェント市場の成長余地</strong>を分析、<strong>Anthropic IPO 1 兆ドル評価(2026-06-02)に並走する Palantir の評価</strong>。三菱重工 × PFN(同日続報)、Mach Industries(2026-06-02)、Sakana × DEEP DIVE(2026-05-29)、Datadog × Sakana(2026-06-02)に並ぶ<strong>国家戦略 × エージェント AI</strong>プレイヤーの上場企業ベース評価。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>finance-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://simplywall.st/" target="_blank" rel="noopener">simplywall.st</a> / 2026-06-03</li>
+</ul>
+
+<h3>AI 対応データ基盤「レイクハウスアーキテクチャ」 — IT Leaders</h3>
+<ul>
+<li><strong>要約</strong>: IT Leaders。<strong>AI 対応データ基盤としての「レイクハウスアーキテクチャ」</strong>を解説、ビジネス成長の鍵に。Snowflake × Anthropic(2026-06-02)、AlloyDB(2026-06-01)、Oracle Database@AWS 大阪(2026-06-02)、Carbonfact × Vaayu(同)、CDP マスター講座(同)に並走する<strong>データ基盤 × AI 設計</strong>論。</li>
+<li><strong>トピック</strong>: <code>ai-data-structuring</code>, <code>enterprise-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">IT Leaders</a> / 2026-06-03</li>
+</ul>
+
+<h3>Focused Energy $240M Series A — レーザー核融合</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Focused Energy がレーザー核融合で $240M Series A 調達</strong>、AI データセンター電力需要対応の超大型投資。米国民 AI DC 反対 70%(2026-05-15)、Silicon Valley 電力不足(2026-05-16)、Google AI 水問題(同日)、xAI ガスタービン訴訟(2026-05-13)に並走する<strong>AI 電力需要 × 革新的発電</strong>主戦場。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>enterprise-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-03</li>
+</ul>
+
+<h3>異種 QPU をつなぐネットワーク新スイッチ — 量子コンピュータ</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>「巨大な量子コンピュータ 1 台」では戦えない時代に、異種 QPU をつなぐネットワーク新スイッチ</strong>が登場。Imperagen 量子 + AI 酵素(2026-05-21)、Jensen Huang $200B 新市場(同)、xCena memory ボトルネック(2026-05-29)に並ぶ<strong>ポスト古典コンピューティング × AI 基盤</strong>論。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>「JavaScript の AI ブーム」 — 案件数 1 位でも年収は 10 位</h3>
+<ul>
+<li><strong>要約</strong>: @IT。<strong>JavaScript が AI ブームで案件数 1 位</strong>になったが、<strong>年収は 10 位</strong>にとどまるという乖離。AI コーディングツール利用率 Copilot vs Claude Code(2026-05-21)、Microsoft AI モデル(同日)、Rolldown 1.0(2026-06-02)、Wasmer × Codex(同日)、vibe coding(2026-05-20)、Cursor 3(2026-05-29)に並走する<strong>AI コーディング市場の歪み</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>enterprise-ai</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">@IT</a> / 2026-06-03</li>
+</ul>
+
+<h3>Anthropic IPO 関連: マネフォワード、PKSHA など国内 AI 銘柄動向</h3>
+<ul>
+<li><strong>要約</strong>: トレーダーズ・ウェブ / 時事通信。<strong>Anthropic IPO 申請(2026-06-02)の余波で国内 AI 銘柄が変動</strong>、マネフォワード + PKSHA + オプロ + みのや + リボミック + テラスカイ 名前挙がる。同日 PKSHA を東海東京が目標株価引き下げ + DZH レーティング中立、レゾナック AI 特需(2026-05-15)、上場企業 27 年 3 月期(2026-05-17)、AI 投資世界貿易救済(2026-05-18)に並走する<strong>国内 AI 銘柄の市場評価</strong>動向。</li>
+<li><strong>トピック</strong>: <code>finance-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Yahoo ファイナンス(トレーダーズ)</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">Yahoo ファイナンス(DZH)</a> / 2026-06-03</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">月額 4180 円で紙の技術書 &quot;読み放題&quot; 法人契約可(ITmedia)</a> — IT エンジニア向け図書館サービス</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Ex-Anduril engineer が $42M 調達(TechCrunch)</a> — Composite parts の Amazon</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Board(Brynn Putnam 新スタートアップ)$20M(TechCrunch)</a> — ゲーム × AI</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Everand が e-book + audiobook + book clubs バンドル(TechCrunch)</a> — Amazon 競合</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">VivaTech 2026 — Europe AI strategy(TechCrunch)</a> — 欧州 AI 戦略 イベント</li>
+<li><a href="https://news.google.com/" target="_blank" rel="noopener">Snowflake CoCo PR(PR TIMES)</a></li>
+<li><a href="https://ainow.ai/" target="_blank" rel="noopener">生成 AI 医療機関活用事例 + 注意点(AINOW)</a></li>
+<li><a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">Pythonで学ぶデータ分析:ベイズ統計(@IT)</a> — 入門編</li>
+<li><a href="https://news.google.com/" target="_blank" rel="noopener">トレードワークス 分散型データ基盤新規事業基本合意(Yahoo ファイナンス)</a></li>
+<li><a href="https://atmarkit.itmedia.co.jp/" target="_blank" rel="noopener">総合病院 kintone 院内データベース 30 分→5 分(@IT)</a> — 自治体/医療 DX</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>Microsoft の &quot;全 AI 独立化&quot; 完成期</strong>: AI モデル 7 件 + MXC + 1 ペタフロップス PC + WSL containers + Coreutils + 行動テストツール + Copilot 33% + Claude Code 取消 + OpenAI 破局 — <strong>Microsoft が OpenAI から離れて自社モデル + Copilot で勝負する全方位リリース</strong>、AI 業界の連合解体期。</p>
+<p>2. <strong>Anthropic Mythos の世界配布加速</strong>: 6/2 15 ヶ国 → 6/3 150 組織 + Trump 大統領令(公開 30 日前検査権限)+ Partner Network サービストラック + Glasswing 透明性 + セキュリティフレームワーク — <strong>Mythos が 24 時間で 10 倍規模 + 政府検査制度化 + パートナー網拡大</strong>で<strong>AI セキュリティ業界の覇権</strong>を確立</p>
+<p>3. <strong>OpenAI 規範・業務応戦 4 連発</strong>: GPT-Rosalind + Democratic Governance Blueprint + Public Policy Agenda + ZoomInfo セールス統合 — Anthropic IPO + Mythos 150 組織に対する<strong>規範 + 業務 4 軸並走応戦</strong></p>
+<p>4. <strong>エージェント AI = 組織構成員 + 77% 本番投入 + 「使うなら教えて」ガバナンス再設計 + シャドー AI 認証情報 + Uber 予算オーバー</strong>: <strong>AI ガバナンスの中心テーマが「禁止」から「組織化」へ完全シフト</strong>、PwC Japan が<strong>「AI = 組織人材」</strong>を制度化</p>
+<p>5. <strong>AI 観測ベンダー巨額化</strong>: Coralogix $200M + Datadog × Sakana(6/2)+ ZeroDrift(同)+ Cisco Cloud Control(同)+ Cyera $12B — <strong>「AI を見張る AI」</strong>が新たな超大型市場に</p>
+<p>6. <strong>国産 AI 連合の本格化</strong>: 三菱重工 × PFN 4 媒体報道 + Snowflake × Anthropic + Palantir × NVIDIA + Sakana DEEP DIVE / Datadog 提携 — <strong>国家インフラ × AI = 国産 PFN / Sakana / Snowflake + Anthropic / NVIDIA 連合</strong>の構築期</p>
+<p>7. <strong>「水・電力・量子・メモリ・レガシー」AI インフラ 5 主戦場同時拡大</strong>: Focused Energy 核融合 $240M + Google AI 水問題 + 異種 QPU 接続スイッチ + xCena memory(2026-05-29) + COBOL/Java レガシー数日刷新 — <strong>AI インフラの物理・物質・時間軸全方位</strong>で同時進行</p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>ai-companies</code> 蓄積推奨</strong>: Microsoft 7 AI モデル + MXC + 1 ペタフロップス PC + WSL containers + Coreutils + Copilot 33% + OpenAI 破局、Anthropic Mythos 150 組織 + Partner Network + IPO 余波、OpenAI 4 連発、Meta WhatsApp Business、Coralogix $200M、Snowflake CoCo、Cyera $12B、Palantir × NVIDIA、Focused Energy $240M、Wasmer × Codex</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: Trump 大統領令(30 日前検査)、Anthropic Mythos 150 組織、OpenAI Democratic Governance Blueprint、OpenAI Public Policy Agenda、Anthropic Partner Network 規範、Publishers AI Search opt-out、シャドー AI Okta、PwC 組織構成員ガバナンス、「使うなら教えて」</li>
+<li><strong><code>agentic-ai</code> 蓄積推奨</strong>: Microsoft MXC(OpenClaw 動作)、Anthropic セキュリティフレームワーク継続、Coralogix AI 監視、Snowflake CoCo、Meta WhatsApp Business AI、Cloudflare AI エージェント対応度評価、77% 本番投入、PwC 組織構成員、OutSystems Open Agentic Systems</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: Microsoft 365 Copilot 33%(続)、Anthropic Partner Network、Snowflake CoCo、Salesforce / OutSystems オープン、PwC AI ガバナンス、Forbes 新たな人材スタック、77% エージェント本番、Uber 予算オーバー、4 割 1 時間 8000 万円損失、Wasmer × Codex</li>
+<li><strong><code>consulting-ai</code> 蓄積推奨</strong>: Anthropic Partner Network、PwC Japan AI ガバナンス、Forbes 新たな人材スタック、OpenAI Public Policy Agenda、Snowflake 上原(続)、就活生 1 位、AI 期待 vs 渋り 4 割、「使うなら教えて」設計</li>
+<li><strong><code>ai-models</code> 蓄積推奨</strong>: Microsoft 7 AI モデル、Anthropic Glasswing(続)、OpenAI GPT-Rosalind 新機能、Snowflake CoCo、量子 QPU 接続スイッチ</li>
+<li><strong><code>ai-coding</code> 蓄積推奨</strong>: Microsoft 自社モデル開発(コーディング)、Snowflake CoCo、Wasmer × Codex、AI で COBOL/Java 数日刷新、JavaScript 案件 1 位年収 10 位、Cursor 3 続(2026-05-29)</li>
+<li><strong><code>ai-infra</code> 蓄積推奨</strong>: Microsoft × NVIDIA 1 ペタフロップス PC、WSL containers、Coreutils for Windows、MXC、Cisco Cloud Control 続、Coralogix $200M、Google AI 水問題、Focused Energy 核融合、量子 QPU 接続、Anthropic Mythos 150 組織</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: Snowflake CoCo、レイクハウスアーキテクチャ、Carbonfact × Vaayu 続、ZoomInfo 統合、CDP マスター講座</li>
+<li><strong><code>physical-ai</code> 蓄積推奨</strong>: 三菱重工 × PFN 4 媒体続報、Palantir × NVIDIA、Mach Industries 続、Focused Energy 核融合</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: Anthropic IPO 余波 国内銘柄、PKSHA レーティング 中立、Cyera $12B 80x ARR、Coralogix $200M、Uber 予算オーバー、ZoomInfo 統合</li>
+<li><strong><code>llm-evaluation</code> 蓄積推奨</strong>: Coralogix 観測、Anthropic Glasswing 透明性、Cloudflare AI エージェント対応度、Cyera 80x 倍率</li>
+<li><strong><code>logistics-ai</code> 蓄積推奨</strong>: (本日該当無し)</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>

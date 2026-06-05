@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-06-05 AI News Digest</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #c15f3c;
+    --border: #e5e5e0;
+    --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e5e5e0;
+      --muted: #999;
+      --accent: #e08060;
+      --border: #333;
+      --card: #242424;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .article-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: var(--border);
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 0.9em; }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>2026-06-05 AI News Digest</h1>
+
+<blockquote>本日のハイライト: <strong>Anthropic「AI 開発のリスクが高まれば停止を」 — 協調行動呼びかけ</strong>(Reuters、Mythos 150 組織 + Trump 大統領令の翌々日に &quot;業界自己抑制&quot; を主導)、<strong>「ミュトス」国内初公表 — トレンドマイクロが Anthropic Mythos 利用 + 企業連合参加</strong>(TBS NEWS DIG — トレンドマイクロ株急反発)、<strong>Anthropic Daniela Amodei、IPO 前に AI リターン疑念を一蹴</strong>(TechCrunch)、<strong>「Claude が新本番コードの 80% を作成」</strong>(VentureBeat — Anthropic 内部統計の衝撃) + <strong>米生成 AI 市場で Claude 1100% 成長、シェア 17% に急拡大 — Copilot 急落</strong>(ITmedia)、<strong>米下院議員、州の AI 開発規制を禁じる法案公表 — 消費者団体批判</strong>(Reuters)、<strong>米政府が AI 企業株式取得を検討 — OpenAI などと協議</strong>(Reuters)、<strong>英、AI 検索機能で世界初の新規制 — 報道機関に「利用拒否権」</strong>(毎日新聞)、<strong>米 AI 計画に日本が 800 億円拠出 + 日米 AI 科学振興協力 5 年 1600 億円規模</strong>(Yahoo / 時事)、<strong>カナダ政府、新 AI 戦略 — 25 万人雇用 + 企業支援基金</strong>(Reuters)、<strong>東京株式市場、続落 1600 円超安 — AI 関連軟調</strong>(Reuters、Anthropic IPO + AI バブル懸念の余波)、<strong>Helion(Sam Altman 出資の核融合)$465M — Microsoft 用発電所建設</strong>(TechCrunch)、<strong>Anthropic OSS — AI 駆動脆弱性発見フレームワーク</strong>(GitHub)、<strong>Anthropic「When AI Builds Itself」 — 再帰的自己改善の進捗報告</strong>(Anthropic 公式 / Sakana DGM、Synthetic、Karpathy Anthropic、Opus 4.8 と全部接続)、<strong>Microsoft Build 2026 発表まとめ — 開発基盤 + 安全対策 + ハードウェア網羅</strong>(ITmedia)、<strong>WWDC 2026 期待 — Siri 刷新 + Apple Intelligence</strong>(TechCrunch)、<strong>Hello Robot、家庭用ロボット投入準備</strong>(TechCrunch — Silicon Valley の Physical AI 家庭進出)、<strong>Meta スマートグラスに顔認識搭載 + テントでデータセンター建設(Tesla 戦術) + Facebook 新 AI クリエイター</strong>(TechCrunch 3 件)、<strong>Apple Messages for Business 上で「Poke」初の AI エージェント承認</strong>、<strong>Airbnb Brian Chesky、新 AI ラボ立ち上げ計画</strong>、<strong>日立東原会長「ドメインナレッジ × AI」 — AI 時代の日本企業の勝ち筋</strong>(日経xtech)、<strong>メルカリ「AI 戦国時代」 — AI ガバナンス策定</strong>(日経xtech)、<strong>日経クロステック多発:「Mythos より怖いバイブコーディング落とし穴」「FDE は客先常駐と似て非なる」「AI ブームでもコンサル絶好調 — 伴走型は劇薬」「AI エージェントの非決定論問題」「AI 検索 vs Web 検索 使い分け」</strong>、<strong>慶應「三田評論」生成 AI と人間らしさ特集</strong>、<strong>学生 AI リーダーズ大賞</strong>(日経BP)、<strong>住友ゴム × 富士通 — タイヤ FEM 解析 45 分 → 5 分 AI サロゲート</strong>、<strong>Glean × NVIDIA Nemotron 3 Ultra 統合(マルチモデル戦略)</strong>、<strong>「学び続ける AI」 — グーグル / アップル出身者が新会社設立</strong>(WIRED.jp)、<strong>Goldman:SpaceX AI 事業売上 30 年に 100 倍予測</strong>(FT)、<strong>「AI で思考力が奪われる?」AI バカの壁論議</strong>(ITmedia)。</blockquote>
+
+<h2>🔥 重要度・高</h2>
+
+<h3>Anthropic「AI 開発リスクが高まれば停止を」 — 協調行動呼びかけ</h3>
+<ul>
+<li><strong>要約</strong>: Reuters。<strong>Anthropic が「AI 開発でリスクが高まったら開発を停止する」業界協調行動を呼びかけ</strong>。Mythos 150 組織(2026-06-03)、Trump 大統領令(同)、Japan AI Index(2026-06-04)、ICE × Anthropic(同)、Glasswing(2026-06-02)、セキュリティフレームワーク(同)、AI バイオ兵器保護要請(2026-06-04)、Frontier AI Democratic Governance(2026-06-03)に並走する<strong>Anthropic の &quot;規範主導者&quot; としての存在強化</strong>、IPO 1 兆ドル評価(2026-06-02)直前の<strong>「責任ある AI ベンダー」イメージ確立</strong>戦略、<strong>「兵器を出す責任 = 業界自己抑制リード」</strong>論。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Reuters</a> / 2026-06-05</li>
+</ul>
+
+<h3>「Claude Mythos」を国内初公表 — トレンドマイクロが Anthropic 企業連合参加</h3>
+<ul>
+<li><strong>要約</strong>: TBS NEWS DIG + かぶたん。<strong>トレンドマイクロが国内企業として初めて Mythos の利用を公表、Anthropic の Mythos 企業連合に参加</strong>、<strong>脆弱性の迅速発見を実現</strong>へ。トレンドマイクロ株式大幅反発(同日かぶたん)。日本政府 Mythos アクセス権(2026-06-04)、Japan AI Index(同)、自民 AI 政策骨太(2026-05-21)、Mythos 150 組織(2026-06-03)、Trump 大統領令(同)に続く<strong>国内民間企業の Mythos 採用第 1 号</strong>、<strong>「Mythos 軍備競争」の国内本格化</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-regulation</code>, <code>agentic-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://newsdig.tbs.co.jp/" target="_blank" rel="noopener">TBS NEWS DIG</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">かぶたん</a> / 2026-06-05</li>
+</ul>
+
+<h3>Anthropic 「新本番コードの 80% が Claude 製」 + 米生成 AI 市場で Claude 1100% 成長 シェア 17%</h3>
+<ul>
+<li><strong>要約</strong>: VentureBeat + ITmedia。</li>
+</ul>
+<p>  - <strong>「Anthropic は新本番コードの 80% を Claude が作成」</strong>(VentureBeat — エンタープライズへの示唆論記事)</p>
+<p>  - <strong>「Claude が驚異の 1100% 成長で米市場シェア 17% に急拡大」 / 「Copilot は急落」</strong>(ITmedia)</p>
+<ul>
+<li><strong>位置付け</strong>: Code with Claude(2026-05-21)、AI コーディング利用率 Copilot vs Claude Code(同)、Claude Code UI 刷新(2026-05-19)、Anthropic Code with Claude(2026-05-21)、Microsoft × OpenAI 破局(2026-06-03)、Microsoft Claude 取消(2026-06-02)、Cursor 3 / Devin Desktop(2026-05-29 / 2026-06-04)、Microsoft 7 AI モデル(2026-06-03)に並走する<strong>Claude のコーディング覇権確立</strong>、<strong>「Microsoft が Claude を捨てる ↔ 米市場では Claude が Copilot を逆転」</strong>の構造矛盾。</li>
+<li><strong>トピック</strong>: <code>ai-coding</code>, <code>ai-companies</code>, <code>enterprise-ai</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://venturebeat.com/" target="_blank" rel="noopener">VentureBeat</a> / <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-05</li>
+</ul>
+
+<h3>Anthropic「When AI Builds Itself」 — 再帰的自己改善の進捗報告</h3>
+<ul>
+<li><strong>要約</strong>: Anthropic 公式。<strong>「AI が自分自身を構築するとき:再帰的自己改善への進捗」</strong>を発表。Sakana DGM 自己改変(2026-05-19)、Anthropic「AI が夢を見る」(2026-05-17)、Synthetic「AI が AI を作る」(2026-05-14)、Karpathy → Anthropic pre-training research(同日)、Opus 4.8(2026-05-29)、OpenAI Dreaming(2026-06-04)、Claude が 80% 新コード作成(同日)に並ぶ<strong>「AI 自己改善」</strong>主軸テーマ、<strong>Anthropic のフロンティア研究公開 + 自己抑制呼びかけ(同日)の対比</strong>は規範形成リーダーシップの構造化。</li>
+<li><strong>トピック</strong>: <code>ai-models</code>, <code>agentic-ai</code>, <code>ai-companies</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://www.anthropic.com/news/recursive-self-improvement" target="_blank" rel="noopener">Anthropic</a> / 2026-06-05</li>
+</ul>
+
+<h3>Anthropic OSS — AI 駆動脆弱性発見フレームワーク</h3>
+<ul>
+<li><strong>要約</strong>: Anthropic GitHub。<strong>Anthropic が AI 駆動脆弱性発見のためのオープンソースフレームワークを公開</strong>。Mythos 一般公開(2026-05-29)、Anthropic セキュリティフレームワーク(2026-06-02)、Mythos 150 組織(2026-06-03)、トレンドマイクロ Mythos 国内初(同日)、日本政府 Mythos アクセス(2026-06-04)、米国「全部守るのは無理」(2026-05-18)、CTF 破壊(2026-05-16)、Verizon DBIR(2026-05-20)に並走する<strong>Mythos エコシステムの OSS 化</strong>、<strong>個人 / 中小組織でも Mythos 級分析が可能になる民主化</strong>フェーズ。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>agentic-ai</code>, <code>ai-models</code>, <code>ai-coding</code></li>
+<li><strong>ソース</strong>: <a href="https://github.com/anthropic/" target="_blank" rel="noopener">Anthropic GitHub</a> / 2026-06-05</li>
+</ul>
+
+<h3>米下院、州の AI 開発規制を禁じる法案 — 消費者団体批判 + 米政府が AI 企業株式取得検討</h3>
+<ul>
+<li><strong>要約</strong>: Reuters 2 件 + Yahoo。</li>
+</ul>
+<p>  - <strong>米下院議員が「州の AI 開発規制を禁じる法案」を公表</strong>、消費者団体が強く批判(Reuters)</p>
+<p>  - <strong>米政府が AI 企業の株式取得を検討、OpenAI などと協議</strong>(Reuters / Yahoo)</p>
+<ul>
+<li><strong>位置付け</strong>: Trump 大統領令(2026-06-03)、Anthropic vs 米政府(2026-05-19)、ICE × Anthropic(2026-06-04)、Mach Industries Defense Tech(2026-06-02)、Helion × Microsoft 核融合(同日)に並走する<strong>米国 AI 政策の &quot;中央集権 + 産業政策&quot; 強化</strong>、<strong>「政府が AI 大手の株主になる」</strong>は AI が公益に組み込まれる新フェーズ。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Reuters(規制禁止)</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">Reuters(株式取得)</a> / 2026-06-05</li>
+</ul>
+
+<h3>英、AI 検索で世界初の新規制 — 報道機関に「利用拒否権」 + 米 AI 計画に日本 800 億円拠出 + 日米科学 5 年 1600 億円</h3>
+<ul>
+<li><strong>要約</strong>: 毎日新聞 + Yahoo + 時事ドットコム。</li>
+</ul>
+<p>  - <strong>英国、AI 検索機能で世界初の新規制 — 報道機関に「利用拒否権」</strong>(毎日新聞)</p>
+<p>  - <strong>日本が米 AI 計画に 800 億円拠出</strong>(Yahoo)</p>
+<p>  - <strong>日米、AI 科学振興で 5 年 1600 億円規模協力</strong>(時事)</p>
+<ul>
+<li><strong>位置付け</strong>: Trump 大統領令(2026-06-03)、自民 AI 政策骨太(2026-05-21)、Japan AI Index(2026-06-04)、Publishers AI Search opt-out(2026-06-03)、ネイバー「信頼できる出典」(2026-05-17)、朝日 × 日経 vs Perplexity 訴訟(2026-05-15)、AI 規制対極論(2026-05-17)、米中 AI 対話協調(同)に並走する<strong>G7 主要国の AI 規制 + 国際協力本格化</strong>、<strong>「AI 国家戦略の三国構造(米英日)」</strong>確立。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">毎日新聞</a> / <a href="https://www.jiji.com/" target="_blank" rel="noopener">Yahoo / 時事</a> / 2026-06-05</li>
+</ul>
+
+<h3>Helion(Sam Altman 出資)$465M — Microsoft 用核融合発電所</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Sam Altman 出資の Helion(核融合スタートアップ)が $465M 調達、Microsoft 向け発電所を建設</strong>。Focused Energy 核融合 $240M(2026-06-03)、Google AI 水問題(同)、米国民 AI DC 反対 70%(2026-05-15)、Silicon Valley 電力不足(2026-05-16)、xAI ガスタービン訴訟(2026-05-13)、Microsoft Build 2026(2026-06-03)、TSMC「需要に追いつけない」(2026-06-04)、Kevin O&#x27;Leary ユタ DC 縮小(同日)、Meta テント DC(同)、Alphabet $85B(2026-06-04)に並走する<strong>AI 電力 × 革新発電 × 巨額投資</strong>主戦場、<strong>Microsoft が Anthropic 排除戦略の電力裏付け</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-infra</code>, <code>ai-companies</code>, <code>enterprise-ai</code>, <code>physical-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/04/helion-465m-microsoft/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-05</li>
+</ul>
+
+<h3>東京株式市場、続落 1600 円超安 — AI 関連軟調(Anthropic IPO + AI バブル懸念)</h3>
+<ul>
+<li><strong>要約</strong>: Reuters。<strong>東京株式市場が続落、前場で一時 1600 円超安、AI 関連株が軟調</strong>。Anthropic IPO 1 兆ドル(2026-06-02)、Cyera 80x ARR(2026-06-03)、Alphabet $85B(2026-06-04)、Nvidia × Kumo(同)、Mach Industries 4 倍(2026-06-02)、TSMC「限界」(2026-06-04)、半導体売上 8 割増(2026-05-18)、PKSHA レーティング中立(2026-06-02)、AI 投資世界貿易救済(2026-05-18)に並走する<strong>AI バブル懸念の国内市場反応</strong>、<strong>「巨額資金調達 = 資金循環の臨界点」</strong>ナラティブの拡散。</li>
+<li><strong>トピック</strong>: <code>finance-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Reuters</a> / 2026-06-05</li>
+</ul>
+
+<h3>Hello Robot — Silicon Valley が家庭用ロボット投入準備</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>「Silicon Valley は家庭用ロボットを送り込む準備ができたか?」 — Hello Robot がチャレンジ</strong>。AI クリーニングロボ無料訓練(2026-05-29)、AI ロボット盲導犬(2026-05-17)、Kiwibit 鳥フィーダー(2026-05-29)、Amazon Voice 倉庫ロボ(2026-06-04)、Honda 人型ロボブーム(同)、Mach Industries(2026-06-02)、三菱重工 × PFN(同)に並ぶ<strong>Physical AI / 家庭用ロボット</strong>主戦場、<strong>消費者レイヤへの Physical AI 進出</strong>の Western 大手案件。</li>
+<li><strong>トピック</strong>: <code>physical-ai</code>, <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-05</li>
+</ul>
+
+<h3>Microsoft Build 2026 発表まとめ — 開発基盤 + 安全対策 + ハードウェア</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>Microsoft Build 2026 の発表まとめ詳報</strong>、開発基盤(MXC / WSL containers / Coreutils / Windows Development Skills / AI 行動テストツール / 自社 7 AI モデル / 1 ペタフロップス PC / Solara)を網羅。Microsoft × OpenAI 破局(2026-06-03)、Microsoft 365 Copilot 33% 増(2026-06-02)、Foundry Local(2026-05-29)、Cisco Cloud Control / Datadog × Sakana / Coralogix $200M に並ぶ<strong>Microsoft × OpenAI 連合解体期の Microsoft 単独戦略の完成</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>agentic-ai</code>, <code>ai-coding</code>, <code>ai-models</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-05</li>
+</ul>
+
+<h3>Anthropic Daniela Amodei、IPO 前に AI リターン疑念を一蹴</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Anthropic 共同創業者 Daniela Amodei が IPO 直前に「AI 投資のリターン疑念」を否定</strong>。Anthropic IPO 1 兆ドル(2026-06-02)、Q2 $10.9B(2026-05-21)、Snowflake × Anthropic(2026-06-02)、Mythos 150 組織(2026-06-03)、Karpathy 移籍(2026-05-19)、KPMG 27.6 万 / 日立 29 万(同)、AI コスト燃やし $500M(2026-05-29)、Uber 4 ヶ月予算オーバー(2026-06-03)、東京株式市場続落 AI 軟調(同日)に並走する<strong>AI バブル懸念と Anthropic の自信表明</strong>の対比。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>finance-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/2026/06/04/anthropic-daniela-amodei-ipo/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-05</li>
+</ul>
+
+<h3>カナダ政府、新 AI 戦略 — 25 万人雇用 + 企業支援基金</h3>
+<ul>
+<li><strong>要約</strong>: Reuters。<strong>カナダ政府が新 AI 戦略を発表、25 万人雇用創出 + 企業支援基金設置を目指す</strong>。Trump 大統領令(2026-06-03)、自民 AI 政策骨太(2026-05-21)、Japan AI Index(2026-06-04)、英 AI 検索規制(同日)、日米 1600 億円(同)、米下院州規制禁止法案(同)、米政府 AI 株式取得(同)、Pope Magnifica Humanitas(2026-05-29)、米中 AI 対話(2026-05-17)、安野 AI 民主主義(2026-05-18)に並ぶ<strong>G7 各国 AI 政策連発フェーズ</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code>, <code>consulting-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">Reuters</a> / 2026-06-05</li>
+</ul>
+
+<h2>📰 重要度・中</h2>
+
+<h3>日立東原会長「ドメインナレッジ × AI」 — AI 時代の日本企業の勝ち筋</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック。<strong>日立製作所東原会長が「ドメインナレッジ × AI」を AI 時代の日本企業の勝ち筋</strong>と提示。日立 × Anthropic 29 万人(2026-05-19)、Japan AI Index(2026-06-04)、三菱重工 × PFN(2026-06-02)、SMBC ヘルスケア基盤(2026-05-19)、Honda 人型ロボブーム(2026-06-04)、住友ゴム × 富士通 タイヤ AI(同日)に並ぶ<strong>国内 AI 戦略論</strong>の集約、<strong>「業務 + AI の組み合わせ」</strong>を業界標準にする論。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>consulting-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/" target="_blank" rel="noopener">日経クロステック</a> / 2026-06-05</li>
+</ul>
+
+<h3>メルカリ「AI 戦国時代」 — AI ガバナンス策定の勘所</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック。<strong>メルカリが「この 1 年は AI 戦国時代」と表現</strong>、AI ガバナンス策定の勘所を共有。PwC「組織構成員」(2026-06-03)、Anthropic「リスク高まれば停止」(同日)、Anthropic セキュリティフレームワーク(2026-06-02)、Glasswing(同)、77% 本番投入(2026-06-03)、「使うなら教えて」(同)、$500M 燃やし(2026-05-29)、Japan AI Index(2026-06-04)に並走する<strong>国内大手の AI ガバナンス事例</strong>、<strong>「日本企業が独自の AI ガバナンスを発信」</strong>段階。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>ai-regulation</code>, <code>consulting-ai</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/" target="_blank" rel="noopener">日経クロステック</a> / 2026-06-05</li>
+</ul>
+
+<h3>日経クロステック多発 — 「Mythos より怖いバイブコーディング落とし穴」「FDE は客先常駐と似て非なる」「AI コンサル絶好調」「AI エージェント非決定論」「AI 検索 vs Web 検索 使い分け」</h3>
+<ul>
+<li><strong>要約</strong>: 日経クロステック 5 連発の AI 業務深掘り記事。</li>
+</ul>
+<p>  - <strong>「怖いのは Mythos だけじゃない、バイブコーディングの思わぬ落とし穴」</strong> — vibe coding 主流化(2026-05-20-21)のリスク論</p>
+<p>  - <strong>「客先常駐と似て非なる FDE、上流に強み — 少数精鋭で知識集約型」</strong> — FDE(ServiceNow × Accenture(2026-06-04)、KPMG / 日立 × Anthropic に並走)構造論</p>
+<p>  - <strong>「AI ブームでもコンサルは絶好調 — 伴走型は劇薬」</strong> — KPMG / アクセンチュア(2026-05-19, 20)、Endava(2026-06-04)、Japan AI Index 松尾研 + Anthropic + PKSHA(同)、Snowflake × Anthropic(2026-06-02)に並ぶ<strong>コンサル業界の AI ブーム特需</strong></p>
+<p>  - <strong>「LLM にどこまで委ねるか — AI エージェントの非決定論問題」</strong> — Anthropic Glasswing + セキュリティフレームワーク(2026-06-02)、Coralogix $200M(同)、ZeroDrift(同)、サブエージェント 5 使い所(2026-06-04)、Forge Guardrails(2026-05-19)、組織構成員 PwC(2026-06-03)に並ぶ<strong>LLM 委任の境界線</strong>論</p>
+<p>  - <strong>「AI 検索と Web 検索、使い分けるのが時短への道」</strong> — Google Spark 30 億人(2026-05-20)、Gemini 3.5(同)、英 AI 検索規制(同日)、Publishers opt-out(2026-06-03)に並走する<strong>消費者 AI 検索の運用論</strong></p>
+<ul>
+<li><strong>位置付け</strong>: 国内大手 × AI 業務深耕の網羅論評期、<strong>日経クロステックが AI 業界主戦場での最強発信源化</strong>。</li>
+<li><strong>トピック</strong>: <code>consulting-ai</code>, <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>ai-coding</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://xtech.nikkei.com/" target="_blank" rel="noopener">日経クロステック</a> / 2026-06-05</li>
+</ul>
+
+<h3>Meta — スマートグラス顔認識 + テント DC + Facebook 新 AI クリエイター + Apple Poke 承認</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch 4 件 + Apple。</li>
+</ul>
+<p>  - <strong>Meta スマートグラスが顔認識搭載</strong>(TechCrunch) — プライバシー論議再燃</p>
+<p>  - <strong>Meta、テントでデータセンター建設 — Tesla 戦術を流用</strong>(TechCrunch) — 急ぎ作戦</p>
+<p>  - <strong>Meta、Facebook に新 AI クリエイターアシスタント展開</strong>(TechCrunch)</p>
+<p>  - <strong>Apple が Messages for Business 上で「Poke」を初の AI エージェント承認</strong>(TechCrunch)</p>
+<ul>
+<li><strong>位置付け</strong>: Meta レイオフ AI 投資相殺(2026-05-21)、Meta WhatsApp Business AI エージェント(2026-06-03)、Apple WWDC 期待(同日)、Apple App Store $1.4T(2026-06-04)、Apple Mythos 5 日突破(2026-05-20)、AI グラス中国 80%(2026-05-17)、Google AI Glasses 26 秋(2026-05-20)に並ぶ<strong>Meta × Apple × Google の Physical / Voice / Messaging AI 並行展開</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>physical-ai</code>, <code>agentic-ai</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch x4 / Apple</a> / 2026-06-05</li>
+</ul>
+
+<h3>住友ゴム × 富士通 — タイヤ FEM 解析 45 分 → 5 分 AI サロゲートモデル共同開発</h3>
+<ul>
+<li><strong>要約</strong>: MONOist。<strong>住友ゴム × 富士通がタイヤ FEM 解析を 45 分から 5 分に短縮する AI サロゲートモデルを共同開発</strong>。NGK 化合物探索(2026-05-18)、大林組 × RICOS 風荷重 AI-CAE(2026-05-29)、Imperagen 量子 AI 酵素(2026-05-21)、トラスコ × 富士通 HR(2026-05-20)、SMBC + 富士通 + SB(2026-05-19)、Japan AI Index 松尾研 + PKSHA(2026-06-04)に並ぶ<strong>国内製造業 × AI サロゲートモデル</strong>の代表事例、<strong>「シミュレーション → AI 近似」</strong>の効率化主戦場。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>physical-ai</code>, <code>ai-models</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://monoist.itmedia.co.jp/" target="_blank" rel="noopener">MONOist</a> / 2026-06-05</li>
+</ul>
+
+<h3>Glean × NVIDIA Nemotron 3 Ultra 統合 — マルチモデル戦略強化</h3>
+<ul>
+<li><strong>要約</strong>: atpartners.co.jp。<strong>エンタープライズ AI プラットフォーム Glean が NVIDIA Nemotron 3 Ultra サポートを追加、マルチモデル戦略強化</strong>。Glean ARR $300M(2026-05-29)、Nvidia × Kumo(2026-06-04)、Palantir × NVIDIA(2026-06-03)、Microsoft 7 AI モデル(同)、Gemma 4 12B(2026-06-04)、Opus 4.8(2026-05-29)、xCena memory(同)に並走する<strong>マルチモデル / マルチベンダー戦略</strong>の主流化、<strong>「単一 AI ベンダー依存からの脱却」</strong>事例。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>ai-models</code></li>
+<li><strong>ソース</strong>: <a href="https://atpartners.co.jp/" target="_blank" rel="noopener">atpartners</a> / 2026-06-05</li>
+</ul>
+
+<h3>「Mythos 一般公開を恐れる前に — 推奨される 7 つの優先対策」</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>「脆弱性報告数が別次元に」 — Mythos 一般公開を恐れる前に推奨される 7 つの優先対策</strong>を提示。Mythos 150 組織(2026-06-03)、トレンドマイクロ国内初(同日)、日本政府 Mythos アクセス(2026-06-04)、Anthropic OSS フレームワーク(同日)、Anthropic「リスク高まれば停止」(同)、Mythos × Apple 5 日突破(2026-05-20)、Verizon DBIR(同)、Cisco Cloud Control(2026-06-02)、Coralogix $200M(2026-06-03)、Glasswing + セキュリティフレームワーク(2026-06-02)に並走する<strong>CISO / SOC の Mythos 対策実装ガイド</strong>、Mythos 時代の防衛標準化。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-05</li>
+</ul>
+
+<h3>「学び続ける AI」 — Google / Apple 出身者が新会社設立(WIRED.jp)</h3>
+<ul>
+<li><strong>要約</strong>: WIRED.jp。<strong>Google や Apple の出身者らが新会社を設立、「学び続ける AI」を目指す</strong>(continual learning / Reflection AI 系)。Karpathy → Anthropic pre-training(2026-05-19)、Sakana AI DGM 自己改変(同)、Synthetic $650M(2026-05-14)、Anthropic「夢を見る」(2026-05-17)、「When AI Builds Itself」(同日)、Hark $700M(2026-05-21)、Richard Socher Synthetic(2026-05-14)に並走する<strong>「自己改善 / 継続学習 AI」</strong>主軸の連続スタートアップ事例。</li>
+<li><strong>トピック</strong>: <code>ai-models</code>, <code>ai-companies</code>, <code>agentic-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://wired.jp/" target="_blank" rel="noopener">WIRED.jp</a> / 2026-06-05</li>
+</ul>
+
+<h3>Goldman Sachs:SpaceX AI 事業売上、30 年に 100 倍予測(FT)</h3>
+<ul>
+<li><strong>要約</strong>: FT / Yahoo。<strong>Goldman Sachs が SpaceX の AI 事業売上は 2030 年までに 100 倍に増加すると予測</strong>。Anthropic × Colossus $15B(2026-05-21)、Musk steamroll Wall Street(2026-06-04)、xAI / SpaceX 統合戦略、米政府 AI 株式取得検討(同日)、Mach Industries(2026-06-02)に並走する<strong>Musk 帝国 × AI 売上の超大型化予測</strong>、<strong>SpaceX が DC + AI モデル + 発電 + AI クラウドの統合化</strong>シナリオ。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>finance-ai</code>, <code>ai-infra</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">FT(Yahoo経由)</a> / 2026-06-05</li>
+</ul>
+
+<h3>Anthropic 共同創設者の楽観 vs 東京市場の AI 関連株軟調 vs 米政府 AI 株式取得検討</h3>
+<ul>
+<li><strong>要約</strong>: 同日 3 視点の対比。</li>
+</ul>
+<p>  - <strong>Daniela Amodei、AI リターン疑念を一蹴</strong>(TechCrunch)</p>
+<p>  - <strong>東京株式市場、AI 関連が軟調 1600 円超安</strong>(Reuters)</p>
+<p>  - <strong>米政府が AI 企業株式取得を検討</strong>(Reuters)</p>
+<ul>
+<li><strong>位置付け</strong>: Anthropic IPO 1 兆ドル(2026-06-02)、Cyera 80x ARR(2026-06-03)、Alphabet $85B(2026-06-04)、Mach Industries(2026-06-02)、Helion(同日)、Kevin O&#x27;Leary ユタ DC 縮小(2026-06-04)に並走する<strong>AI バブル懸念 / リターン論議 / 国家関与</strong>の同期発生、<strong>「AI 市場の評価 ↔ 規制 ↔ 個別銘柄の不一致」</strong>確立。</li>
+<li><strong>トピック</strong>: <code>finance-ai</code>, <code>ai-companies</code>, <code>ai-regulation</code></li>
+<li><strong>ソース</strong>: 上記 3 ソース統合 / 2026-06-05</li>
+</ul>
+
+<h3>モビルス — コンタクトセンター向け生成 AI チャットボット</h3>
+<ul>
+<li><strong>要約</strong>: デジタルクロス。<strong>モビルスが複数のナレッジを基に生成 AI が回答するコンタクトセンター向けチャットボット</strong>を開始。Sprocket データ分析エージェント(2026-05-19)、chai+ 受電双方向(2026-06-01)、Travelers × OpenAI(2026-06-02)、Anthropic Partner Network(2026-06-03)、NHN テコラス(2026-05-29)、Glean × NVIDIA(同日)に並ぶ<strong>国内コンタクトセンター × AI 統合</strong>事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>agentic-ai</code>, <code>ai-companies</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">デジタルクロス</a> / 2026-06-05</li>
+</ul>
+
+<h3>検図 → 積算図面解析 AI、工数最大 60% 削減(MONOist)</h3>
+<ul>
+<li><strong>要約</strong>: MONOist。<strong>検図から積算まで支援する図面解析 AI が工数を最大 60% 削減</strong>。renue Drawing Agent(2026-05-15)、大林組 × RICOS 風荷重 AI-CAE(2026-05-29)、住友ゴム × 富士通(同日)、NGK 化合物(2026-05-18)、Imperagen(2026-05-21)、Honda 人型ロボ(2026-06-04)、三菱重工 × PFN(2026-06-02)に並ぶ<strong>国内製造業 × AI 工数削減</strong>の連続事例。</li>
+<li><strong>トピック</strong>: <code>enterprise-ai</code>, <code>physical-ai</code>, <code>ai-data-structuring</code></li>
+<li><strong>ソース</strong>: <a href="https://monoist.itmedia.co.jp/" target="_blank" rel="noopener">MONOist</a> / 2026-06-05</li>
+</ul>
+
+<h3>Airbnb Brian Chesky、新 AI ラボ立ち上げ計画</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Airbnb 共同創業者 Brian Chesky が新 AI ラボを立ち上げ計画</strong>。Status AI(2026-05-19)、Paprclip(同)、Hark $700M(2026-05-21)、The Path(同)、Hello Robot(同日)、Maka Kids(2026-05-21)、Brynn Putnam Board $20M(2026-06-03)、Reflection AI 系(同日 WIRED)に並ぶ<strong>消費者向け AI / コンシューマー × AI</strong> の新参入。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-05</li>
+</ul>
+
+<h3>Apple WWDC 2026 期待 — Siri 刷新 + Apple Intelligence</h3>
+<ul>
+<li><strong>要約</strong>: TechCrunch。<strong>Apple WWDC 2026 で期待される内容 — Siri 刷新 + Apple Intelligence アップデート</strong>。Apple Siri 自動削除(2026-05-18)、Apple アクセシビリティ + Apple Intelligence(2026-05-19)、Apple Mythos 5 日突破(2026-05-20)、Apple App Store $1.4T(2026-06-04)、Apple Poke 承認(同日)に並ぶ<strong>Apple Intelligence 再構築フェーズ</strong>、Google I/O 2026(2026-05-20)、Microsoft Build 2026(2026-06-03)に続く<strong>Big Tech イベント連発の Apple 順番</strong>。</li>
+<li><strong>トピック</strong>: <code>ai-companies</code>, <code>ai-models</code>, <code>agentic-ai</code>, <code>physical-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> / 2026-06-05</li>
+</ul>
+
+<h3>慶應「三田評論」 — 生成 AI と「人間らしさ」特集 + 学生 AI リーダーズ大賞</h3>
+<ul>
+<li><strong>要約</strong>: 慶應義塾 + 日経BP。</li>
+</ul>
+<p>  - <strong>慶應「三田評論」6 月号で「生成 AI と人間らしさ」特集</strong></p>
+<p>  - <strong>「学生 AI リーダーズ大賞」開催</strong>(日経BP)</p>
+<ul>
+<li><strong>位置付け</strong>: Pope Magnifica Humanitas(2026-05-29)、Japan AI Index(2026-06-04)、就活生 1 位「AI 使えない会社不安」(2026-05-29)、AI バカの壁論議(同日 ITmedia)に並ぶ<strong>学術 / 教育 × AI</strong>の言説形成、<strong>「日本のアカデミア × AI」の主戦場化</strong>。</li>
+<li><strong>トピック</strong>: <code>consulting-ai</code>, <code>ai-regulation</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://news.google.com/" target="_blank" rel="noopener">慶應義塾</a> / <a href="https://news.google.com/" target="_blank" rel="noopener">日経BP</a> / 2026-06-05</li>
+</ul>
+
+<h3>「AI で思考力が奪われる?」 — AI バカの壁論議</h3>
+<ul>
+<li><strong>要約</strong>: ITmedia。<strong>「AI で思考力が奪われる?」 — 世界の研究が警告する &quot;AI バカの壁&quot;</strong>。AI psychosis 経営者(2026-05-29)、Schmidt 学生ブーイング(2026-05-18)、デジタルフリクション(2026-05-20)、AI 過信反発(同期)、ファクト眼(2026-05-18)、Pope Magnifica Humanitas(2026-05-29)に並走する<strong>AI ナラティブの哲学的批判</strong>の継続テーマ。</li>
+<li><strong>トピック</strong>: <code>ai-regulation</code>, <code>consulting-ai</code>, <code>enterprise-ai</code></li>
+<li><strong>ソース</strong>: <a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">ITmedia</a> / 2026-06-05</li>
+</ul>
+
+<h2>📌 その他のトピック</h2>
+
+<ul>
+<li><a href="https://news.google.com/" target="_blank" rel="noopener">トレンドマイクロ大幅反発、Anthropic AI モデル活用発表(かぶたん)</a> — 株価材料</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Kevin O&#x27;Leary、ユタ州大型 DC 縮小に同意(TechCrunch)</a> — DC バックラッシュ続</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Defense tech, AI, fundraising — StrictlyVC Los Angeles 6/18(TechCrunch)</a> — イベント告知</li>
+<li><a href="https://github.com/anthropic/" target="_blank" rel="noopener">Anthropic オープンソース 脆弱性発見 GitHub</a></li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">サントリーBF 油そば 食券押し放題(ITmedia)</a> — ビジネス</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">アスクル 社長交代 — ランサム攻撃踏まえた経営刷新(ITmedia)</a> — 経営 × 安全保障</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">2025 年度倒産発生率過去 10 年でワースト(ITmedia)</a> — 国内経済</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">働く高齢者の 8 割超「デジタルの壁」(ITmedia)</a> — DX × シニア</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">Hornetsecurity M365 データ保護(ITmedia)</a></li>
+<li><a href="https://xtech.nikkei.com/" target="_blank" rel="noopener">「ドメインナレッジ × AI」日立東原会長(日経xtech)</a> — 国内 AI 戦略</li>
+<li><a href="https://xtech.nikkei.com/" target="_blank" rel="noopener">「AI ブームでもコンサル絶好調 — 伴走型は劇薬」(日経xtech)</a> — コンサル業界</li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">生成 AI へのキャリア相談 6 割が「人より相談しやすい」(ITmedia)</a> — 消費者 AI</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Meta スマートグラス顔認識 + テント DC + Facebook AI クリエイター(TechCrunch x3)</a></li>
+<li><a href="https://www.itmedia.co.jp/" target="_blank" rel="noopener">Microsoft Build 2026 まとめ続報</a></li>
+<li><a href="https://xtech.nikkei.com/" target="_blank" rel="noopener">携帯料金値上げ効果 ソフトバンク(日経xtech)</a> — 通信</li>
+<li><a href="https://techcrunch.com/" target="_blank" rel="noopener">Retro-Tech Parenting(TechCrunch)</a> — Anti-AI ライフスタイル</li>
+</ul>
+
+<p>---</p>
+
+<h2>今日の問い</h2>
+
+<p>1. <strong>Anthropic「リスク高まれば停止」 + Daniela Amodei IPO 自信 + Mythos OSS フレームワーク + トレンドマイクロ国内初 Mythos + Claude 1100% 成長 + 80% 新コード Claude 製 + 再帰的自己改善 + AI 開発 GitHub OSS</strong>: <strong>Anthropic が &quot;規範形成 + 商業勝利 + 自社改善 + 透明性 + 国内市場参入&quot; 6 軸全方位</strong>で同日に動き、<strong>IPO 直前 1 週間の総攻勢が頂点</strong>へ。同時に<strong>「Mythos の民主化(OSS) + 自律規制呼びかけ」</strong>で<strong>「責任ある AI 大手」</strong>のナラティブを完成</p>
+<p>2. <strong>G7 主要国 AI 政策連発</strong>: 米下院 州規制禁止法案 + 米政府 AI 株式取得検討 + 英 AI 検索利用拒否権 + カナダ 25 万人雇用戦略 + 日米 1600 億円 5 年協力 + 日本 800 億円 米 AI 拠出 — <strong>「AI 国家戦略の国際標準化フェーズ」</strong>確立、Trump 大統領令(2026-06-03)、Japan AI Index(2026-06-04)からの<strong>集中加速</strong></p>
+<p>3. <strong>AI バブル懸念 vs 個別大型化の不一致</strong>: 東京 1600 円超安 + AI 関連軟調 + Kevin O&#x27;Leary ユタ DC 縮小 ↔ Helion $465M + Goldman SpaceX AI 100 倍 + Alphabet $85B(6/4) + Anthropic IPO 1 兆ドル — <strong>マクロ市場 ↔ 個別大手の評価逆相関</strong></p>
+<p>4. <strong>Microsoft 完全独立戦略の完成期 + Apple WWDC 期待</strong>: Microsoft Build 2026 まとめ + WWDC 2026 + Microsoft × OpenAI 破局 — <strong>Big Tech 5 強(Microsoft / Google / Apple / Anthropic / OpenAI)の同時主戦場固め</strong>フェーズ、<strong>Microsoft が &quot;OpenAI 連合解体期&quot; のリーダー</strong>として位置付け</p>
+<p>5. <strong>AI コーディング覇権の数値確定</strong>: Claude 1100% 成長 + シェア 17% + 80% 新コード Claude 製 — <strong>Microsoft × OpenAI 破局(6/3) + Microsoft Claude 取消(6/2) と並走する Claude の市場圧倒</strong>、<strong>「Microsoft が Claude を捨て、市場は Claude を選ぶ」</strong>矛盾構造の確定</p>
+<p>6. <strong>規範 / 司法 / 学術 / 消費者 5 層の AI ナラティブ完成</strong>: 慶應三田評論 + 学生 AI リーダーズ大賞 + AI バカの壁 + 生成 AI へのキャリア相談 6 割 + AI 創薬幻想 + AI で思考力 + 日経 5 連発(Mythos 怖いだけじゃない / FDE / バイブコーディング落とし穴 / コンサル絶好調 / 非決定論)— <strong>AI 議論の全社会レイヤ網羅</strong></p>
+
+<h2>推奨アクション</h2>
+
+<ul>
+<li><strong><code>ai-companies</code> 蓄積推奨</strong>: Anthropic「リスク高まれば停止」、Anthropic Mythos OSS、トレンドマイクロ Mythos 国内初、Claude 1100% / 80% 新コード、Daniela Amodei IPO 楽観、米政府 AI 株式取得、Helion × Microsoft、Microsoft Build 2026 まとめ、Apple WWDC、Meta スマートグラス + テント DC、Glean × NVIDIA Nemotron 3 Ultra、Airbnb Brian Chesky AI ラボ、Hello Robot、Goldman SpaceX 100 倍、Anthropic Recursive Self-Improvement</li>
+<li><strong><code>ai-regulation</code> 蓄積推奨</strong>: Anthropic「リスク高まれば停止」、米下院 州規制禁止法案、米政府 AI 株式、英 AI 検索利用拒否権、日米 1600 億円協力、日本 800 億円拠出、カナダ AI 戦略、AI バカの壁、慶應三田評論、学生 AI リーダーズ大賞、Mythos OSS 民主化、トレンドマイクロ国内初</li>
+<li><strong><code>agentic-ai</code> 蓄積推奨</strong>: Anthropic Recursive Self-Improvement、Apple Poke、メルカリ AI 戦国時代ガバナンス、Mythos OSS、ChatGPT Dreaming + Anthropic 夢を見る、非決定論問題、モビルスチャットボット、Glean NVIDIA Nemotron、住友ゴム × 富士通サロゲート</li>
+<li><strong><code>enterprise-ai</code> 蓄積推奨</strong>: Glean × NVIDIA、Microsoft Build 2026、Mythos 7 推奨対策、メルカリ AI ガバナンス、日立東原ドメインナレッジ、AI コンサル絶好調、住友ゴム × 富士通、AI 創薬幻想、検図 AI 60% 削減、コンタクトセンター チャットボット</li>
+<li><strong><code>consulting-ai</code> 蓄積推奨</strong>: AI コンサル絶好調(伴走型は劇薬)、FDE 客先常駐似て非なる、Japan AI Index 続、メルカリ AI 戦国時代、AI バカの壁、慶應三田評論、生成 AI キャリア相談 6 割、米下院規制禁止 + カナダ戦略</li>
+<li><strong><code>ai-models</code> 蓄積推奨</strong>: Anthropic Recursive Self-Improvement、Claude 80% 新コード、住友ゴム × 富士通 AI サロゲート、Glean NVIDIA Nemotron 3 Ultra、Gemma 4 12B(続)、Reflection AI 系継続学習、検図 AI</li>
+<li><strong><code>ai-coding</code> 蓄積推奨</strong>: Claude 1100% 成長、80% 新コード Claude 製、Microsoft Build 2026 続、バイブコーディング落とし穴、Mythos OSS GitHub、Anthropic 再帰的自己改善</li>
+<li><strong><code>ai-infra</code> 蓄積推奨</strong>: Helion $465M × Microsoft、Microsoft 1 ペタフロップス PC 続、Goldman SpaceX 100 倍、Meta テント DC、Kevin O&#x27;Leary ユタ DC 縮小、Microsoft Build 2026 ハードウェア、Anthropic × Colossus(続)、AI 関連株軟調</li>
+<li><strong><code>physical-ai</code> 蓄積推奨</strong>: Hello Robot 家庭用ロボ、Meta スマートグラス顔認識、住友ゴム × 富士通 タイヤ AI、検図 AI、Helion 核融合、Apple WWDC Siri、Honda + Mach Industries(続)</li>
+<li><strong><code>finance-ai</code> 蓄積推奨</strong>: Anthropic IPO 楽観 vs 東京市場軟調、米政府 AI 株式取得、Goldman SpaceX 100 倍、Helion $465M、トレンドマイクロ反発、Mythos × 金融機関(続)</li>
+<li><strong><code>ai-data-structuring</code> 蓄積推奨</strong>: Glean × NVIDIA マルチモデル、Anthropic Mythos OSS、図面解析 AI 60% 削減、Japan AI Index 構築</li>
+<li><strong><code>llm-evaluation</code> 蓄積推奨</strong>: Anthropic Recursive Self-Improvement、Claude vs Copilot シェア(1100% / 17% / Copilot 急落)、Claude Opus 4.8 忖度しない(続)、Glean マルチモデル、非決定論問題</li>
+<li><strong><code>logistics-ai</code> 蓄積推奨</strong>: モビルスコンタクトセンターチャットボット</li>
+</ul>
+
+<div class="footer">Generated by ai-news-vault</div>
+</div>
+</body>
+</html>
